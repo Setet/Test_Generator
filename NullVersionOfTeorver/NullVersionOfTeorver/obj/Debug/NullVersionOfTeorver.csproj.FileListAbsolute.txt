@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\bin\Debug\NullVersionOfTeorver.exe.config
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\bin\Debug\NullVersionOfTeorver.exe
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\bin\Debug\NullVersionOfTeorver.pdb
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.Form1.resources
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.Properties.Resources.resources
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.exe
+C:\Users\User\Desktop\Resources\2 Course\Teorver\NullVersionOfTeorver\NullVersionOfTeorver\obj\Debug\NullVersionOfTeorver.pdb
