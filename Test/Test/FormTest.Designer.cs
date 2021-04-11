@@ -32,10 +32,9 @@ namespace Test
             this.NumberOfQuestions = new System.Windows.Forms.TextBox();
             this.WritePath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ListOfSurnames = new System.Windows.Forms.RichTextBox();
             this.button_ToAccept = new System.Windows.Forms.Button();
             this.button_GenerateTest = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -62,15 +61,6 @@ namespace Test
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
-            // ListOfSurnames
-            // 
-            this.ListOfSurnames.AutoWordSelection = true;
-            this.ListOfSurnames.Location = new System.Drawing.Point(248, 7);
-            this.ListOfSurnames.Name = "ListOfSurnames";
-            this.ListOfSurnames.Size = new System.Drawing.Size(187, 197);
-            this.ListOfSurnames.TabIndex = 3;
-            this.ListOfSurnames.Text = "";
-            // 
             // button_ToAccept
             // 
             this.button_ToAccept.Location = new System.Drawing.Point(118, 21);
@@ -83,7 +73,7 @@ namespace Test
             // 
             // button_GenerateTest
             // 
-            this.button_GenerateTest.Location = new System.Drawing.Point(12, 152);
+            this.button_GenerateTest.Location = new System.Drawing.Point(12, 179);
             this.button_GenerateTest.Name = "button_GenerateTest";
             this.button_GenerateTest.Size = new System.Drawing.Size(230, 52);
             this.button_GenerateTest.TabIndex = 5;
@@ -91,14 +81,14 @@ namespace Test
             this.button_GenerateTest.UseVisualStyleBackColor = true;
             this.button_GenerateTest.Click += new System.EventHandler(this.button_GenerateTest_Click);
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Кол-во вопросов";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Кол-во вопросов";
             // 
             // label3
             // 
@@ -113,17 +103,17 @@ namespace Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 212);
+            this.ClientSize = new System.Drawing.Size(271, 243);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button_GenerateTest);
             this.Controls.Add(this.button_ToAccept);
-            this.Controls.Add(this.ListOfSurnames);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WritePath);
             this.Controls.Add(this.NumberOfQuestions);
             this.Name = "FormTest";
             this.Text = "Генератор тестов";
+            this.Load += new System.EventHandler(this.FormTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,10 +124,9 @@ namespace Test
         private System.Windows.Forms.TextBox NumberOfQuestions;
         private System.Windows.Forms.TextBox WritePath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox ListOfSurnames;
         private System.Windows.Forms.Button button_ToAccept;
         private System.Windows.Forms.Button button_GenerateTest;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
     }
 }
