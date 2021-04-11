@@ -20,8 +20,27 @@ namespace NullVersionOfTeorver
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double P = Tools.Sochetanie(Int32.Parse(textBox1.Text), Int32.Parse(textBox2.Text));
-            textBox3.Text = "Answer is " + P;
+
+            double P = Exc.TestNameExc1(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Int32.Parse(TB3.Text), Int32.Parse(TB4.Text));
+            TBAnswer.Text = "Answer is " + P;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double P = Exc.TestNameExc1(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Int32.Parse(TB3.Text), Int32.Parse(TB4.Text));
+            
+            P = 1 - P;
+            
+            TBAnswer.Text = "Answer is " + P;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double P = Exc.TestNameExc2(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Int32.Parse(TB3.Text));
+            
+            P = 1 - P;
+
+            TBAnswer.Text = "Answer is " + P;
         }
     }
 }

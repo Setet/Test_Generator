@@ -31,12 +31,15 @@ namespace NullVersionOfTeorver.Exercises
         private static double Factorial(int number)
         {
             double n = 1;
-
-            for (int i = 1; i <= number; i++)
+            if (number != 0)
             {
-                n *= i;
+                for (int i = 1; i <= number; i++)
+                {
+                    n *= i;
+                }
+                return n;
             }
-            return n;
+            else return 1;
         }
         /// <summary>
         /// Факториал от from до to
