@@ -8,3 +8,23 @@ C:\Users\user\Desktop\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
 C:\Users\user\Desktop\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\Test\Test\obj\Debug\Test.exe
 C:\Users\user\Desktop\Test\Test\obj\Debug\Test.pdb
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\bin\Debug\Test.exe.config
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\bin\Debug\Test.exe
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\bin\Debug\Test.pdb
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.FormTest.resources
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.exe
+C:\Users\larik\OneDrive\Рабочий стол\Test\Test\obj\Debug\Test.pdb
+D:\Новая папка\Test\Test\bin\Debug\Test.exe.config
+D:\Новая папка\Test\Test\bin\Debug\Test.exe
+D:\Новая папка\Test\Test\bin\Debug\Test.pdb
+D:\Новая папка\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\Новая папка\Test\Test\obj\Debug\Test.FormTest.resources
+D:\Новая папка\Test\Test\obj\Debug\Test.Properties.Resources.resources
+D:\Новая папка\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+D:\Новая папка\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\Новая папка\Test\Test\obj\Debug\Test.exe
+D:\Новая папка\Test\Test\obj\Debug\Test.pdb

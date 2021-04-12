@@ -29,25 +29,18 @@ namespace Test
         /// </summary>
         private void InitializeComponent()
         {
-            this.NumberOfQuestions = new System.Windows.Forms.TextBox();
             this.WritePath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button_ToAccept = new System.Windows.Forms.Button();
             this.button_GenerateTest = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button_SaveFile = new System.Windows.Forms.Button();
+            this.labeln = new System.Windows.Forms.Label();
+            this.button_FileCreate = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // NumberOfQuestions
-            // 
-            this.NumberOfQuestions.Location = new System.Drawing.Point(12, 23);
-            this.NumberOfQuestions.Name = "NumberOfQuestions";
-            this.NumberOfQuestions.Size = new System.Drawing.Size(100, 20);
-            this.NumberOfQuestions.TabIndex = 0;
             // 
             // WritePath
             // 
-            this.WritePath.Location = new System.Drawing.Point(12, 80);
+            this.WritePath.Location = new System.Drawing.Point(12, 114);
             this.WritePath.Name = "WritePath";
             this.WritePath.Size = new System.Drawing.Size(230, 20);
             this.WritePath.TabIndex = 1;
@@ -55,21 +48,11 @@ namespace Test
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 112);
+            this.label1.Location = new System.Drawing.Point(88, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
-            // 
-            // button_ToAccept
-            // 
-            this.button_ToAccept.Location = new System.Drawing.Point(118, 21);
-            this.button_ToAccept.Name = "button_ToAccept";
-            this.button_ToAccept.Size = new System.Drawing.Size(75, 23);
-            this.button_ToAccept.TabIndex = 4;
-            this.button_ToAccept.Text = "Принять";
-            this.button_ToAccept.UseVisualStyleBackColor = true;
-            this.button_ToAccept.Click += new System.EventHandler(this.button_ToAccept_Click);
             // 
             // button_GenerateTest
             // 
@@ -81,36 +64,56 @@ namespace Test
             this.button_GenerateTest.UseVisualStyleBackColor = true;
             this.button_GenerateTest.Click += new System.EventHandler(this.button_GenerateTest_Click);
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Кол-во вопросов";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(88, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
             // 
-            // label3
+            // button_SaveFile
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Путь сохранения файла";
+            this.button_SaveFile.Location = new System.Drawing.Point(130, 12);
+            this.button_SaveFile.Name = "button_SaveFile";
+            this.button_SaveFile.Size = new System.Drawing.Size(112, 38);
+            this.button_SaveFile.TabIndex = 9;
+            this.button_SaveFile.Text = "Выбрать файл";
+            this.button_SaveFile.UseVisualStyleBackColor = true;
+            this.button_SaveFile.Click += new System.EventHandler(this.button_SaveFile_Click);
+            // 
+            // labeln
+            // 
+            this.labeln.AutoSize = true;
+            this.labeln.Location = new System.Drawing.Point(88, 137);
+            this.labeln.Name = "labeln";
+            this.labeln.Size = new System.Drawing.Size(35, 13);
+            this.labeln.TabIndex = 10;
+            this.labeln.Text = "labeln";
+            // 
+            // button_FileCreate
+            // 
+            this.button_FileCreate.Location = new System.Drawing.Point(12, 12);
+            this.button_FileCreate.Name = "button_FileCreate";
+            this.button_FileCreate.Size = new System.Drawing.Size(112, 38);
+            this.button_FileCreate.TabIndex = 11;
+            this.button_FileCreate.Text = "Создать файл и выбрать файл";
+            this.button_FileCreate.UseVisualStyleBackColor = true;
+            this.button_FileCreate.Click += new System.EventHandler(this.button_FileCreate_Click);
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 243);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(253, 243);
+            this.Controls.Add(this.button_FileCreate);
+            this.Controls.Add(this.labeln);
+            this.Controls.Add(this.button_SaveFile);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button_GenerateTest);
-            this.Controls.Add(this.button_ToAccept);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WritePath);
-            this.Controls.Add(this.NumberOfQuestions);
             this.Name = "FormTest";
             this.Text = "Генератор тестов";
             this.Load += new System.EventHandler(this.FormTest_Load);
@@ -120,14 +123,13 @@ namespace Test
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox NumberOfQuestions;
         private System.Windows.Forms.TextBox WritePath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_ToAccept;
         private System.Windows.Forms.Button button_GenerateTest;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_SaveFile;
+        private System.Windows.Forms.Label labeln;
+        private System.Windows.Forms.Button button_FileCreate;
     }
 }
 
