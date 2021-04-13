@@ -11,7 +11,7 @@ namespace Test
 
         StreamReader surname;//для ФИО
 
-        int number_of_questions = 0;//переменная кол-ва человеков
+        int number_of_human = 0;//переменная кол-ва человеков
 
 
         public FormTest()
@@ -69,6 +69,11 @@ namespace Test
         }
 
         //функция позволяет ПОСЛЕДОВАТЕЛЬНО брать фамилии в файле(костыли,но больше я пока не придумал)
+        /*
+        Я,толи от тупости,толи чётр пойми от чего сломал эту штуку,и как бы тоно обрабатывает все фамилии
+        но в каком-то конченном порядке(на самом деле я уже нашёл причино-следственную связь)
+        в идеале надо сделать так чтобы фамилии шли по тому же порядку,по которому они записанны
+         */
         void MixName()
         {
             surname.Close();
@@ -92,6 +97,17 @@ namespace Test
         void StartTest()
         {
             var encoding = System.Text.Encoding.GetEncoding(1251);
+
+            try
+            {
+
+                surname = new StreamReader(Directory.GetCurrentDirectory() + @"\Name.txt", encoding);//место где лежит список заданий
+            }
+            catch (Exception message)
+            {
+                MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             try
             {
                 // Создание экземпляра StreamReader для чтения из файла
@@ -102,32 +118,24 @@ namespace Test
                 MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+            
             try
             {
-                // Создание экземпляра StreamReader для чтения из файла
-                surname = new StreamReader(Directory.GetCurrentDirectory() + @"\Name.txt", encoding);//место где лежит список заданий
-            }
-            catch (Exception message)
-            {   // Отчет о всех ошибках:
-                MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            try
-            {
-                // Создание экземпляра StreamReader для чтения из файла
+                
                 number2 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number2.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
-            {   // Отчет о всех ошибках:
+            {   
                 MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
             ReadNextQuestion();
         }
 
 
         /*
          Микро фикс который можно сделать-чтобы к конце каждого вопроса в каждом задании не ставить
-         ограничительный знак как этого требует 104 строка
+         ограничительный знак как этого требуют строки ниже
          */
 
         //функция позволяющая выбрать след вопрос
@@ -152,6 +160,7 @@ namespace Test
         private void button_GenerateTest_Click(object sender, EventArgs e)
         {
             int number_of_options = 1;//счётчик для номера варианта
+
             string Path = WritePath.Text;
             string writePath = @"" + Path;//создание файла по пути написанному пользователем в WritePath
 
@@ -160,9 +169,9 @@ namespace Test
             //считает кол-во людей по факту(заполняет var lines строками из Name,а потом считает кол-во строк)
             string dest = Directory.GetCurrentDirectory() + @"\Name.txt";
             var lines = File.ReadAllLines(dest);
-            number_of_questions = lines.Length;//кол-во человек вычисляется из кол-ва фамилий в списки Name
+            number_of_human = lines.Length;//кол-во человек вычисляется из кол-ва фамилий в списки Name
 
-            for (int i = 0; i < number_of_questions; i++)//записть нужного кол-ва вопросов в файл(пока txt)
+            for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
             {
                 StartTest();
                 sw.Write(labeln.Text + "\n");
@@ -171,8 +180,11 @@ namespace Test
                 MixQuestion2();
                 MixName();
 
-                sw.Write(label1.Text + "\n");
-                sw.Write(label2.Text + "\n" + "\n");
+                //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
+                // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
+
+                sw.Write("1) "+label1.Text + "\n");
+                sw.Write("2) "+label2.Text + "\n" + "\n");
                 number_of_options++;
             }
 
@@ -227,9 +239,9 @@ namespace Test
 
         private void button_FileCreate_Click(object sender, EventArgs e)
         {
+            string res = "Варианты тестов пофамильно";//Ъръютр тх№юџђэюёђќ, їђю C №ѓїхъ юърцѓђёџ
             var dialog = new SaveFileDialog();
             dialog.Filter = "All Files (.doc)|*.doc|All Files (*.*)|*.*";
-            dialog.FileName = "";
 
             if (dialog.ShowDialog() == DialogResult.Cancel)
             {
@@ -237,7 +249,8 @@ namespace Test
             }
             else
             {
-                File.OpenWrite(dialog.FileName);//голова не красивого костыля(см.выше)
+                File.WriteAllText(dialog.FileName, res);//микро фикс пробелемы с левой кнопкой которые родились недавно,вроде работает,надеюсь
+                                                        //надеюсь обойдёмся без приколов
 
                 string filename = dialog.FileName;//получаем в строку имя файла с расширением(из-за это писать его в WritePath и в коде не нужно(я про расширение)
                 WritePath.Text = filename;

@@ -40,15 +40,15 @@ namespace Test
             // 
             // WritePath
             // 
-            this.WritePath.Location = new System.Drawing.Point(12, 114);
+            this.WritePath.Location = new System.Drawing.Point(12, 156);
             this.WritePath.Name = "WritePath";
-            this.WritePath.Size = new System.Drawing.Size(230, 20);
+            this.WritePath.Size = new System.Drawing.Size(25, 20);
             this.WritePath.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 150);
+            this.label1.Location = new System.Drawing.Point(12, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace Test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 163);
+            this.label2.Location = new System.Drawing.Point(12, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 8;
@@ -86,7 +86,7 @@ namespace Test
             // labeln
             // 
             this.labeln.AutoSize = true;
-            this.labeln.Location = new System.Drawing.Point(88, 137);
+            this.labeln.Location = new System.Drawing.Point(12, 53);
             this.labeln.Name = "labeln";
             this.labeln.Size = new System.Drawing.Size(35, 13);
             this.labeln.TabIndex = 10;
@@ -94,7 +94,7 @@ namespace Test
             // 
             // button_FileCreate
             // 
-            this.button_FileCreate.Location = new System.Drawing.Point(12, 12);
+            this.button_FileCreate.Location = new System.Drawing.Point(11, 12);
             this.button_FileCreate.Name = "button_FileCreate";
             this.button_FileCreate.Size = new System.Drawing.Size(112, 38);
             this.button_FileCreate.TabIndex = 11;
