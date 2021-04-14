@@ -45,7 +45,7 @@ namespace Test
         void MixQuestion1()
         {
             number1.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number1.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number1.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -66,7 +66,7 @@ namespace Test
         void MixQuestion2()
         {
             number2.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number2.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number2.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -87,7 +87,7 @@ namespace Test
         void MixQuestion3()
         {
             number3.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number3.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number3.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -108,7 +108,7 @@ namespace Test
         void MixQuestion4()
         {
             number4.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number4.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number4.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -129,7 +129,7 @@ namespace Test
         void MixQuestion5()
         {
             number5.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number5.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number5.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -150,7 +150,7 @@ namespace Test
         void MixQuestion6()
         {
             number6.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number6.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number6.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -171,7 +171,7 @@ namespace Test
         void MixQuestion7()
         {
             number7.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number7.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number7.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -192,7 +192,7 @@ namespace Test
         void MixQuestion8()
         {
             number8.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number8.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number8.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -213,7 +213,7 @@ namespace Test
         void MixQuestion9()
         {
             number9.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number9.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number9.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -234,7 +234,7 @@ namespace Test
         void MixQuestion10()
         {
             number10.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number10.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number10.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -255,7 +255,7 @@ namespace Test
         void MixQuestion11()
         {
             number11.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number11.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number11.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -276,7 +276,7 @@ namespace Test
         void MixQuestion12()
         {
             number12.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number12.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number12.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -297,7 +297,7 @@ namespace Test
         void MixQuestion13()
         {
             number13.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number13.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number13.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -318,7 +318,7 @@ namespace Test
         void MixQuestion14()
         {
             number14.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number14.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number14.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -339,7 +339,7 @@ namespace Test
         void MixQuestion15()
         {
             number15.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number15.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number15.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -360,7 +360,7 @@ namespace Test
         void MixQuestion16()
         {
             number16.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number16.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number16.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -381,7 +381,7 @@ namespace Test
         void MixQuestion17()
         {
             number17.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number17.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number17.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -402,7 +402,7 @@ namespace Test
         void MixQuestion18()
         {
             number18.Close();
-            string dest = Directory.GetCurrentDirectory() + @"\Number18.txt";
+            string dest = Directory.GetCurrentDirectory() + @"\Tusk\Number18.txt";
             var encoding = System.Text.Encoding.UTF8;
             var lines = File.ReadAllLines(dest);
 
@@ -463,7 +463,7 @@ namespace Test
             try
             {
                 // Создание экземпляра StreamReader для чтения из файла
-                number1 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number1.txt", encoding);//место где лежит список заданий
+                number1 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number1.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {   // Отчет о всех ошибках:
@@ -473,7 +473,7 @@ namespace Test
             try
             {
 
-                number2 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number2.txt", encoding);//место где лежит список заданий
+                number2 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number2.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -483,7 +483,7 @@ namespace Test
             try
             {
 
-                number3 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number3.txt", encoding);//место где лежит список заданий
+                number3 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number3.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -493,7 +493,7 @@ namespace Test
             try
             {
 
-                number4 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number4.txt", encoding);//место где лежит список заданий
+                number4 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number4.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -503,7 +503,7 @@ namespace Test
             try
             {
 
-                number5 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number5.txt", encoding);//место где лежит список заданий
+                number5 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number5.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -513,7 +513,7 @@ namespace Test
             try
             {
 
-                number6 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number6.txt", encoding);//место где лежит список заданий
+                number6 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number6.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -523,7 +523,7 @@ namespace Test
             try
             {
 
-                number7 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number7.txt", encoding);//место где лежит список заданий
+                number7 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number7.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -533,7 +533,7 @@ namespace Test
             try
             {
 
-                number8 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number8.txt", encoding);//место где лежит список заданий
+                number8 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number8.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -542,17 +542,7 @@ namespace Test
 
             try
             {
-                number9 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number9.txt", encoding);//место где лежит список заданий
-            }
-            catch (Exception message)
-            {
-                MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            try
-            {
-
-                number10 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number10.txt", encoding);//место где лежит список заданий
+                number9 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number9.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -562,7 +552,7 @@ namespace Test
             try
             {
 
-                number11 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number11.txt", encoding);//место где лежит список заданий
+                number10 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number10.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -572,7 +562,7 @@ namespace Test
             try
             {
 
-                number12 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number12.txt", encoding);//место где лежит список заданий
+                number11 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number11.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -582,7 +572,7 @@ namespace Test
             try
             {
 
-                number13 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number13.txt", encoding);//место где лежит список заданий
+                number12 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number12.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -592,7 +582,7 @@ namespace Test
             try
             {
 
-                number14 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number14.txt", encoding);//место где лежит список заданий
+                number13 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number13.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -602,7 +592,7 @@ namespace Test
             try
             {
 
-                number15 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number15.txt", encoding);//место где лежит список заданий
+                number14 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number14.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -612,7 +602,7 @@ namespace Test
             try
             {
 
-                number16 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number16.txt", encoding);//место где лежит список заданий
+                number15 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number15.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -622,7 +612,7 @@ namespace Test
             try
             {
 
-                number17 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number17.txt", encoding);//место где лежит список заданий
+                number16 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number16.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -632,7 +622,17 @@ namespace Test
             try
             {
 
-                number18 = new StreamReader(Directory.GetCurrentDirectory() + @"\Number18.txt", encoding);//место где лежит список заданий
+                number17 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number17.txt", encoding);//место где лежит список заданий
+            }
+            catch (Exception message)
+            {
+                MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            try
+            {
+
+                number18 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number18.txt", encoding);//место где лежит список заданий
             }
             catch (Exception message)
             {
@@ -651,26 +651,26 @@ namespace Test
         //функция позволяющая выбрать след вопрос
         void ReadNextQuestion()
         {
-            string[] name = surname.ReadLine().Split(',');
+            string[] name = surname.ReadLine().Split('\n');
 
-            string[] tmp1 = number1.ReadLine().Split('|');
-            string[] tmp2 = number2.ReadLine().Split('|');
-            string[] tmp3 = number3.ReadLine().Split('|');
-            string[] tmp4 = number4.ReadLine().Split('|');
-            string[] tmp5 = number5.ReadLine().Split('|');
-            string[] tmp6 = number6.ReadLine().Split('|');
-            string[] tmp7 = number7.ReadLine().Split('|');
-            string[] tmp8 = number8.ReadLine().Split('|');
-            string[] tmp9 = number9.ReadLine().Split('|');
-            string[] tmp10 = number10.ReadLine().Split('|');
-            string[] tmp11 = number11.ReadLine().Split('|');
-            string[] tmp12 = number12.ReadLine().Split('|');
-            string[] tmp13 = number13.ReadLine().Split('|');
-            string[] tmp14 = number14.ReadLine().Split('|');
-            string[] tmp15 = number15.ReadLine().Split('|');
-            string[] tmp16 = number16.ReadLine().Split('|');
-            string[] tmp17 = number17.ReadLine().Split('|');
-            string[] tmp18 = number18.ReadLine().Split('|');
+            string[] tmp1 = number1.ReadLine().Split('\n');
+            string[] tmp2 = number2.ReadLine().Split('\n');
+            string[] tmp3 = number3.ReadLine().Split('\n');
+            string[] tmp4 = number4.ReadLine().Split('\n');
+            string[] tmp5 = number5.ReadLine().Split('\n');
+            string[] tmp6 = number6.ReadLine().Split('\n');
+            string[] tmp7 = number7.ReadLine().Split('\n');
+            string[] tmp8 = number8.ReadLine().Split('\n');
+            string[] tmp9 = number9.ReadLine().Split('\n');
+            string[] tmp10 = number10.ReadLine().Split('\n');
+            string[] tmp11 = number11.ReadLine().Split('\n');
+            string[] tmp12 = number12.ReadLine().Split('\n');
+            string[] tmp13 = number13.ReadLine().Split('\n');
+            string[] tmp14 = number14.ReadLine().Split('\n');
+            string[] tmp15 = number15.ReadLine().Split('\n');
+            string[] tmp16 = number16.ReadLine().Split('\n');
+            string[] tmp17 = number17.ReadLine().Split('\n');
+            string[] tmp18 = number18.ReadLine().Split('\n');
 
             int indexn = 0;
             int index1 = 0;
@@ -964,7 +964,7 @@ namespace Test
             MessageBox.Show("Тест составлен в файл "+textBox1.Text+"!!!");
             button_FileCreate.Visible = true;
 
-            //обнуляет значения всех полей
+            //зануляет значения всех полей
             textBox1.Text = "";
             radioButton1.Checked = false;
             radioButton2.Checked = false;
@@ -977,10 +977,11 @@ namespace Test
         private void FormTest_Load(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
+
             button_GenerateTest.Visible = false;
+            button_IndTusk.Visible = false;
 
             labeln.Visible = false;
-
             label1.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
@@ -999,6 +1000,7 @@ namespace Test
             label16.Visible = false;
             label17.Visible = false;
             label18.Visible = false;
+            label19.Visible = false;
 
             checkBox1.Visible = false;
             checkBox2.Visible = false;
@@ -1006,10 +1008,7 @@ namespace Test
             checkBox4.Visible = false;
             checkBox5.Visible = false;
 
-            label19.Visible = false;
-
             textBox1.Visible = false;
-
             WritePath.Visible = false;
         }
 
@@ -1046,6 +1045,8 @@ namespace Test
 
             label19.Visible = true;
             textBox1.Visible = true;
+
+            button_IndTusk.Visible = true;
         }
 
         /*короче,про создание файла из того же окна что и выбор инфы крайне мало,поэтому пришлось идти костылями
@@ -1141,6 +1142,13 @@ namespace Test
             {
                 checkBox5.Checked = false;
             }
+        }
+
+        private void button_IndTusk_Click(object sender, EventArgs e)
+        {
+            FormInd newForm = new FormInd();
+            newForm.Owner = this;
+            newForm.Show();
         }
     }
 }
