@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NullVersionOfTeorver.Exercises;
 
@@ -18,64 +11,76 @@ namespace NullVersionOfTeorver
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//1a
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric1(1);
 
-            double P = ExerciseAnswer.TestNameExc1(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Int32.Parse(TB3.Text), Int32.Parse(TB4.Text));
-            TBAnswer.Text = "Answer is " + P;
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)//1b
         {
-            double P = ExerciseAnswer.TestNameExc1(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Int32.Parse(TB3.Text), Int32.Parse(TB4.Text));
-            
-            P = 1 - P;
-            
-            TBAnswer.Text = "Answer is " + P;
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric1(2);
+
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)//1c
         {
-            double P = ExerciseAnswer.TestNameExc2(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Int32.Parse(TB3.Text));
-            
-            P = 1 - P;
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric1(3);
 
-            TBAnswer.Text = "Answer is " + P;
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)//2
         {
-            double P = ExerciseAnswer.TestNameExc3(Double.Parse(TB1.Text), Double.Parse(TB2.Text), Double.Parse(TB3.Text));
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric2();
 
-            TBAnswer.Text = "Answer is " + P;
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n l = " + Answer[3] + "\n Result = " + Answer[4];
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)//3
         {
-            double P = ExerciseAnswer.TestNameExc4(Double.Parse(TB1.Text), Double.Parse(TB2.Text));
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric3();
 
-            TBAnswer.Text = "Answer is " + P;
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n Result = " + Answer[2];
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//4
         {
-            double P = ExerciseAnswer.TestNameExc5(Double.Parse(TB1.Text), Double.Parse(TB2.Text));
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric4();
 
-            TBAnswer.Text = "Answer is " + P;
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//5
         {
-            double P = ExerciseAnswer.TestNameExc6(Double.Parse(TB1.Text), Double.Parse(TB2.Text));
-
-            TBAnswer.Text = "Answer is " + P;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)//6
         {
-            double P = ExerciseAnswer.TestNameExc7(Int32.Parse(TB1.Text), Int32.Parse(TB2.Text), Double.Parse(TB3.Text));
+        }
 
-            TBAnswer.Text = "Answer is " + P;
+        private void button5_Click(object sender, EventArgs e)//7
+        {
+        }
+
+        private void button6_Click(object sender, EventArgs e)//8
+        {
+        }
+
+        private void button7_Click(object sender, EventArgs e)//9
+        {
+        }
+
+        private void button8_Click(object sender, EventArgs e)//10
+        {
         }
     }
 }

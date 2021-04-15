@@ -1,28 +1,106 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NullVersionOfTeorver.Exercises
 {
-    class ExerciseAnswer
+    //Дисклеймер
+
+    //Данный класс является набором методов, для решения определенных задач
+    //По-идее, у вас не должно быть доступа к этому классу. Т.к. он нужен только для класса генережки, но С# не дает мне его "запротектить"
+    //Может в будущем разберусь с этой проблемой. Либо просто перекину его в класс с генережкой, и решу кек с инкапсуляцией
+    public class ExerciseAnswer
     {
         /// <summary>
-        /// Решает задачи 1а), 2, 3, 4
+        /// Решает задачу 1а)
         /// n - общее количество изделий ;
         /// k - количество бракованных изделий ;
         /// m - общее количество взятых наугад изделий ;
-        /// l - количество бракованных изделий из взятых наугад ;
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        protected static double AnswerForExc1a (int n, int k, int m)
+        {
+            return Tools.Sochetanie(n - k, m) / Tools.Sochetanie(n, m);
+        }
+
+        /// <summary>
+        /// Решает задачу 1b)
+        /// n - общее количество изделий ;
+        /// k - количество бракованных изделий ;
+        /// m - общее количество взятых наугад изделий ;
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        protected static double AnswerForExc1b(int n, int k, int m)
+        {
+            return Tools.Sochetanie(k, m) / Tools.Sochetanie(n, m);
+        }
+
+        /// <summary>
+        /// Решает задачу 1c)
+        /// n - общее количество изделий ;
+        /// k - количество бракованных изделий ;
+        /// m - общее количество взятых наугад изделий ;
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        protected static double AnswerForExc1c(int n, int k, int m)
+        {
+            return (Tools.Sochetanie(k,m)+Tools.Sochetanie(n-k,1)*Tools.Sochetanie(k,1)) 
+                               / Tools.Sochetanie(n, m);
+        }
+
+
+        /// <summary>
+        /// Решает задачу 2
+        /// n - общее количество изделий 
+        /// k - количество бракованных изделий
+        /// m - общее количество взятых наугад изделий
+        /// l - количество бракованных изделий из взятых наугад
         /// </summary>
         /// <param name="n"></param>
         /// <param name="k"></param>
         /// <param name="m"></param>
         /// <param name="l"></param>
         /// <returns></returns>
-        public static double TestNameExc1 (int n, int k, int m, int l)
+        protected static double AnswerForExc2(int n, int k, int m, int l)
         {
-            return (Tools.Sochetanie(k, l) * Tools.Sochetanie(n - k, m - l)) / Tools.Sochetanie(n, m);
+            return Tools.Sochetanie(k, l)*Tools.Sochetanie(n-k,m-l) / Tools.Sochetanie(n, m);
+        }
+
+
+        /// <summary>
+        /// Решает задачу 3
+        /// n - общее число карт
+        /// k - количество карт, взятых наугад
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        protected static double AnswerForExc3(int n, int k)
+        {
+            return 1-Tools.Sochetanie(4, 0) * Tools.Sochetanie(n - k, k) / Tools.Sochetanie(n, k);
+        }
+
+
+        /// <summary>
+        /// Решает задачу 4
+        /// n - общее количество изделий 
+        /// k - количество бракованных изделий
+        /// m - общее количество взятых наугад изделий
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        protected static double AnswerForExc4(int n, int k, int m)
+        {
+            return Tools.Sochetanie(k, m/2) * Tools.Sochetanie(n - k, m/2) / Tools.Sochetanie(n, m);
         }
 
 
@@ -36,10 +114,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="k"></param>
         /// <param name="c"></param>
         /// <returns></returns>
-        public static double TestNameExc2 (int n, int k, int c)
+        protected static double AnswerForExc5(int n, int k, int c)
         {
             double x = Convert.ToDouble(k) / Convert.ToDouble(n);
-            return (Math.Pow(x, c));
+            return 1 - (Math.Pow(x, c));
         }
 
 
@@ -51,7 +129,7 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="x2"></param>
         /// <param name="x3"></param>
         /// <returns></returns>
-        public static double TestNameExc3 (double x1, double x2, double x3)
+        protected static double AnswerForExc6(double x1, double x2, double x3)
         {
             return (1 - x1) * (1 - x2) * (1 - x3);
         }
@@ -64,7 +142,7 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="p1"></param>
         /// <param name="p2"></param>
         /// <returns></returns>
-        public static double TestNameExc4 (double p1, double p2)
+        protected static double AnswerForExc7(double p1, double p2)
         {
             return (1 - p1) * p2 + (1 - p2) * p1;
         }
@@ -77,7 +155,7 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="h1"></param>
         /// <param name="h2"></param>
         /// <returns></returns>
-        public static double TestNameExc5 (double h1, double h2)
+        protected static double AnswerForExc8(double h1, double h2)
         {
             double q1 = 1 - h1;
             double q2 = 1 - h2;
@@ -96,7 +174,7 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="h1"></param>
         /// <param name="h2"></param>
         /// <returns></returns>
-        public static double TestNameExc6 (double h1, double h2)
+        protected static double AnswerForExc9(double h1, double h2)
         {
             double Ph1 = 0.33;
             double Ph2 = 0.66;
@@ -115,7 +193,7 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="k"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        public static double TestNameExc7 (int n, int k, double p)
+        protected static double AnswerForExc10(int n, int k, double p)
         {
             double q = 1 - p;
             return Tools.Sochetanie(n, k) * Math.Pow(q, k) * Math.Pow(p, k);
