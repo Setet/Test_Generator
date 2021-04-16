@@ -29,7 +29,7 @@ namespace Test
         /// </summary>
         private void InitializeComponent()
         {
-            this.WritePath = new System.Windows.Forms.TextBox();
+            this.WritePath1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_GenerateTest = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,27 +54,22 @@ namespace Test
             this.label18 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.button_IndTusk = new System.Windows.Forms.Button();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // WritePath
+            // WritePath1
             // 
-            this.WritePath.Location = new System.Drawing.Point(120, 223);
-            this.WritePath.Name = "WritePath";
-            this.WritePath.Size = new System.Drawing.Size(111, 20);
-            this.WritePath.TabIndex = 1;
+            this.WritePath1.Location = new System.Drawing.Point(120, 223);
+            this.WritePath1.Name = "WritePath1";
+            this.WritePath1.Size = new System.Drawing.Size(111, 20);
+            this.WritePath1.TabIndex = 1;
             // 
             // label1
             // 
@@ -88,7 +83,7 @@ namespace Test
             // 
             // button_GenerateTest
             // 
-            this.button_GenerateTest.Location = new System.Drawing.Point(11, 191);
+            this.button_GenerateTest.Location = new System.Drawing.Point(4, 130);
             this.button_GenerateTest.Name = "button_GenerateTest";
             this.button_GenerateTest.Size = new System.Drawing.Size(227, 52);
             this.button_GenerateTest.TabIndex = 5;
@@ -298,83 +293,27 @@ namespace Test
             this.checkBox2.Text = "1-10";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(165, 127);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(47, 17);
-            this.checkBox4.TabIndex = 30;
-            this.checkBox4.Text = "1-14";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(163, 150);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(47, 17);
-            this.checkBox5.TabIndex = 31;
-            this.checkBox5.Text = "1-16";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(165, 107);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(47, 17);
-            this.checkBox3.TabIndex = 32;
-            this.checkBox3.Text = "1-12";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(129, 53);
+            this.groupBox1.Location = new System.Drawing.Point(130, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(109, 138);
+            this.groupBox1.Size = new System.Drawing.Size(109, 91);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выбор заданий";
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(6, 115);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(46, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "1-16";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 92);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(46, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "1-14";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(6, 65);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(46, 17);
+            this.radioButton3.Size = new System.Drawing.Size(52, 17);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "1-12";
+            this.radioButton3.Text = "11-18";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
@@ -419,29 +358,25 @@ namespace Test
             this.label19.TabIndex = 35;
             this.label19.Text = "Имя файла с тестом";
             // 
-            // button_IndTusk
+            // checkBox3
             // 
-            this.button_IndTusk.Location = new System.Drawing.Point(11, 127);
-            this.button_IndTusk.Name = "button_IndTusk";
-            this.button_IndTusk.Size = new System.Drawing.Size(112, 58);
-            this.button_IndTusk.TabIndex = 36;
-            this.button_IndTusk.Text = "Индивидуальные задания";
-            this.button_IndTusk.UseVisualStyleBackColor = true;
-            this.button_IndTusk.Click += new System.EventHandler(this.button_IndTusk_Click);
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(165, 107);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(53, 17);
+            this.checkBox3.TabIndex = 36;
+            this.checkBox3.Text = "11-18";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(251, 249);
-            this.Controls.Add(this.button_IndTusk);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.button_GenerateTest);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button_SaveFile);
@@ -465,7 +400,8 @@ namespace Test
             this.Controls.Add(this.labeln);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.WritePath);
+            this.Controls.Add(this.WritePath1);
+            this.Controls.Add(this.checkBox3);
             this.Name = "FormTest";
             this.Text = "Генератор тестов";
             this.Load += new System.EventHandler(this.FormTest_Load);
@@ -477,7 +413,7 @@ namespace Test
         }
 
         #endregion
-        private System.Windows.Forms.TextBox WritePath;
+        private System.Windows.Forms.TextBox WritePath1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_GenerateTest;
         private System.Windows.Forms.Label label2;
@@ -502,18 +438,13 @@ namespace Test
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button_IndTusk;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 

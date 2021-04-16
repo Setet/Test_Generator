@@ -28,15 +28,3 @@ D:\Новая папка\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
 D:\Новая папка\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Новая папка\Test\Test\obj\Debug\Test.exe
 D:\Новая папка\Test\Test\obj\Debug\Test.pdb
-C:\Users\user\Desktop\Test\Test\obj\Debug\Test.FormInd.resources
-C:\Users\user\Desktop\Pogromists\Test\Test\bin\Debug\Test.exe.config
-C:\Users\user\Desktop\Pogromists\Test\Test\bin\Debug\Test.exe
-C:\Users\user\Desktop\Pogromists\Test\Test\bin\Debug\Test.pdb
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.FormInd.resources
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.FormTest.resources
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.Properties.Resources.resources
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.exe
-C:\Users\user\Desktop\Pogromists\Test\Test\obj\Debug\Test.pdb

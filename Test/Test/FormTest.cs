@@ -719,12 +719,18 @@ namespace Test
         //та самая кнопка в которой происходит кривая костылявая,но магия
         private void button_GenerateTest_Click(object sender, EventArgs e)
         {
+            int Answer = 0;
+
             int number_of_options = 1;//счётчик для номера варианта
 
-            string Path = WritePath.Text;
-            string writePath = @"" + Path;//создание файла по пути написанному пользователем в WritePath
+            string Path1 = WritePath1.Text;
 
-            StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default);
+            string writePath1 = @"" + Path1;//создание файла по пути написанному пользователем в WritePath
+            string writePath2 = @"C:\Users\user\Desktop\Test\Test\bin\Debug\Answer.doc";
+
+            StreamWriter sw = new StreamWriter(writePath1, false, System.Text.Encoding.Default);
+
+            StreamWriter ws = new StreamWriter(writePath2, false, System.Text.Encoding.Default);
 
             //считает кол-во людей по факту(заполняет var lines строками из Name,а потом считает кол-во строк)
             string dest = Directory.GetCurrentDirectory() + @"\Name.txt";
@@ -739,6 +745,7 @@ namespace Test
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
+                    ws.Write("Вариант №" + number_of_options + "\n");
                     MixQuestion1();
                     MixQuestion2();
                     MixQuestion3();
@@ -764,23 +771,52 @@ namespace Test
                     номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
                     */
 
-                    sw.Write("1) " + label1.Text + "\n");
-                    sw.Write("2) " + label2.Text + "\n");
-                    sw.Write("3) " + label3.Text + "\n");
-                    sw.Write("4) " + label4.Text + "\n");
-                    sw.Write("5) " + label5.Text + "\n");
-                    sw.Write("6) " + label6.Text + "\n");
-                    sw.Write("7) " + label7.Text + "\n");
-                    sw.Write("8) " + label8.Text + "\n");
-                    sw.Write("9) " + label9.Text + "\n");
-                    sw.Write("10) " + label10.Text + "\n");
-                    sw.Write("11) " + label11.Text + "\n");
-                    sw.Write("12) " + label12.Text + "\n");
-                    sw.Write("13) " + label13.Text + "\n");
-                    sw.Write("14) " + label14.Text + "\n");
-                    sw.Write("15) " + label15.Text + "\n");
-                    sw.Write("16) " + label16.Text + "\n");
-                    sw.Write("17) " + label17.Text + "\n");
+                    sw.Write("1) " + label1.Text + "\n" + "\n");
+
+                    ws.Write("1) " + label1.Text + "\n" + "Ответ :" + "a)" + Answer + " ," + "b)" + Answer + " ," + "c)" + Answer + "\n");
+
+                    sw.Write("2) " + label2.Text + "\n" + "\n");
+
+                    ws.Write("2) " + label2.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("3) " + label3.Text + "\n" + "\n");
+
+                    ws.Write("3) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("4) " + label4.Text + "\n" + "\n");
+
+                    ws.Write("4) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("5) " + label5.Text + "\n" + "\n");
+
+                    ws.Write("5) " + label5.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("6) " + label6.Text + "\n" + "\n");
+
+                    ws.Write("6) " + label6.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("7) " + label7.Text + "\n" + "\n");
+
+                    ws.Write("7) " + label7.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("8) " + label8.Text + "\n" + "\n");
+
+                    ws.Write("8) " + label8.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("9) " + label9.Text + "\n" + "\n");
+
+                    ws.Write("9) " + label9.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("10) " + label10.Text + "\n" + "\n");
+
+                    ws.Write("10) " + label10.Text + "\n" + "Ответ :" + Answer + "\n");
+                    //---------------------------------------------------------------------------//
+                    sw.Write("11) " + label11.Text + "\n" + "\n");
+                    sw.Write("12) " + label12.Text + "\n" + "\n");
+                    sw.Write("13) " + label13.Text + "\n" + "\n");
+                    sw.Write("14) " + label14.Text + "\n" + "\n");
+                    sw.Write("16) " + label16.Text + "\n" + "\n");
+                    sw.Write("17) " + label17.Text + "\n" + "\n");
                     sw.Write("18) " + label18.Text + "\n" + "\n");
                     number_of_options++;
                 }
@@ -799,6 +835,7 @@ namespace Test
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
+                    ws.Write("Вариант №" + number_of_options + "\n");
                     MixQuestion1();
                     MixQuestion2();
                     MixQuestion3();
@@ -814,20 +851,49 @@ namespace Test
                     //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
                     // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
 
-                    sw.Write("1) " + label1.Text + "\n");
-                    sw.Write("2) " + label2.Text + "\n");
-                    sw.Write("3) " + label3.Text + "\n");
-                    sw.Write("4) " + label4.Text + "\n");
-                    sw.Write("5) " + label5.Text + "\n");
-                    sw.Write("6) " + label6.Text + "\n");
-                    sw.Write("7) " + label7.Text + "\n");
-                    sw.Write("8) " + label8.Text + "\n");
-                    sw.Write("9) " + label9.Text + "\n");
+                    sw.Write("1) " + label1.Text + "\n" + "\n");
+
+                    ws.Write("1) " + label1.Text + "\n" + "Ответ :" + "a)" + Answer + " ," + "b)" + Answer + " ," + "c)" + Answer + "\n");
+
+                    sw.Write("2) " + label2.Text + "\n" + "\n");
+
+                    ws.Write("2) " + label2.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("3) " + label3.Text + "\n" + "\n");
+
+                    ws.Write("3) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("4) " + label4.Text + "\n" + "\n");
+
+                    ws.Write("4) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("5) " + label5.Text + "\n" + "\n");
+
+                    ws.Write("5) " + label5.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("6) " + label6.Text + "\n" + "\n");
+
+                    ws.Write("6) " + label6.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("7) " + label7.Text + "\n" + "\n");
+
+                    ws.Write("7) " + label7.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("8) " + label8.Text + "\n" + "\n");
+
+                    ws.Write("8) " + label8.Text + "\n" + "Ответ :" + Answer + "\n");
+
+                    sw.Write("9) " + label9.Text + "\n" + "\n");
+
+                    ws.Write("9) " + label9.Text + "\n" + "Ответ :" + Answer + "\n");
+
                     sw.Write("10) " + label10.Text + "\n" + "\n");
+
+                    ws.Write("10) " + label10.Text + "\n" + "Ответ :" + Answer + "\n");
                     number_of_options++;
                 }
             }
-            //1-12
+            //11-18
             if (checkBox3.Checked == true)
             {
                 for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
@@ -835,133 +901,34 @@ namespace Test
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
-                    MixQuestion1();
-                    MixQuestion2();
-                    MixQuestion3();
-                    MixQuestion4();
-                    MixQuestion5();
-                    MixQuestion6();
-                    MixQuestion7();
-                    MixQuestion8();
-                    MixQuestion9();
-                    MixQuestion10();
-                    MixQuestion11();
-                    MixQuestion12();
-                    MixName();
-
-                    //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
-                    // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
-
-                    sw.Write("1) " + label1.Text + "\n");
-                    sw.Write("2) " + label2.Text + "\n");
-                    sw.Write("3) " + label3.Text + "\n");
-                    sw.Write("4) " + label4.Text + "\n");
-                    sw.Write("5) " + label5.Text + "\n");
-                    sw.Write("6) " + label6.Text + "\n");
-                    sw.Write("7) " + label7.Text + "\n");
-                    sw.Write("8) " + label8.Text + "\n");
-                    sw.Write("9) " + label9.Text + "\n");
-                    sw.Write("10) " + label10.Text + "\n");
-                    sw.Write("11) " + label11.Text + "\n");
-                    sw.Write("12) " + label12.Text + "\n" + "\n");
-                    number_of_options++;
-                }
-            }
-            //1-14
-            if (checkBox4.Checked == true)
-            {
-                for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
-                {
-                    StartTest();
-                    sw.Write(labeln.Text + "\n");
-                    sw.Write("Вариант №" + number_of_options + "\n");
-                    MixQuestion1();
-                    MixQuestion2();
-                    MixQuestion3();
-                    MixQuestion4();
-                    MixQuestion5();
-                    MixQuestion6();
-                    MixQuestion7();
-                    MixQuestion8();
-                    MixQuestion9();
-                    MixQuestion10();
-                    MixQuestion11();
-                    MixQuestion12();
-                    MixQuestion13();
-                    MixQuestion14();
-                    MixName();
-
-                    //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
-                    // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
-
-                    sw.Write("1) " + label1.Text + "\n");
-                    sw.Write("2) " + label2.Text + "\n");
-                    sw.Write("3) " + label3.Text + "\n");
-                    sw.Write("4) " + label4.Text + "\n");
-                    sw.Write("5) " + label5.Text + "\n");
-                    sw.Write("6) " + label6.Text + "\n");
-                    sw.Write("7) " + label7.Text + "\n");
-                    sw.Write("8) " + label8.Text + "\n");
-                    sw.Write("9) " + label9.Text + "\n");
-                    sw.Write("10) " + label10.Text + "\n");
-                    sw.Write("11) " + label11.Text + "\n");
-                    sw.Write("12) " + label12.Text + "\n");
-                    sw.Write("13) " + label13.Text + "\n");
-                    sw.Write("14) " + label14.Text + "\n" + "\n");
-                    number_of_options++;
-                }
-            }
-            //1-16
-            if (checkBox5.Checked == true)
-            {
-                for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
-                {
-                    StartTest();
-                    sw.Write(labeln.Text + "\n");
-                    sw.Write("Вариант №" + number_of_options + "\n");
-                    MixQuestion1();
-                    MixQuestion2();
-                    MixQuestion3();
-                    MixQuestion4();
-                    MixQuestion5();
-                    MixQuestion6();
-                    MixQuestion7();
-                    MixQuestion8();
-                    MixQuestion9();
-                    MixQuestion10();
                     MixQuestion11();
                     MixQuestion12();
                     MixQuestion13();
                     MixQuestion14();
                     MixQuestion15();
                     MixQuestion16();
+                    MixQuestion17();
+                    MixQuestion18();
                     MixName();
 
                     //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
                     // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
 
-                    sw.Write("1) " + label1.Text + "\n");
-                    sw.Write("2) " + label2.Text + "\n");
-                    sw.Write("3) " + label3.Text + "\n");
-                    sw.Write("4) " + label4.Text + "\n");
-                    sw.Write("5) " + label5.Text + "\n");
-                    sw.Write("6) " + label6.Text + "\n");
-                    sw.Write("7) " + label7.Text + "\n");
-                    sw.Write("8) " + label8.Text + "\n");
-                    sw.Write("9) " + label9.Text + "\n");
-                    sw.Write("10) " + label10.Text + "\n");
-                    sw.Write("11) " + label11.Text + "\n");
-                    sw.Write("12) " + label12.Text + "\n");
-                    sw.Write("13) " + label13.Text + "\n");
-                    sw.Write("14) " + label14.Text + "\n");
-                    sw.Write("15) " + label15.Text + "\n");
+                    sw.Write("11) " + label11.Text + "\n" + "\n");
+                    sw.Write("12) " + label12.Text + "\n" + "\n");
+                    sw.Write("13) " + label13.Text + "\n" + "\n");
+                    sw.Write("14) " + label14.Text + "\n" + "\n");
+                    sw.Write("15) " + label15.Text + "\n" + "\n");
                     sw.Write("16) " + label16.Text + "\n" + "\n");
+                    sw.Write("17) " + label17.Text + "\n" + "\n");
+                    sw.Write("18) " + label18.Text + "\n" + "\n");
                     number_of_options++;
                 }
             }
 
+
             sw.Close();
-            MessageBox.Show("Тест составлен в файл "+textBox1.Text+"!!!");
+            MessageBox.Show("Тест составлен в файл " + textBox1.Text + "!!!");
             button_FileCreate.Visible = true;
 
             //зануляет значения всех полей
@@ -969,8 +936,6 @@ namespace Test
             radioButton1.Checked = false;
             radioButton2.Checked = false;
             radioButton3.Checked = false;
-            radioButton4.Checked = false;
-            radioButton5.Checked = false;
         }
 
         //крысинное скрытие label-ов
@@ -979,7 +944,6 @@ namespace Test
             groupBox1.Visible = false;
 
             button_GenerateTest.Visible = false;
-            button_IndTusk.Visible = false;
 
             labeln.Visible = false;
             label1.Visible = false;
@@ -1005,11 +969,9 @@ namespace Test
             checkBox1.Visible = false;
             checkBox2.Visible = false;
             checkBox3.Visible = false;
-            checkBox4.Visible = false;
-            checkBox5.Visible = false;
 
             textBox1.Visible = false;
-            WritePath.Visible = false;
+            WritePath1.Visible = false;
         }
 
         //вроде как решил проблему с работой в вордовском формате
@@ -1036,7 +998,7 @@ namespace Test
             string filename1 = openFileDialog.FileName;//получаем в строку имя файла с расширением(из-за это писать его в WritePath и в коде не нужно(я про расширение)
             string filename2 = openFileDialog.SafeFileName;
 
-            WritePath.Text = filename1;
+            WritePath1.Text = filename1;
             textBox1.Text = filename2;
 
             MessageBox.Show("Файл для теста принят!!!");
@@ -1046,7 +1008,6 @@ namespace Test
             label19.Visible = true;
             textBox1.Visible = true;
 
-            button_IndTusk.Visible = true;
         }
 
         /*короче,про создание файла из того же окна что и выбор инфы крайне мало,поэтому пришлось идти костылями
@@ -1063,7 +1024,7 @@ namespace Test
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            saveFileDialog.Filter= "Tests(*.doc)|*.doc|All files(*.*)|*.*";
+            saveFileDialog.Filter = "Tests(*.doc)|*.doc|All files(*.*)|*.*";
 
             if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
             {
@@ -1116,39 +1077,6 @@ namespace Test
             {
                 checkBox3.Checked = false;
             }
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton radioButton = (RadioButton)sender;
-            if (radioButton.Checked)
-            {
-                checkBox4.Checked = true;
-            }
-            else
-            {
-                checkBox4.Checked = false;
-            }
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton radioButton = (RadioButton)sender;
-            if (radioButton.Checked)
-            {
-                checkBox5.Checked = true;
-            }
-            else
-            {
-                checkBox5.Checked = false;
-            }
-        }
-
-        private void button_IndTusk_Click(object sender, EventArgs e)
-        {
-            FormInd newForm = new FormInd();
-            newForm.Owner = this;
-            newForm.Show();
         }
     }
 }
