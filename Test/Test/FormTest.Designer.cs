@@ -61,6 +61,10 @@ namespace Test
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button_SaveFileAnswer = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.WritePath2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +87,7 @@ namespace Test
             // 
             // button_GenerateTest
             // 
-            this.button_GenerateTest.Location = new System.Drawing.Point(4, 130);
+            this.button_GenerateTest.Location = new System.Drawing.Point(11, 191);
             this.button_GenerateTest.Name = "button_GenerateTest";
             this.button_GenerateTest.Size = new System.Drawing.Size(227, 52);
             this.button_GenerateTest.TabIndex = 5;
@@ -106,7 +110,7 @@ namespace Test
             this.button_SaveFile.Name = "button_SaveFile";
             this.button_SaveFile.Size = new System.Drawing.Size(112, 38);
             this.button_SaveFile.TabIndex = 9;
-            this.button_SaveFile.Text = "Выбрать файл";
+            this.button_SaveFile.Text = "Выбрать файл для тестов";
             this.button_SaveFile.UseVisualStyleBackColor = true;
             this.button_SaveFile.Click += new System.EventHandler(this.button_SaveFile_Click);
             // 
@@ -121,7 +125,7 @@ namespace Test
             // 
             // button_FileCreate
             // 
-            this.button_FileCreate.Location = new System.Drawing.Point(11, 12);
+            this.button_FileCreate.Location = new System.Drawing.Point(9, 102);
             this.button_FileCreate.Name = "button_FileCreate";
             this.button_FileCreate.Size = new System.Drawing.Size(112, 38);
             this.button_FileCreate.TabIndex = 11;
@@ -276,7 +280,7 @@ namespace Test
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(165, 62);
+            this.checkBox1.Location = new System.Drawing.Point(165, 102);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(45, 17);
             this.checkBox1.TabIndex = 28;
@@ -286,7 +290,7 @@ namespace Test
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(165, 84);
+            this.checkBox2.Location = new System.Drawing.Point(165, 125);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(47, 17);
             this.checkBox2.TabIndex = 29;
@@ -298,7 +302,7 @@ namespace Test
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(130, 55);
+            this.groupBox1.Location = new System.Drawing.Point(130, 94);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(109, 91);
             this.groupBox1.TabIndex = 33;
@@ -343,7 +347,7 @@ namespace Test
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 71);
+            this.textBox1.Location = new System.Drawing.Point(126, 71);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(109, 20);
@@ -352,7 +356,7 @@ namespace Test
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 55);
+            this.label19.Location = new System.Drawing.Point(127, 53);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(112, 13);
             this.label19.TabIndex = 35;
@@ -361,20 +365,58 @@ namespace Test
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(165, 107);
+            this.checkBox3.Location = new System.Drawing.Point(165, 148);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(53, 17);
             this.checkBox3.TabIndex = 36;
             this.checkBox3.Text = "11-18";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(9, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(114, 20);
+            this.textBox2.TabIndex = 37;
+            // 
+            // button_SaveFileAnswer
+            // 
+            this.button_SaveFileAnswer.Location = new System.Drawing.Point(5, 12);
+            this.button_SaveFileAnswer.Name = "button_SaveFileAnswer";
+            this.button_SaveFileAnswer.Size = new System.Drawing.Size(112, 38);
+            this.button_SaveFileAnswer.TabIndex = 38;
+            this.button_SaveFileAnswer.Text = "Выбрать файл для тестов с ответами";
+            this.button_SaveFileAnswer.UseVisualStyleBackColor = true;
+            this.button_SaveFileAnswer.Click += new System.EventHandler(this.button_SaveFileAnswer_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(124, 13);
+            this.label20.TabIndex = 39;
+            this.label20.Text = "Имя файла с ответами";
+            // 
+            // WritePath2
+            // 
+            this.WritePath2.Location = new System.Drawing.Point(12, 223);
+            this.WritePath2.Name = "WritePath2";
+            this.WritePath2.Size = new System.Drawing.Size(111, 20);
+            this.WritePath2.TabIndex = 40;
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(251, 249);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.button_GenerateTest);
+            this.Controls.Add(this.WritePath2);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.button_SaveFileAnswer);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkBox2);
@@ -445,6 +487,10 @@ namespace Test
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button_SaveFileAnswer;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox WritePath2;
     }
 }
 

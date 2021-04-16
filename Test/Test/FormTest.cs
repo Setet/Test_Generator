@@ -719,14 +719,22 @@ namespace Test
         //та самая кнопка в которой происходит кривая костылявая,но магия
         private void button_GenerateTest_Click(object sender, EventArgs e)
         {
+
             int Answer = 0;
 
             int number_of_options = 1;//счётчик для номера варианта
 
             string Path1 = WritePath1.Text;
+            string Path2 = WritePath2.Text;
 
             string writePath1 = @"" + Path1;//создание файла по пути написанному пользователем в WritePath
-            string writePath2 = @"C:\Users\user\Desktop\Test\Test\bin\Debug\Answer.doc";
+            string writePath2 = @"" + Path2;
+
+            if (writePath2 == "")
+            {
+                MessageBox.Show("А сохранять куда?");
+                return;
+            }
 
             StreamWriter sw = new StreamWriter(writePath1, false, System.Text.Encoding.Default);
 
@@ -805,7 +813,7 @@ namespace Test
 
                     sw.Write("9) " + label9.Text + "\n" + "\n");
 
-                    ws.Write("9) " + label9.Text + "\n" + "Ответ :" + Answer + "\n");
+                    ws.Write("9)" + label9.Text + "\n" + "Ответ :" + Answer + "\n");
 
                     sw.Write("10) " + label10.Text + "\n" + "\n");
 
@@ -933,9 +941,13 @@ namespace Test
 
             //зануляет значения всех полей
             textBox1.Text = "";
+            textBox2.Text = "";
             radioButton1.Checked = false;
             radioButton2.Checked = false;
             radioButton3.Checked = false;
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
         }
 
         //крысинное скрытие label-ов
@@ -944,6 +956,7 @@ namespace Test
             groupBox1.Visible = false;
 
             button_GenerateTest.Visible = false;
+            button_SaveFileAnswer.Visible = false;
 
             labeln.Visible = false;
             label1.Visible = false;
@@ -965,13 +978,16 @@ namespace Test
             label17.Visible = false;
             label18.Visible = false;
             label19.Visible = false;
+            label20.Visible = false;
 
             checkBox1.Visible = false;
             checkBox2.Visible = false;
             checkBox3.Visible = false;
 
             textBox1.Visible = false;
+            textBox2.Visible = false;
             WritePath1.Visible = false;
+            WritePath2.Visible = false;
         }
 
         //вроде как решил проблему с работой в вордовском формате
@@ -1002,12 +1018,10 @@ namespace Test
             textBox1.Text = filename2;
 
             MessageBox.Show("Файл для теста принят!!!");
-            groupBox1.Visible = true;
-            button_GenerateTest.Visible = true;
 
             label19.Visible = true;
             textBox1.Visible = true;
-
+            button_SaveFileAnswer.Visible = true;
         }
 
         /*короче,про создание файла из того же окна что и выбор инфы крайне мало,поэтому пришлось идти костылями
@@ -1077,6 +1091,31 @@ namespace Test
             {
                 checkBox3.Checked = false;
             }
+        }
+
+        private void button_SaveFileAnswer_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();//создаём объект класса для работы с открытием файла
+
+            openFileDialog.Filter = "Tests(*.doc)|*.doc|All files(*.*)|*.*";//фильтр,конструкция немного норкоманская,как работает доподлинно не знаю,но если надо сменить формат
+                                                                            //то просто замени .doc на то что надо
+
+            if (openFileDialog.ShowDialog() == DialogResult.Cancel)//тип если он не открылся по какой-то причине,то у нас проблемы
+            {
+                return;
+            }
+
+            string filename1 = openFileDialog.FileName;//получаем в строку имя файла с расширением(из-за это писать его в WritePath и в коде не нужно(я про расширение)
+            string filename2 = openFileDialog.SafeFileName;
+
+            WritePath2.Text = filename1;
+            textBox2.Text = filename2;
+
+            MessageBox.Show("Файл для ответов принят!!");
+            label20.Visible = true;
+            textBox2.Visible = true;
+            groupBox1.Visible = true;
+            button_GenerateTest.Visible = true;
         }
     }
 }
