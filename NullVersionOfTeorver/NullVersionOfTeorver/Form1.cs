@@ -61,26 +61,50 @@ namespace NullVersionOfTeorver
 
         private void button3_Click(object sender, EventArgs e)//5
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric5();
+
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
         }
 
         private void button4_Click(object sender, EventArgs e)//6
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric6();
+
+            RTBAnswer.Text = "Answer is \n p1 = " + Answer[0] + "\n p2 =" + Answer[1] + "\n p3 = " + Answer[2] + "\n Result = " + Answer[3];
         }
 
         private void button5_Click(object sender, EventArgs e)//7
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric7();
+
+            RTBAnswer.Text = "Answer is \n p1 = " + Answer[0] + "\n p2 =" + Answer[1] + "\n Result = " + Answer[2];
         }
 
         private void button6_Click(object sender, EventArgs e)//8
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric8();
+
+            RTBAnswer.Text = "Answer is \n h1 = " + Answer[0] + "\n h2 =" + Answer[1] + "\n Result = " + Answer[2];
         }
 
         private void button7_Click(object sender, EventArgs e)//9
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric9();
+
+            RTBAnswer.Text = "Answer is \n b1 = " + Answer[0] + "\n b2 =" + Answer[1] + "\n Result = " + Answer[2];
         }
 
         private void button8_Click(object sender, EventArgs e)//10
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric10();
+
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n p = " + Answer[2] + "\n Result = " + Answer[3];
         }
     }
 }

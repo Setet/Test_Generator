@@ -114,10 +114,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="k"></param>
         /// <param name="c"></param>
         /// <returns></returns>
-        protected static double AnswerForExc5(int n, int k, int c)
+        protected static double AnswerForExc5(int n, int k, int m)
         {
-            double x = Convert.ToDouble(k) / Convert.ToDouble(n);
-            return 1 - (Math.Pow(x, c));
+            double x = (Convert.ToDouble(n) - Convert.ToDouble(k)) / Convert.ToDouble(n);
+            return 1 - (Math.Pow(x, m));
         }
 
 
@@ -169,17 +169,17 @@ namespace NullVersionOfTeorver.Exercises
 
         /// <summary>
         /// Задача 9
-        /// h1 и h2 - вероятность получения "хорошей" детали на каждом из автоматов
+        /// b1 и b2 - вероятность получения "хорошей" детали на каждом из автоматов
         /// </summary>
         /// <param name="h1"></param>
         /// <param name="h2"></param>
         /// <returns></returns>
-        protected static double AnswerForExc9(double h1, double h2)
+        protected static double AnswerForExc9(double b1, double b2)
         {
             double Ph1 = 0.33;
             double Ph2 = 0.66;
 
-            return (Ph1 * h1) / (Ph1 * h1 + Ph2 * h2);
+            return (Ph1 * b1) / (Ph1 * b1 + Ph2 * b2);
         }
 
 
