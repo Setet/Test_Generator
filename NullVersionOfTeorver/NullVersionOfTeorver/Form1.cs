@@ -106,5 +106,22 @@ namespace NullVersionOfTeorver
 
             RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n p = " + Answer[2] + "\n Result = " + Answer[3];
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[,] Answer = EG.TestGeneric11();
+            int n = Answer.Length;//Если кто-то поймет, почему он не выводит массив длины 6, тот молодец
+
+            if (n == 8)
+                RTBAnswer.Text = "Answer is \n " + Answer[0, 0] + "  " + Answer[0, 1] + "  " + Answer[0, 2] + "  " + Answer[0, 3] +
+                    "\n " + Answer[1, 0] + "  " + Answer[1, 1] + "  " + Answer[1, 2] + "  " + Answer[1, 3];
+            if (n == 10)
+                RTBAnswer.Text = "Answer is \n " + Answer[0, 0] + "  " + Answer[0, 1] + "  " + Answer[0, 2] + "  " + Answer[0, 3] + "  " + Answer[0, 4] +
+                   "\n " + Answer[1, 0] + "  " + Answer[1, 1] + "  " + Answer[1, 2] + "  " + Answer[1, 3] + "  " + Answer[1, 4];
+            if (n == 12)
+                RTBAnswer.Text = "Answer is \n " + Answer[0, 0] + "  " + Answer[0, 1] + "  " + Answer[0, 2] + "  " + Answer[0, 3] + "  " + Answer[0, 4] + "  " + Answer[0, 5] +
+                   "\n " + Answer[1, 0] + "  " + Answer[1, 1] + "  " + Answer[1, 2] + "  " + Answer[1, 3] + "  " + Answer[1, 4] + "  " + Answer[1, 5];
+        }
     }
 }

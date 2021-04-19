@@ -315,25 +315,41 @@ namespace NullVersionOfTeorver.Exercises
         }
 
 
-        /*
         public string[,] TestGeneric11()
         {
             int n = rnd.Next(4, 6);
             double[] P = new double[n];
-            int c = 10;
+            int c = 20;
             int y;
             for (int i = 0; i < n - 1; i++)
             {
-                y = rnd.Next(1, c);
+                y = rnd.Next(1, c / (n-2));
                 P[i] = y * 0.05;
                 c -= y;
             }
             P[n - 1] = c * 0.05;
-            string[,] Answer = new string[2, 4] { { "", "", "", "", }, { "", "", "", "" } };
-            for (int i = 0)
-                return 0;
-        }
-        */
 
+            string[,] Answer;
+            switch (n)
+            {
+                case (4):
+                    {
+                        Answer = new string[2, 4] { { "0.1", "0.2", "0.3", "0.4", }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString() } };
+                        return Answer;
+                    }
+                case (5):
+                    {
+                        Answer = new string[2, 5] { { "0.1", "0.2", "0.3", "0.4", "0.5" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString(), P[4].ToString() } };
+                        return Answer;
+                    }
+                case (6):
+                    {
+                        Answer = new string[2, 6] { { "0.1", "0.2", "0.3", "0.4", "0.5", "0.6" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString(), P[4].ToString(), P[5].ToString() } };
+                        return Answer;
+                    }
+                default:
+                    return Answer = new string[,] { };
+            }
+        }
     }
 }
