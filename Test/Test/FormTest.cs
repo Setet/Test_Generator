@@ -719,9 +719,6 @@ namespace Test
         //та самая кнопка в которой происходит кривая костылявая,но магия
         private void button_GenerateTest_Click(object sender, EventArgs e)
         {
-
-            int Answer = 0;
-
             int number_of_options = 1;//счётчик для номера варианта
 
             string Path1 = WritePath1.Text;
@@ -774,50 +771,185 @@ namespace Test
                     MixQuestion18();
                     MixName();
 
-                    /*
-                    здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
-                    номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
-                    */
+                    ExerciseGenerator EG = new ExerciseGenerator();
+                    //1
+                    string[] Answer1_1 = EG.TestGeneric1(1);
+                    string[] Answer1_2 = EG.TestGeneric1(2);
+                    string[] Answer1_3 = EG.TestGeneric1(3);
+
+                    string n = Answer1_1[0];
+                    string k = Answer1_1[1];
+                    string m = Answer1_1[2];
+                    string result1_1 = Answer1_1[3];
+                    string result1_2 = Answer1_2[3];
+                    string result1_3 = Answer1_3[3];
+
+                    string text1 = label1.Text;
+                    text1 = text1.Replace("n", n);
+                    text1 = text1.Replace("k", k);
+                    text1 = text1.Replace("m", m);
+                    label1.Text = text1;
 
                     sw.Write("1) " + label1.Text + "\n" + "\n");
+                    ws.Write("1) " + label1.Text + "\n" + "Ответ :" + "a)" + result1_1 + " ," + "b)" + result1_2 + " ," + "c)" + result1_3 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    //2
+                    string[] Answer2 = EG.TestGeneric2();
 
-                    ws.Write("1) " + label1.Text + "\n" + "Ответ :" + "a)" + Answer + " ," + "b)" + Answer + " ," + "c)" + Answer + "\n");
+                    n = Answer2[0];
+                    k = Answer2[1];
+                    m = Answer2[2];
+                    string l = Answer2[3];
+                    string result2 = Answer2[4];
+
+                    string text2 = label2.Text;
+                    text2 = text2.Replace("n", n);
+                    text2 = text2.Replace("k", k);
+                    text2 = text2.Replace("m", m);
+                    text2 = text2.Replace("l", l);
+                    label2.Text = text2;
 
                     sw.Write("2) " + label2.Text + "\n" + "\n");
+                    ws.Write("2) " + label2.Text + "\n" + "Ответ :" + result2 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    l = "";
+                    //3
+                    string[] Answer3 = EG.TestGeneric3();
 
-                    ws.Write("2) " + label2.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer3[0];
+                    k = Answer3[1];
+                    string result3 = Answer3[2];
+
+                    string text3 = label3.Text;
+                    text3 = text3.Replace("n", n);
+                    text3 = text3.Replace("k", k);
+                    label3.Text = text3;
 
                     sw.Write("3) " + label3.Text + "\n" + "\n");
+                    ws.Write("3) " + label3.Text + "\n" + "Ответ :" + result3 + "\n");
+                    n = "";
+                    k = "";
+                    //4
+                    string[] Answer4 = EG.TestGeneric4();
 
-                    ws.Write("3) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer4[0];
+                    k = Answer4[1];
+                    m = Answer4[2];
+                    string result4 = Answer4[3];
+
+                    string text4 = label4.Text;
+                    text4 = text4.Replace("n", n);
+                    text4 = text4.Replace("k", k);
+                    text4 = text4.Replace("m", m);
+                    label4.Text = text4;
 
                     sw.Write("4) " + label4.Text + "\n" + "\n");
+                    ws.Write("4) " + label4.Text + "\n" + "Ответ :" + result4 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    //5
+                    string[] Answer5 = EG.TestGeneric5();
 
-                    ws.Write("4) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer5[0];
+                    k = Answer5[1];
+                    m = Answer5[2];
+                    string result5 = Answer5[3];
+
+                    string text5 = label5.Text;
+                    text5 = text5.Replace("n", n);
+                    text5 = text5.Replace("k", k);
+                    text5 = text5.Replace("m", m);
+                    label5.Text = text5;
 
                     sw.Write("5) " + label5.Text + "\n" + "\n");
+                    ws.Write("5) " + label5.Text + "\n" + "Ответ :" + result5 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    //6
+                    string[] Answer6 = EG.TestGeneric6();
 
-                    ws.Write("5) " + label5.Text + "\n" + "Ответ :" + Answer + "\n");
+                    string p1 = Answer6[0];
+                    string p2 = Answer6[1];
+                    string p3 = Answer6[2];
+                    string result6 = Answer6[3];
+
+                    string text6 = label6.Text;
+                    text6 = text6.Replace("p1", p1);
+                    text6 = text6.Replace("p2", p2);
+                    text6 = text6.Replace("p3", p3);
+                    label6.Text = text6;
 
                     sw.Write("6) " + label6.Text + "\n" + "\n");
+                    ws.Write("6) " + label6.Text + "\n" + "Ответ :" + result6 + "\n");
+                    p1 = "";
+                    p2 = "";
+                    p3 = "";
+                    //7
+                    string[] Answer7 = EG.TestGeneric7();
 
-                    ws.Write("6) " + label6.Text + "\n" + "Ответ :" + Answer + "\n");
+                    p1 = Answer7[0];
+                    p2 = Answer7[1];
+                    string result7 = Answer7[2];
+
+                    string text7 = label7.Text;
+                    text7 = text7.Replace("p1", p1);
+                    text7 = text7.Replace("p2", p2);
+                    label7.Text = text7;
 
                     sw.Write("7) " + label7.Text + "\n" + "\n");
+                    ws.Write("7) " + label7.Text + "\n" + "Ответ :" + result7 + "\n");
+                    p1 = "";
+                    p2 = "";
+                    //8
+                    string[] Answer8 = EG.TestGeneric8();
 
-                    ws.Write("7) " + label7.Text + "\n" + "Ответ :" + Answer + "\n");
+                    string h1 = Answer8[0];
+                    string h2 = Answer8[1];
+                    string result8 = Answer8[2];
+
+                    string text8 = label8.Text;
+                    text8 = text8.Replace("h1", h1);
+                    text8 = text8.Replace("h2", h2);
+                    label8.Text = text8;
 
                     sw.Write("8) " + label8.Text + "\n" + "\n");
+                    ws.Write("8) " + label8.Text + "\n" + "Ответ :" + result8 + "\n");
+                    //9
+                    string[] Answer9 = EG.TestGeneric9();
 
-                    ws.Write("8) " + label8.Text + "\n" + "Ответ :" + Answer + "\n");
+                    string b1 = Answer9[0];
+                    string b2 = Answer9[1];
+                    string result9 = Answer9[2];
+
+                    string text9 = label9.Text;
+                    text9 = text9.Replace("b1", b1);
+                    text9 = text9.Replace("b2", b2);
+                    label9.Text = text9;
 
                     sw.Write("9) " + label9.Text + "\n" + "\n");
+                    ws.Write("9)" + label9.Text + "\n" + "Ответ :" + result9 + "\n");
+                    //10
+                    string[] Answer10 = EG.TestGeneric10();
 
-                    ws.Write("9)" + label9.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer10[0];
+                    k = Answer10[1];
+                    string p = Answer10[2];
+                    string result10 = Answer10[3];
+
+                    string text10 = label10.Text;
+                    text10 = text10.Replace("n", n);
+                    text10 = text10.Replace("k", k);
+                    text10 = text10.Replace("p", p);
+                    label10.Text = text10;
 
                     sw.Write("10) " + label10.Text + "\n" + "\n");
-
-                    ws.Write("10) " + label10.Text + "\n" + "Ответ :" + Answer + "\n");
+                    ws.Write("10) " + label10.Text + "\n" + "Ответ :" + result10 + "\n");
                     //---------------------------------------------------------------------------//
                     sw.Write("11) " + label11.Text + "\n" + "\n");
                     sw.Write("12) " + label12.Text + "\n" + "\n");
@@ -856,48 +988,185 @@ namespace Test
                     MixQuestion10();
                     MixName();
 
-                    //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
-                    // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
+                    ExerciseGenerator EG = new ExerciseGenerator();
+                    //1
+                    string[] Answer1_1 = EG.TestGeneric1(1);
+                    string[] Answer1_2 = EG.TestGeneric1(2);
+                    string[] Answer1_3 = EG.TestGeneric1(3);
+
+                    string n = Answer1_1[0];
+                    string k = Answer1_1[1];
+                    string m = Answer1_1[2];
+                    string result1_1 = Answer1_1[3];
+                    string result1_2 = Answer1_2[3];
+                    string result1_3 = Answer1_3[3];
+
+                    string text1 = label1.Text;
+                    text1 = text1.Replace("n", n);
+                    text1 = text1.Replace("k", k);
+                    text1 = text1.Replace("m", m);
+                    label1.Text = text1;
 
                     sw.Write("1) " + label1.Text + "\n" + "\n");
+                    ws.Write("1) " + label1.Text + "\n" + "Ответ :" + "a)" + result1_1 + " ," + "b)" + result1_2 + " ," + "c)" + result1_3 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    //2
+                    string[] Answer2 = EG.TestGeneric2();
 
-                    ws.Write("1) " + label1.Text + "\n" + "Ответ :" + "a)" + Answer + " ," + "b)" + Answer + " ," + "c)" + Answer + "\n");
+                    n = Answer2[0];
+                    k = Answer2[1];
+                    m = Answer2[2];
+                    string l = Answer2[3];
+                    string result2 = Answer2[4];
+
+                    string text2 = label2.Text;
+                    text2 = text2.Replace("n", n);
+                    text2 = text2.Replace("k", k);
+                    text2 = text2.Replace("m", m);
+                    text2 = text2.Replace("l", l);
+                    label2.Text = text2;
 
                     sw.Write("2) " + label2.Text + "\n" + "\n");
+                    ws.Write("2) " + label2.Text + "\n" + "Ответ :" + result2 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    l = "";
+                    //3
+                    string[] Answer3 = EG.TestGeneric3();
 
-                    ws.Write("2) " + label2.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer3[0];
+                    k = Answer3[1];
+                    string result3 = Answer3[2];
+
+                    string text3 = label3.Text;
+                    text3 = text3.Replace("n", n);
+                    text3 = text3.Replace("k", k);
+                    label3.Text = text3;
 
                     sw.Write("3) " + label3.Text + "\n" + "\n");
+                    ws.Write("3) " + label3.Text + "\n" + "Ответ :" + result3 + "\n");
+                    n = "";
+                    k = "";
+                    //4
+                    string[] Answer4 = EG.TestGeneric4();
 
-                    ws.Write("3) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer4[0];
+                    k = Answer4[1];
+                    m = Answer4[2];
+                    string result4 = Answer4[3];
+
+                    string text4 = label4.Text;
+                    text4 = text4.Replace("n", n);
+                    text4 = text4.Replace("k", k);
+                    text4 = text4.Replace("m", m);
+                    label4.Text = text4;
 
                     sw.Write("4) " + label4.Text + "\n" + "\n");
+                    ws.Write("4) " + label4.Text + "\n" + "Ответ :" + result4 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    //5
+                    string[] Answer5 = EG.TestGeneric5();
 
-                    ws.Write("4) " + label4.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer5[0];
+                    k = Answer5[1];
+                    m = Answer5[2];
+                    string result5 = Answer5[3];
+
+                    string text5 = label5.Text;
+                    text5 = text5.Replace("n", n);
+                    text5 = text5.Replace("k", k);
+                    text5 = text5.Replace("m", m);
+                    label5.Text = text5;
 
                     sw.Write("5) " + label5.Text + "\n" + "\n");
+                    ws.Write("5) " + label5.Text + "\n" + "Ответ :" + result5 + "\n");
+                    n = "";
+                    k = "";
+                    m = "";
+                    //6
+                    string[] Answer6 = EG.TestGeneric6();
 
-                    ws.Write("5) " + label5.Text + "\n" + "Ответ :" + Answer + "\n");
+                    string p1 = Answer6[0];
+                    string p2 = Answer6[1];
+                    string p3 = Answer6[2];
+                    string result6 = Answer6[3];
+
+                    string text6 = label6.Text;
+                    text6 = text6.Replace("p1", p1);
+                    text6 = text6.Replace("p2", p2);
+                    text6 = text6.Replace("p3", p3);
+                    label6.Text = text6;
 
                     sw.Write("6) " + label6.Text + "\n" + "\n");
+                    ws.Write("6) " + label6.Text + "\n" + "Ответ :" + result6 + "\n");
+                    p1 = "";
+                    p2 = "";
+                    p3 = "";
+                    //7
+                    string[] Answer7 = EG.TestGeneric7();
 
-                    ws.Write("6) " + label6.Text + "\n" + "Ответ :" + Answer + "\n");
+                    p1 = Answer7[0];
+                    p2 = Answer7[1];
+                    string result7 = Answer7[2];
+
+                    string text7 = label7.Text;
+                    text7 = text7.Replace("p1", p1);
+                    text7 = text7.Replace("p2", p2);
+                    label7.Text = text7;
 
                     sw.Write("7) " + label7.Text + "\n" + "\n");
+                    ws.Write("7) " + label7.Text + "\n" + "Ответ :" + result7 + "\n");
+                    p1 = "";
+                    p2 = "";
+                    //8
+                    string[] Answer8 = EG.TestGeneric8();
 
-                    ws.Write("7) " + label7.Text + "\n" + "Ответ :" + Answer + "\n");
+                    string h1 = Answer8[0];
+                    string h2 = Answer8[1];
+                    string result8 = Answer8[2];
+
+                    string text8 = label8.Text;
+                    text8 = text8.Replace("h1", h1);
+                    text8 = text8.Replace("h2", h2);
+                    label8.Text = text8;
 
                     sw.Write("8) " + label8.Text + "\n" + "\n");
+                    ws.Write("8) " + label8.Text + "\n" + "Ответ :" + result8 + "\n");
+                    //9
+                    string[] Answer9 = EG.TestGeneric9();
 
-                    ws.Write("8) " + label8.Text + "\n" + "Ответ :" + Answer + "\n");
+                    string b1 = Answer9[0];
+                    string b2 = Answer9[1];
+                    string result9 = Answer9[2];
+
+                    string text9 = label9.Text;
+                    text9 = text9.Replace("b1", b1);
+                    text9 = text9.Replace("b2", b2);
+                    label9.Text = text9;
 
                     sw.Write("9) " + label9.Text + "\n" + "\n");
+                    ws.Write("9)" + label9.Text + "\n" + "Ответ :" + result9 + "\n");
+                    //10
+                    string[] Answer10 = EG.TestGeneric10();
 
-                    ws.Write("9) " + label9.Text + "\n" + "Ответ :" + Answer + "\n");
+                    n = Answer10[0];
+                    k = Answer10[1];
+                    string p = Answer10[2];
+                    string result10 = Answer10[3];
+
+                    string text10 = label10.Text;
+                    text10 = text10.Replace("n", n);
+                    text10 = text10.Replace("k", k);
+                    text10 = text10.Replace("p", p);
+                    label10.Text = text10;
 
                     sw.Write("10) " + label10.Text + "\n" + "\n");
-
-                    ws.Write("10) " + label10.Text + "\n" + "Ответ :" + Answer + "\n");
+                    ws.Write("10) " + label10.Text + "\n" + "Ответ :" + result10 + "\n");
                     number_of_options++;
                 }
             }
