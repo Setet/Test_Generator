@@ -111,7 +111,7 @@ namespace NullVersionOfTeorver
         {
             ExerciseGenerator EG = new ExerciseGenerator();
             string[,] Answer = EG.TestGeneric11();
-            int n = Answer.Length;//Если кто-то поймет, почему он не выводит массив длины 6, тот молодец
+            int n = Answer.Length;
 
             if (n == 8)
                 RTBAnswer.Text = "Answer is \n " + Answer[0, 0] + "  " + Answer[0, 1] + "  " + Answer[0, 2] + "  " + Answer[0, 3] +

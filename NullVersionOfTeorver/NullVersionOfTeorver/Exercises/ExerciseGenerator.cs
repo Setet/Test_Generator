@@ -19,8 +19,8 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric1(int a) 
         {
-            int n = rnd.Next(20, 26);
-            int k = rnd.Next(3, 8);
+            int n = rnd.Next(20, 27);
+            int k = rnd.Next(3, 9);
             int m = 2;
             double Res = -1;
 
@@ -50,10 +50,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric2()
         {
-            int n = rnd.Next(20, 26);
-            int k = rnd.Next(5, 8);
-            int m = rnd.Next(2, n / 2 - 3);
-            int l = rnd.Next(1, m-1);
+            int n = rnd.Next(20, 27);
+            int k = rnd.Next(5, 9);
+            int m = rnd.Next(2, n / 2 - 2);
+            int l = rnd.Next(1, m);
 
             if (m - l > n - k)
                 TestGeneric2();
@@ -74,8 +74,8 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric3()
         {
-            int c = rnd.Next(1, 4);
-            int k = rnd.Next(3, 6);
+            int c = rnd.Next(1, 5);
+            int k = rnd.Next(3, 7);
             int n = 36;
 
             switch (c)
@@ -112,10 +112,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric4()
         {
-            int n = rnd.Next(20, 26);
-            int k = rnd.Next(8, n / 2);
+            int n = rnd.Next(20, 27);
+            int k = rnd.Next(8, n / 2 + 1);
 
-            int c = rnd.Next(1,3);
+            int c = rnd.Next(1,4);
             int m = 4;
 
             switch (c)
@@ -148,9 +148,9 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric5()
         {
-            int n = rnd.Next(7, 10);
-            int k = rnd.Next(3,5);
-            int m = rnd.Next(3,5);
+            int n = rnd.Next(7, 11);
+            int k = rnd.Next(3,6);
+            int m = rnd.Next(3,6);
 
             double Res = ExerciseAnswer.AnswerForExc5(n, k, m);
 
@@ -165,12 +165,12 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric6()
         {
-            double p1 = rnd.Next(3, 12);
-            double p2 = rnd.Next(3, 12);
-            double p3 = rnd.Next(3, 12);
+            double p1 = rnd.Next(3, 13);
+            double p2 = rnd.Next(3, 13);
+            double p3 = rnd.Next(3, 13);
 
-            while (p1 == p2) p2 = rnd.Next(3, 12);
-            while (p1 == p3 || p2 == p3) p3 = rnd.Next(3, 12);
+            while (p1 == p2) p2 = rnd.Next(3, 13);
+            while (p1 == p3 || p2 == p3) p3 = rnd.Next(3, 13);
 
             p1 /= 100;
             p2 /= 100;
@@ -189,10 +189,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric7()
         {
-            double p1 = rnd.Next(1, 4);
-            double p2 = rnd.Next(1, 4);
+            double p1 = rnd.Next(1, 5);
+            double p2 = rnd.Next(1, 5);
 
-            while (p1 == p2) p2 = rnd.Next(1, 4);
+            while (p1 == p2) p2 = rnd.Next(1, 5);
 
             switch (p1)
             {
@@ -258,10 +258,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric8()
         {
-            double h1 = rnd.Next(3, 8);
-            double h2 = rnd.Next(3, 8);
+            double h1 = rnd.Next(3, 9);
+            double h2 = rnd.Next(3, 9);
 
-            while (h1 == h2) h2 = rnd.Next(3, 8);
+            while (h1 == h2) h2 = rnd.Next(3, 9);
 
             h1 /= 100;
             h2 /= 100;
@@ -279,10 +279,10 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric9()
         {
-            double b1 = rnd.Next(60, 90);
-            double b2 = rnd.Next(60, 90);
+            double b1 = rnd.Next(60, 91);
+            double b2 = rnd.Next(60, 91);
 
-            while (b1 == b2) b2 = rnd.Next(60, 90);
+            while (b1 == b2) b2 = rnd.Next(60, 91);
 
             b1 /= 100;
             b2 /= 100;
@@ -300,11 +300,11 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric10()
         {
-            double p = rnd.Next(3, 6);
+            double p = rnd.Next(3, 7);
             p /= 100;
 
-            int n = rnd.Next(3, 6);
-            int k = rnd.Next(2, n - 1);
+            int n = rnd.Next(3, 7);
+            int k = rnd.Next(2, n);
 
             double Res = ExerciseAnswer.AnswerForExc10(n, k, p);
 
@@ -314,16 +314,15 @@ namespace NullVersionOfTeorver.Exercises
             return Answer;
         }
 
-
         public string[,] TestGeneric11()
         {
-            int n = rnd.Next(4, 6);
+            int n = rnd.Next(4, 7);
             double[] P = new double[n];
             int c = 20;
             int y;
             for (int i = 0; i < n - 1; i++)
             {
-                y = rnd.Next(1, c / (n-2));
+                y = rnd.Next(1, c / (n - 2) + 1);
                 P[i] = y * 0.05;
                 c -= y;
             }
@@ -351,5 +350,73 @@ namespace NullVersionOfTeorver.Exercises
                     return Answer = new string[,] { };
             }
         }
+
+        public string[] TestGeneric12(string[,] Matrix)
+        {
+            string[] Answer = new string[3];
+
+            Answer[0] = ExerciseAnswer.FinderM(Matrix).ToString();
+
+            Answer[1] = ExerciseAnswer.FinderD(Matrix).ToString();
+
+            Answer[2] = ExerciseAnswer.FinderS(Matrix).ToString();
+
+            return Answer;
+        }
+
+        public string[] TestGeneric15()
+        {
+            int n = rnd.Next(150, 301);
+            int k = rnd.Next(n / 5, 4 * n / 5 + 1);
+
+            double p = rnd.Next(2, 19);
+            p *= 0.05;
+
+            double Res = ExerciseAnswer.AnswerForExc15(n, k, p);
+
+            String[] Answer = new string[4]
+            { n.ToString(), k.ToString(), p.ToString(), Res.ToString() };
+
+            return Answer;
+        }
+        private double[] swaper(int x1, int x2, double[] line)
+        {
+            double t = line[x1];
+            line[x1] = line[x2];
+            line[x2] = t;
+            return line;
+        }
+        public string[,] TableGeneric18()
+        {
+            double[] P = new double[6];
+            P[0] = rnd.Next(1, 7) * 0.05;
+            P[1] = rnd.Next(1, 7) * 0.05;
+            P[2] = 0.7 - P[0] - P[1];
+            P[3] = rnd.Next(1, 26) * 0.01;
+            P[4] = 0.3 - P[3];
+            P[5] = 0;
+
+            for (int i = 0; i < 20; i++)
+                swaper(rnd.Next(1, 7), rnd.Next(1, 7), P);
+
+            string[,] Matrix = new string[3, 4] { { " ", "-1", "0", "1" }, 
+                { "0", P[0].ToString(), P[1].ToString(), P[2].ToString() }, { "1", P[3].ToString(), P[4].ToString(), P[5].ToString() } };
+
+            return Matrix;
+        }
+        /* Работа в процессе
+        public string[] AnswerGeneric18(string[,] Matrix)
+        {
+            string[,] E = new string[2, 2] { { "0", "1" }, { (Convert.ToDouble(Matrix[1,1])+ Convert.ToDouble(Matrix[1, 2])+ Convert.ToDouble(Matrix[1, 3])).ToString(),
+                    (Convert.ToDouble(Matrix[2, 1])+Convert.ToDouble(Matrix[2,2])+Convert.ToDouble(Matrix[2,3])).ToString() } };
+            string[,] n = new string[2, 3] { { "-1", "0", "1" }, 
+                { (Convert.ToDouble(Matrix[1, 1]) + Convert.ToDouble(Matrix[2, 1])).ToString(), (Convert.ToDouble(Matrix[1, 2]) + Convert.ToDouble(Matrix[2, 2])).ToString(), (Convert.ToDouble(Matrix[1, 3]) + Convert.ToDouble(Matrix[2, 3])).ToString()} };
+
+            double ME = ExerciseAnswer.FinderM(E);
+            double Mn = ExerciseAnswer.FinderM(n);
+            double DE = ExerciseAnswer.FinderD(E);
+            double Dn = ExerciseAnswer.FinderD(n);
+        }
+        */
     }
 }

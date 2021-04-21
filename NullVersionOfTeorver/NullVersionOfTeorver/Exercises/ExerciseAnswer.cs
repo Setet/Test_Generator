@@ -198,5 +198,47 @@ namespace NullVersionOfTeorver.Exercises
             double q = 1 - p;
             return Tools.Sochetanie(n, k) * Math.Pow(q, k) * Math.Pow(p, k);
         }
+
+        protected static double FinderM(string[,] Matrix)
+        {
+            int n = Matrix.Length;
+
+            double Result = 0;
+
+            for (int i = 0; i < n / 2; i++)
+                Result += Convert.ToDouble(Matrix[0, n]) * Convert.ToDouble(Matrix[1, n]);
+
+            return Result;
+        }
+        protected static double FinderD(string[,] Matrix)
+        {
+            int n = Matrix.Length;
+
+            double Result = 0;
+
+            for (int i = 0; i < n / 2; i++)
+                Result += Math.Pow(Convert.ToDouble(Matrix[0, n]),2) * Convert.ToDouble(Matrix[1, n]);
+
+            Result -= FinderM(Matrix);
+
+            return Result;
+        }
+        protected static double FinderS(string[,] Matrix)
+        {
+            return Math.Sqrt(FinderD(Matrix));
+        }
+
+        protected static double AnswerForExc15(int N, int K, double p)
+        {
+            double n = Convert.ToDouble(N);
+            double k = Convert.ToDouble(K);
+
+            double x = (k - n * p) / Math.Sqrt(n * p * (1 - p));
+
+            double F = Math.Exp(-Math.Pow(x, 2) / 2) / Math.Sqrt(2 * Math.PI);
+
+            return F / Math.Sqrt(n * p * (1 - p));
+        }
+
     }
 }

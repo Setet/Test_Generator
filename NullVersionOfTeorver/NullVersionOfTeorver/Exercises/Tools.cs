@@ -1,4 +1,6 @@
-﻿namespace NullVersionOfTeorver.Exercises
+﻿using System;
+
+namespace NullVersionOfTeorver.Exercises
 {
     public class Tools
     {
@@ -51,17 +53,16 @@
             }
             return n;
         }
-
-        //Я пока думаю, стоит ли так запариваться
+        
         /*
-        double Simpson_Parable_Integral(double a, double b, double n)
+        public double Simpson_Parable_Integral(double a, double b)
         {
-            double h = (b - a) / n; // вычисляем шаг - h
+            double h = (b - a) / 1000; // вычисляем шаг - h
             double sum = 0;     // сумма, результат вычисления интеграла.
             double x0 = a;      // правая граница подотрезка отрезка [a, b]
             double x1 = a + h;  // левая граница подотрезка отрезка [a, b]
 
-            for (int i = 0; i < n; i++) // в цикле применяем формулу Симпсона
+            for (int i = 0; i < 1000; i++) // в цикле применяем формулу Симпсона
             {
                 sum += func(x0) + 4 * func(x0 + h / 2) + func(x1);   //для каждого подотрезка, и складываем все полученные значения в общую сумму.
                 x0 += h;    // сдвигаем левую и
