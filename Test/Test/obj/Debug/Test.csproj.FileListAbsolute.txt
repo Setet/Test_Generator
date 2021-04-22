@@ -28,3 +28,23 @@ D:\Новая папка\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
 D:\Новая папка\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Новая папка\Test\Test\obj\Debug\Test.exe
 D:\Новая папка\Test\Test\obj\Debug\Test.pdb
+F:\Приколы для учёбы\Test\Test\bin\Debug\Test.exe.config
+F:\Приколы для учёбы\Test\Test\bin\Debug\Test.exe
+F:\Приколы для учёбы\Test\Test\bin\Debug\Test.pdb
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.FormTest.resources
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.Properties.Resources.resources
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.exe
+F:\Приколы для учёбы\Test\Test\obj\Debug\Test.pdb
+C:\Users\user\Desktop\Test1\Test\bin\Debug\Test.exe.config
+C:\Users\user\Desktop\Test1\Test\bin\Debug\Test.exe
+C:\Users\user\Desktop\Test1\Test\bin\Debug\Test.pdb
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.FormTest.resources
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.exe
+C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.pdb

@@ -31,7 +31,6 @@ namespace Test
         {
             this.WritePath1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button_GenerateTest = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button_SaveFile = new System.Windows.Forms.Button();
             this.labeln = new System.Windows.Forms.Label();
@@ -57,14 +56,12 @@ namespace Test
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button_SaveFileAnswer = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.WritePath2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.RichTextBox();
+            this.button_GenerateTest = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,16 +81,6 @@ namespace Test
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
-            // 
-            // button_GenerateTest
-            // 
-            this.button_GenerateTest.Location = new System.Drawing.Point(2, 191);
-            this.button_GenerateTest.Name = "button_GenerateTest";
-            this.button_GenerateTest.Size = new System.Drawing.Size(234, 58);
-            this.button_GenerateTest.TabIndex = 5;
-            this.button_GenerateTest.Text = "Сгенерировать тест";
-            this.button_GenerateTest.UseVisualStyleBackColor = true;
-            this.button_GenerateTest.Click += new System.EventHandler(this.button_GenerateTest_Click);
             // 
             // label2
             // 
@@ -125,7 +112,7 @@ namespace Test
             // 
             // button_FileCreate
             // 
-            this.button_FileCreate.Location = new System.Drawing.Point(9, 102);
+            this.button_FileCreate.Location = new System.Drawing.Point(11, 12);
             this.button_FileCreate.Name = "button_FileCreate";
             this.button_FileCreate.Size = new System.Drawing.Size(112, 38);
             this.button_FileCreate.TabIndex = 11;
@@ -336,33 +323,6 @@ namespace Test
             this.checkBox3.Text = "11-18";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(9, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
-            this.textBox2.TabIndex = 37;
-            // 
-            // button_SaveFileAnswer
-            // 
-            this.button_SaveFileAnswer.Location = new System.Drawing.Point(5, 12);
-            this.button_SaveFileAnswer.Name = "button_SaveFileAnswer";
-            this.button_SaveFileAnswer.Size = new System.Drawing.Size(112, 38);
-            this.button_SaveFileAnswer.TabIndex = 38;
-            this.button_SaveFileAnswer.Text = "Выбрать файл для тестов с ответами";
-            this.button_SaveFileAnswer.UseVisualStyleBackColor = true;
-            this.button_SaveFileAnswer.Click += new System.EventHandler(this.button_SaveFileAnswer_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(124, 13);
-            this.label20.TabIndex = 39;
-            this.label20.Text = "Имя файла с ответами";
-            // 
             // WritePath2
             // 
             this.WritePath2.Location = new System.Drawing.Point(6, 227);
@@ -402,6 +362,16 @@ namespace Test
             this.label10.TabIndex = 44;
             this.label10.Text = "";
             // 
+            // button_GenerateTest
+            // 
+            this.button_GenerateTest.Location = new System.Drawing.Point(2, 191);
+            this.button_GenerateTest.Name = "button_GenerateTest";
+            this.button_GenerateTest.Size = new System.Drawing.Size(234, 58);
+            this.button_GenerateTest.TabIndex = 5;
+            this.button_GenerateTest.Text = "Сгенерировать тест";
+            this.button_GenerateTest.UseVisualStyleBackColor = true;
+            this.button_GenerateTest.Click += new System.EventHandler(this.button_GenerateTest_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,9 +383,6 @@ namespace Test
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.WritePath2);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.button_SaveFileAnswer);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
@@ -453,7 +420,6 @@ namespace Test
         #endregion
         private System.Windows.Forms.TextBox WritePath1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_GenerateTest;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_SaveFile;
         private System.Windows.Forms.Label labeln;
@@ -479,14 +445,12 @@ namespace Test
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button_SaveFileAnswer;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox WritePath2;
         private System.Windows.Forms.RichTextBox label7;
         private System.Windows.Forms.RichTextBox label8;
         private System.Windows.Forms.RichTextBox label9;
         private System.Windows.Forms.RichTextBox label10;
+        private System.Windows.Forms.Button button_GenerateTest;
     }
 }
 
