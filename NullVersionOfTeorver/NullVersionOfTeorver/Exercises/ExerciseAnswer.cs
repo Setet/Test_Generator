@@ -240,5 +240,13 @@ namespace NullVersionOfTeorver.Exercises
             return F / Math.Sqrt(n * p * (1 - p));
         }
 
+        protected static double AnswerForExc16(double a, double sig, double x1, double x2)
+        {
+            return Laplase((x2 - a) / Math.Sqrt(sig)) - Laplase((x1 - a) / Math.Sqrt(sig));
+        }
+        private static double Laplase(double x)
+        {
+            return (1 / Math.Sqrt(2 * Math.PI)) * (Math.Exp(-Math.Pow(x, 2) / 2) - 1);
+        }
     }
 }

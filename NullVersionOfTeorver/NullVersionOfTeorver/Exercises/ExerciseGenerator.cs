@@ -5,7 +5,7 @@ namespace NullVersionOfTeorver.Exercises
     //Дисклеймер
 
     //Данный класс является набором методов для генережки задач
-    //Большинство методов не нуждаются в начальных аргументах, кроме некоторых, где они выступают, как выбор конкретной подзадачи
+    //Большинство методов не нуждаются в начальных аргументах, кроме некоторых
     //На выход у всех методов подается маленький стринговый массив, каждый элемент которого отвечает за определенную переменную в задаче + ответ
     public class ExerciseGenerator : ExerciseAnswer
     {
@@ -13,37 +13,24 @@ namespace NullVersionOfTeorver.Exercises
 
         /// <summary>
         /// Генератор задания №1. 
-        /// Аргумент 'a' означает, какая задача нам именно нужна: 1 - 1а, 2 - 1b, 3 - 1с. 
-        /// На выход поступает стринговый массив из 4 элементов: 1-n, 2-k, 3-m, 4-Результат
+        /// На выход поступает стринговый массив из 6 элементов: 1-n, 2-k, 3-m, 4-Результат для подзадачи "a", 5 - для "b", 6 - для "c"
         /// </summary>
         /// <returns></returns>
-        public string[] TestGeneric1(int a) 
+        public string[] TestGeneric1()
         {
             int n = rnd.Next(20, 27);
             int k = rnd.Next(3, 9);
             int m = 2;
-            double Res = -1;
+            double ResA = ExerciseAnswer.AnswerForExc1a(n, k, m);
+            double ResB = ExerciseAnswer.AnswerForExc1b(n, k, m);
+            double ResC = ExerciseAnswer.AnswerForExc1c(n, k, m);
 
-            switch (a)
-            {
-                case (1):
-                    Res = ExerciseAnswer.AnswerForExc1a(n, k, m);
-                    break;
-                case (2):
-                    Res = ExerciseAnswer.AnswerForExc1b(n, k, m);
-                    break;
-                case (3):
-                    Res = ExerciseAnswer.AnswerForExc1c(n, k, m);
-                    break;
-                default:
-                    break;
-            }//Свитч, для выбора альтернатив
-
-            String[] Answer = new string[4] 
-            { n.ToString(), k.ToString(), m.ToString(), Res.ToString() };
+            String[] Answer = new string[6]
+            { n.ToString(), k.ToString(), m.ToString(), ResA.ToString(),ResB.ToString(),ResC.ToString() };
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №2. На выход поступает стринговый массив из 5 элементов: 1-n, 2-k, 3-m, 4-l, 5-Результат
         /// </summary>
@@ -68,6 +55,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №3. На выход поступает стринговый массив из 3 элементов: 1-n, 2-k, 3-Результат
         /// </summary>
@@ -106,6 +94,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №4. На выход поступает стринговый массив из 4 элементов: 1-n, 2-k, 3-m, 4-Результат
         /// </summary>
@@ -142,6 +131,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №5. На выход поступает стринговый массив из 4 элементов: 1-n, 2-k, 3-m, 4-Результат
         /// </summary>
@@ -159,6 +149,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №6. На выход поступает стринговый массив из 4 элементов: 1-p1, 2-p2, 3-p3, 4-Результат
         /// </summary>
@@ -183,6 +174,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №7. На выход поступает стринговый массив из 3 элементов: 1-p1, 2-p2, 3-Результат
         /// </summary>
@@ -252,6 +244,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №8. На выход поступает стринговый массив из 3 элементов: 1-h1, 2-h2, 3-Результат
         /// </summary>
@@ -273,6 +266,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №9. На выход поступает стринговый массив из 3 элементов: 1-b1, 2-b2, 3-Результат
         /// </summary>
@@ -294,6 +288,7 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
         /// <summary>
         /// Генератор задания №10. На выход поступает стринговый массив из 4 элементов: 1-n, 2-k, 3-p, 4-Результат
         /// </summary>
@@ -314,6 +309,10 @@ namespace NullVersionOfTeorver.Exercises
             return Answer;
         }
 
+        /// <summary>
+        /// Генератор задания 11. На выход поступает двумерный стринговый массив 2x4, 2x5 или 2x6. Первая строка - E, вторая - P(x)
+        /// </summary>
+        /// <returns></returns>
         public string[,] TestGeneric11()
         {
             int n = rnd.Next(4, 7);
@@ -351,6 +350,11 @@ namespace NullVersionOfTeorver.Exercises
             }
         }
 
+        /// <summary>
+        /// Не проверялось!
+        /// </summary>
+        /// <param name="Matrix"></param>
+        /// <returns></returns>
         public string[] TestGeneric12(string[,] Matrix)
         {
             string[] Answer = new string[3];
@@ -364,6 +368,10 @@ namespace NullVersionOfTeorver.Exercises
             return Answer;
         }
 
+        /// <summary>
+        /// Не проверялось!
+        /// </summary>
+        /// <returns></returns>
         public string[] TestGeneric15()
         {
             int n = rnd.Next(150, 301);
@@ -379,6 +387,31 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
+
+        /// <summary>
+        /// Не проверялось!
+        /// </summary>
+        /// <returns></returns>
+        public string[] TestGeneric16()
+        {
+            double a = rnd.Next(1, 6);
+            double sig = rnd.Next(4, 10);
+            sig /= 10;
+            double x1 = rnd.Next(1, 5);
+            double x2 = rnd.Next(Convert.ToInt32(x1) + 2, 10);
+            double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1, x2);
+
+            string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
+            return Answer;
+        }
+
+        /// <summary>
+        /// Обычный свапер
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="x2"></param>
+        /// <param name="line"></param>
+        /// <returns></returns>
         private double[] swaper(int x1, int x2, double[] line)
         {
             double t = line[x1];
@@ -386,6 +419,11 @@ namespace NullVersionOfTeorver.Exercises
             line[x2] = t;
             return line;
         }
+
+        /// <summary>
+        /// Не проверялось!
+        /// </summary>
+        /// <returns></returns>
         public string[,] TableGeneric18()
         {
             double[] P = new double[6];
@@ -404,7 +442,12 @@ namespace NullVersionOfTeorver.Exercises
 
             return Matrix;
         }
-        /* Работа в процессе
+
+        /// <summary>
+        /// Не проверялось!
+        /// </summary>
+        /// <param name="Matrix"></param>
+        /// <returns></returns>
         public string[] AnswerGeneric18(string[,] Matrix)
         {
             string[,] E = new string[2, 2] { { "0", "1" }, { (Convert.ToDouble(Matrix[1,1])+ Convert.ToDouble(Matrix[1, 2])+ Convert.ToDouble(Matrix[1, 3])).ToString(),
@@ -416,7 +459,14 @@ namespace NullVersionOfTeorver.Exercises
             double Mn = ExerciseAnswer.FinderM(n);
             double DE = ExerciseAnswer.FinderD(E);
             double Dn = ExerciseAnswer.FinderD(n);
+
+            string[,] nE = new string[2, 3] { { "0", "0", "0" }, { "-" + Matrix[2, 1], "0", Matrix[2, 3] } };
+            double MnE = ExerciseAnswer.FinderM(nE);
+            double DnE = ExerciseAnswer.FinderD(nE);
+
+            string[] Answer = new string[6] { ME.ToString(), Mn.ToString(), MnE.ToString(), DE.ToString(), Dn.ToString(), DnE.ToString() };
+
+            return Answer;
         }
-        */
     }
 }
