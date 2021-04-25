@@ -14,25 +14,9 @@ namespace NullVersionOfTeorver
         private void button1_Click(object sender, EventArgs e)//1a
         {
             ExerciseGenerator EG = new ExerciseGenerator();
-            string[] Answer = EG.TestGeneric1(1);
+            string[] Answer = EG.TestGeneric1();
 
-            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
-        }
-
-        private void button9_Click(object sender, EventArgs e)//1b
-        {
-            ExerciseGenerator EG = new ExerciseGenerator();
-            string[] Answer = EG.TestGeneric1(2);
-
-            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
-        }
-
-        private void button10_Click(object sender, EventArgs e)//1c
-        {
-            ExerciseGenerator EG = new ExerciseGenerator();
-            string[] Answer = EG.TestGeneric1(3);
-
-            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n Result = " + Answer[3];
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n ResultA = " + Answer[3] + "\n ResultB = " + Answer[4] + "\n ResultC = " + Answer[5];
         }
 
         private void button12_Click(object sender, EventArgs e)//2
@@ -122,6 +106,56 @@ namespace NullVersionOfTeorver
             if (n == 12)
                 RTBAnswer.Text = "Answer is \n " + Answer[0, 0] + "  " + Answer[0, 1] + "  " + Answer[0, 2] + "  " + Answer[0, 3] + "  " + Answer[0, 4] + "  " + Answer[0, 5] +
                    "\n " + Answer[1, 0] + "  " + Answer[1, 1] + "  " + Answer[1, 2] + "  " + Answer[1, 3] + "  " + Answer[1, 4] + "  " + Answer[1, 5];
+
+            string[] Result = EG.TestGeneric12(Answer);
+
+            RTBAnswer.Text += "\n\n M(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric15();
+
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n p = " + Answer[2] + "\n Result = " + Answer[3];
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric16();
+
+            RTBAnswer.Text = "Answer is \n a = " + Answer[0] + "\n sig =" + Answer[1] + "\n x1 = " + Answer[2] + "\n x2 = " + Answer[3] + "\n Result = " + Answer[4];
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric17();
+
+            RTBAnswer.Text = "Answer is \n a = " + Answer[0] + "\n sig =" + Answer[1] + "\n x1 = " + Answer[2] + "\n x2 = " + Answer[3] + "\n Result = " + Answer[4];
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[,] Answer = EG.TableGeneric18();
+            RTBAnswer.Text = Answer[0, 0] + " " + Answer[0, 1] + " " + Answer[0, 2] + " " + Answer[0, 3] +
+                "\n" + Answer[1, 0] + " " + Answer[1, 1] + " " + Answer[1, 2] + " " + Answer[1, 3] +
+                "\n" + Answer[2, 0] + " " + Answer[2, 1] + " " + Answer[2, 2] + " " + Answer[2, 3];
+
+            string[] Result = EG.AnswerGeneric18(Answer);
+            RTBAnswer.Text += "\n M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(nE) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(nE) = " + Result[5];
         }
     }
 }

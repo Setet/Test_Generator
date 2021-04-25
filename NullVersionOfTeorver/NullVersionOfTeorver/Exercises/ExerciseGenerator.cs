@@ -26,7 +26,7 @@ namespace NullVersionOfTeorver.Exercises
             double ResC = ExerciseAnswer.AnswerForExc1c(n, k, m);
 
             String[] Answer = new string[6]
-            { n.ToString(), k.ToString(), m.ToString(), ResA.ToString(),ResB.ToString(),ResC.ToString() };
+            { n.ToString(), k.ToString(), m.ToString(), Math.Round(ResA, 3).ToString(),Math.Round(ResB, 3).ToString(),Math.Round(ResC, 3).ToString() };
 
             return Answer;
         }
@@ -42,16 +42,18 @@ namespace NullVersionOfTeorver.Exercises
             int m = rnd.Next(2, n / 2 - 2);
             int l = rnd.Next(1, m);
 
-            if (m - l > n - k)
-                TestGeneric2();
+            while (l >= k)
+            {
+                n = rnd.Next(20, 27);
+                k = rnd.Next(5, 9);
+                m = rnd.Next(2, n / 2 - 2);
+                l = rnd.Next(1, m);
+            }
 
             double Res = ExerciseAnswer.AnswerForExc2(n, k, m, l);
 
-            if (Res >= 1)
-                TestGeneric2();
-
             String[] Answer = new string[5]
-            { n.ToString(), k.ToString(), m.ToString(), l.ToString(), Res.ToString() };
+            { n.ToString(), k.ToString(), m.ToString(), l.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -86,11 +88,8 @@ namespace NullVersionOfTeorver.Exercises
 
             double Res = ExerciseAnswer.AnswerForExc3(n, k);
 
-            if (Res >= 1)
-                TestGeneric3();
-
             String[] Answer = new string[3]
-            { n.ToString(), k.ToString(), Res.ToString() };
+            { n.ToString(), k.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -123,11 +122,8 @@ namespace NullVersionOfTeorver.Exercises
             }//Свитч, для выбора альтернатив
             double Res = ExerciseAnswer.AnswerForExc4(n, k, m);
 
-            if (Res >= 1)
-                TestGeneric4();
-
             String[] Answer = new string[4]
-            { n.ToString(), k.ToString(), m.ToString(), Res.ToString() };
+            { n.ToString(), k.ToString(), m.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -145,7 +141,7 @@ namespace NullVersionOfTeorver.Exercises
             double Res = ExerciseAnswer.AnswerForExc5(n, k, m);
 
             String[] Answer = new string[4]
-            { n.ToString(), k.ToString(), m.ToString(), Res.ToString() };
+            { n.ToString(), k.ToString(), m.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -170,7 +166,7 @@ namespace NullVersionOfTeorver.Exercises
             double Res = ExerciseAnswer.AnswerForExc6(p1, p2, p3);
 
             String[] Answer = new string[4]
-            { p1.ToString(), p2.ToString(), p3.ToString(), Res.ToString() };
+            { p1.ToString(), p2.ToString(), p3.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -240,7 +236,7 @@ namespace NullVersionOfTeorver.Exercises
             double Res = ExerciseAnswer.AnswerForExc7(p1, p2);
 
             String[] Answer = new string[3]
-            { p1.ToString(), p2.ToString(), Res.ToString() };
+            { p1.ToString(), p2.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -262,7 +258,7 @@ namespace NullVersionOfTeorver.Exercises
             double Res = ExerciseAnswer.AnswerForExc8(h1, h2);
 
             String[] Answer = new string[3]
-            { h1.ToString(), h2.ToString(), Res.ToString() };
+            { h1.ToString(), h2.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -284,7 +280,7 @@ namespace NullVersionOfTeorver.Exercises
             double Res = ExerciseAnswer.AnswerForExc9(b1, b2);
 
             String[] Answer = new string[3]
-            { b1.ToString(), b2.ToString(), Res.ToString() };
+            { b1.ToString(), b2.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -304,7 +300,7 @@ namespace NullVersionOfTeorver.Exercises
             double Res = ExerciseAnswer.AnswerForExc10(n, k, p);
 
             String[] Answer = new string[4]
-            { n.ToString(), k.ToString(), p.ToString(), Res.ToString() };
+            { n.ToString(), k.ToString(), p.ToString(), Math.Round(Res, 5).ToString() };
 
             return Answer;
         }
@@ -332,17 +328,17 @@ namespace NullVersionOfTeorver.Exercises
             {
                 case (4):
                     {
-                        Answer = new string[2, 4] { { "0.1", "0.2", "0.3", "0.4", }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString() } };
+                        Answer = new string[2, 4] { { "0,1", "0,2", "0,3", "0,4", }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString() } };
                         return Answer;
                     }
                 case (5):
                     {
-                        Answer = new string[2, 5] { { "0.1", "0.2", "0.3", "0.4", "0.5" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString(), P[4].ToString() } };
+                        Answer = new string[2, 5] { { "0,1", "0,2", "0,3", "0,4", "0,5" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString(), P[4].ToString() } };
                         return Answer;
                     }
                 case (6):
                     {
-                        Answer = new string[2, 6] { { "0.1", "0.2", "0.3", "0.4", "0.5", "0.6" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString(), P[4].ToString(), P[5].ToString() } };
+                        Answer = new string[2, 6] { { "0,1", "0,2", "0,3", "0,4", "0,5", "0,6" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString(), P[4].ToString(), P[5].ToString() } };
                         return Answer;
                     }
                 default:
@@ -351,7 +347,7 @@ namespace NullVersionOfTeorver.Exercises
         }
 
         /// <summary>
-        /// Не проверялось!
+        /// Генератор задания 12. На вход поступает матрица из задания 11. На выход поступает одномерный стринговый массив из 3 элементов: 1 - M(E), 2 - D(E), 3 - Sig(E).
         /// </summary>
         /// <param name="Matrix"></param>
         /// <returns></returns>
@@ -369,15 +365,15 @@ namespace NullVersionOfTeorver.Exercises
         }
 
         /// <summary>
-        /// Не проверялось!
+        /// Генератор задания 15. На выход поступает стринговый одномерный массив из 4 элементов: 1 - n, 2 - k, 3 - p, 3 - Результат
         /// </summary>
         /// <returns></returns>
         public string[] TestGeneric15()
         {
-            int n = rnd.Next(150, 301);
+            int n = rnd.Next(100, 201);
             int k = rnd.Next(n / 5, 4 * n / 5 + 1);
 
-            double p = rnd.Next(2, 19);
+            double p = rnd.Next(8, 19);
             p *= 0.05;
 
             double Res = ExerciseAnswer.AnswerForExc15(n, k, p);
@@ -389,7 +385,7 @@ namespace NullVersionOfTeorver.Exercises
         }
 
         /// <summary>
-        /// Не проверялось!
+        /// Генератор задания 16. На выход поступает стриногвый массив из 5 элементов: 1 - a, 2 - sig, 3 - x1, 4 - x2, 5 - Результат.
         /// </summary>
         /// <returns></returns>
         public string[] TestGeneric16()
@@ -400,6 +396,24 @@ namespace NullVersionOfTeorver.Exercises
             double x1 = rnd.Next(1, 5);
             double x2 = rnd.Next(Convert.ToInt32(x1) + 2, 10);
             double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1, x2);
+
+            string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
+            return Answer;
+        }
+        /// <summary>
+        /// Генератор задания 17. На выход поступаетстринговый массив из 5 элементов: 1 - a, 2 - sig, 3 - x1, 4 - x2, 5 - Результат.
+        /// </summary>
+        /// <returns></returns>
+        public string[] TestGeneric17()
+        {
+            double a = rnd.Next(1, 5);
+            double sig = rnd.Next(4, 10);
+            sig /= 10;
+            double x1 = rnd.Next(3, 7);
+            x1 *= 0.5;
+            double x2 = rnd.Next(1, 4);
+            x2 *= 0.1;
+            double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1 - x2, x1 + x2);
 
             string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
             return Answer;
@@ -421,7 +435,7 @@ namespace NullVersionOfTeorver.Exercises
         }
 
         /// <summary>
-        /// Не проверялось!
+        /// Генератор таблицы для 18 задания
         /// </summary>
         /// <returns></returns>
         public string[,] TableGeneric18()
@@ -435,16 +449,16 @@ namespace NullVersionOfTeorver.Exercises
             P[5] = 0;
 
             for (int i = 0; i < 20; i++)
-                swaper(rnd.Next(1, 7), rnd.Next(1, 7), P);
+                swaper(rnd.Next(0, 6), rnd.Next(0, 6), P);
 
-            string[,] Matrix = new string[3, 4] { { " ", "-1", "0", "1" }, 
+            string[,] Matrix = new string[3, 4] { { "  ", "-1", "0", "1" }, 
                 { "0", P[0].ToString(), P[1].ToString(), P[2].ToString() }, { "1", P[3].ToString(), P[4].ToString(), P[5].ToString() } };
 
             return Matrix;
         }
 
         /// <summary>
-        /// Не проверялось!
+        /// Генератор ответа по таблице из 18 задания
         /// </summary>
         /// <param name="Matrix"></param>
         /// <returns></returns>
@@ -452,8 +466,9 @@ namespace NullVersionOfTeorver.Exercises
         {
             string[,] E = new string[2, 2] { { "0", "1" }, { (Convert.ToDouble(Matrix[1,1])+ Convert.ToDouble(Matrix[1, 2])+ Convert.ToDouble(Matrix[1, 3])).ToString(),
                     (Convert.ToDouble(Matrix[2, 1])+Convert.ToDouble(Matrix[2,2])+Convert.ToDouble(Matrix[2,3])).ToString() } };
-            string[,] n = new string[2, 3] { { "-1", "0", "1" }, 
-                { (Convert.ToDouble(Matrix[1, 1]) + Convert.ToDouble(Matrix[2, 1])).ToString(), (Convert.ToDouble(Matrix[1, 2]) + Convert.ToDouble(Matrix[2, 2])).ToString(), (Convert.ToDouble(Matrix[1, 3]) + Convert.ToDouble(Matrix[2, 3])).ToString()} };
+            string[,] n = new string[2, 3] {
+                { (Convert.ToDouble(Matrix[1, 1]) + Convert.ToDouble(Matrix[2, 1])).ToString(), (Convert.ToDouble(Matrix[1, 2]) + Convert.ToDouble(Matrix[2, 2])).ToString(), 
+                    (Convert.ToDouble(Matrix[1, 3]) + Convert.ToDouble(Matrix[2, 3])).ToString()},{ "-1", "0", "1" } };
 
             double ME = ExerciseAnswer.FinderM(E);
             double Mn = ExerciseAnswer.FinderM(n);

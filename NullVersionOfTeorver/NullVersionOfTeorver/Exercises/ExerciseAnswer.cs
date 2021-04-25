@@ -7,7 +7,7 @@ namespace NullVersionOfTeorver.Exercises
     //Данный класс является набором методов, для решения определенных задач
     //По-идее, у вас не должно быть доступа к этому классу. Т.к. он нужен только для класса генережки, но С# не дает мне его "запротектить"
     //Может в будущем разберусь с этой проблемой. Либо просто перекину его в класс с генережкой, и решу кек с инкапсуляцией
-    public class ExerciseAnswer
+    public class ExerciseAnswer : Tools
     {
         /// <summary>
         /// Решает задачу 1а)
@@ -206,7 +206,7 @@ namespace NullVersionOfTeorver.Exercises
             double Result = 0;
 
             for (int i = 0; i < n / 2; i++)
-                Result += Convert.ToDouble(Matrix[0, n]) * Convert.ToDouble(Matrix[1, n]);
+                Result += Convert.ToDouble(Matrix[0, i]) * Convert.ToDouble(Matrix[1, i]);
 
             return Result;
         }
@@ -217,9 +217,9 @@ namespace NullVersionOfTeorver.Exercises
             double Result = 0;
 
             for (int i = 0; i < n / 2; i++)
-                Result += Math.Pow(Convert.ToDouble(Matrix[0, n]),2) * Convert.ToDouble(Matrix[1, n]);
+                Result += Math.Pow(Convert.ToDouble(Matrix[0, i]), 2) * Convert.ToDouble(Matrix[1, i]);
 
-            Result -= FinderM(Matrix);
+            Result -= Math.Pow(FinderM(Matrix), 2);
 
             return Result;
         }
@@ -246,7 +246,27 @@ namespace NullVersionOfTeorver.Exercises
         }
         private static double Laplase(double x)
         {
-            return (1 / Math.Sqrt(2 * Math.PI)) * (Math.Exp(-Math.Pow(x, 2) / 2) - 1);
+            return (1 / Math.Sqrt(2 * Math.PI)) * Simpson_Parable_Integral(0, x);
+        }
+        static double funcLaplase(double x)
+        {
+            return Math.Exp(-Math.Pow(x, 2) / 2);
+        }
+        private static double Simpson_Parable_Integral(double a, double b)
+        {
+            double h = (b - a) / 1000; // вычисляем шаг - h
+            double sum = 0;     // сумма, результат вычисления интеграла.
+            double x0 = a;      // правая граница подотрезка отрезка [a, b]
+            double x1 = a + h;  // левая граница подотрезка отрезка [a, b]
+
+            for (int i = 0; i < 1000; i++) // в цикле применяем формулу Симпсона
+            {
+                sum += funcLaplase(x0) + 4 * funcLaplase(x0 + h / 2) + funcLaplase(x1);   //для каждого подотрезка, и складываем все полученные значения в общую сумму.
+                x0 += h;    // сдвигаем левую и
+                x1 += h;    // правую границу
+            }
+
+            return (h / 6) * sum;   // возвращаем сумму умноженную на (h/6)(по формуле), т.к. (h/6) общий множитель который можно вынести за скобки.
         }
     }
 }
