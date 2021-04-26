@@ -7,7 +7,7 @@ namespace Test
     //Данный класс является набором методов, для решения определенных задач
     //По-идее, у вас не должно быть доступа к этому классу. Т.к. он нужен только для класса генережки, но С# не дает мне его "запротектить"
     //Может в будущем разберусь с этой проблемой. Либо просто перекину его в класс с генережкой, и решу кек с инкапсуляцией
-    public class ExerciseAnswer
+    public class ExerciseAnswer : Tools
     {
         /// <summary>
         /// Решает задачу 1а)
@@ -197,6 +197,76 @@ namespace Test
         {
             double q = 1 - p;
             return Tools.Sochetanie(n, k) * Math.Pow(q, k) * Math.Pow(p, k);
+        }
+
+        protected static double FinderM(string[,] Matrix)
+        {
+            int n = Matrix.Length;
+
+            double Result = 0;
+
+            for (int i = 0; i < n / 2; i++)
+                Result += Convert.ToDouble(Matrix[0, i]) * Convert.ToDouble(Matrix[1, i]);
+
+            return Result;
+        }
+        protected static double FinderD(string[,] Matrix)
+        {
+            int n = Matrix.Length;
+
+            double Result = 0;
+
+            for (int i = 0; i < n / 2; i++)
+                Result += Math.Pow(Convert.ToDouble(Matrix[0, i]), 2) * Convert.ToDouble(Matrix[1, i]);
+
+            Result -= Math.Pow(FinderM(Matrix), 2);
+
+            return Result;
+        }
+        protected static double FinderS(string[,] Matrix)
+        {
+            return Math.Sqrt(FinderD(Matrix));
+        }
+
+        protected static double AnswerForExc15(int N, int K, double p)
+        {
+            double n = Convert.ToDouble(N);
+            double k = Convert.ToDouble(K);
+
+            double x = (k - n * p) / Math.Sqrt(n * p * (1 - p));
+
+            double F = Math.Exp(-Math.Pow(x, 2) / 2) / Math.Sqrt(2 * Math.PI);
+
+            return F / Math.Sqrt(n * p * (1 - p));
+        }
+
+        protected static double AnswerForExc16(double a, double sig, double x1, double x2)
+        {
+            return Laplase((x2 - a) / Math.Sqrt(sig)) - Laplase((x1 - a) / Math.Sqrt(sig));
+        }
+        private static double Laplase(double x)
+        {
+            return (1 / Math.Sqrt(2 * Math.PI)) * Simpson_Parable_Integral(0, x);
+        }
+        static double funcLaplase(double x)
+        {
+            return Math.Exp(-Math.Pow(x, 2) / 2);
+        }
+        private static double Simpson_Parable_Integral(double a, double b)
+        {
+            double h = (b - a) / 1000; // вычисляем шаг - h
+            double sum = 0;     // сумма, результат вычисления интеграла.
+            double x0 = a;      // правая граница подотрезка отрезка [a, b]
+            double x1 = a + h;  // левая граница подотрезка отрезка [a, b]
+
+            for (int i = 0; i < 1000; i++) // в цикле применяем формулу Симпсона
+            {
+                sum += funcLaplase(x0) + 4 * funcLaplase(x0 + h / 2) + funcLaplase(x1);   //для каждого подотрезка, и складываем все полученные значения в общую сумму.
+                x0 += h;    // сдвигаем левую и
+                x1 += h;    // правую границу
+            }
+
+            return (h / 6) * sum;   // возвращаем сумму умноженную на (h/6)(по формуле), т.к. (h/6) общий множитель который можно вынести за скобки.
         }
     }
 }

@@ -732,39 +732,45 @@ namespace Test
             var lines = File.ReadAllLines(dest);
             number_of_human = lines.Length;//кол-во человек вычисляется из кол-ва фамилий в списки Name
 
-            ExerciseGenerator EG = new ExerciseGenerator();
-
-            string[] Answer1_1 = EG.TestGeneric1(1);
-            string[] Answer1_2 = EG.TestGeneric1(2);
-            string[] Answer1_3 = EG.TestGeneric1(3);
-            string[] Answer2 = EG.TestGeneric2();
-            string[] Answer3 = EG.TestGeneric3();
-            string[] Answer4 = EG.TestGeneric4();
-            string[] Answer5 = EG.TestGeneric5();
-            string[] Answer6 = EG.TestGeneric6();
-            string[] Answer7 = EG.TestGeneric7();
-            string[] Answer8 = EG.TestGeneric8();
-            string[] Answer9 = EG.TestGeneric9();
-            string[] Answer10 = EG.TestGeneric10();
-
-            string result1_1 = Answer1_1[3];
-            string result1_2 = Answer1_2[3];
-            string result1_3 = Answer1_3[3];
-            string result2 = Answer2[4];
-            string result3 = Answer3[2];
-            string result4 = Answer4[3];
-            string result5 = Answer5[3];
-            string result6 = Answer6[3];
-            string result7 = Answer7[2];
-            string result8 = Answer8[2];
-            string result9 = Answer9[2];
-            string result10 = Answer10[3];
-
             //все
             if (checkBox1.Checked == true)
             {
                 for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
                 {
+                    ExerciseGenerator EG = new ExerciseGenerator();
+
+                    string[] Answer1 = EG.TestGeneric1();
+                    string[] Answer2 = EG.TestGeneric2();
+                    string[] Answer3 = EG.TestGeneric3();
+                    string[] Answer4 = EG.TestGeneric4();
+                    string[] Answer5 = EG.TestGeneric5();
+                    string[] Answer6 = EG.TestGeneric6();
+                    string[] Answer7 = EG.TestGeneric7();
+                    string[] Answer8 = EG.TestGeneric8();
+                    string[] Answer9 = EG.TestGeneric9();
+                    string[] Answer10 = EG.TestGeneric10();
+                    string[] Answer15 = EG.TestGeneric15();
+                    string[] Answer16 = EG.TestGeneric16();
+                    string[] Answer17 = EG.TestGeneric17();
+                    
+
+                    string result1_1 = Answer1[3];
+                    string result1_2 = Answer1[4];
+                    string result1_3 = Answer1[5];
+                    string result2 = Answer2[4];
+                    string result3 = Answer3[2];
+                    string result4 = Answer4[3];
+                    string result5 = Answer5[3];
+                    string result6 = Answer6[3];
+                    string result7 = Answer7[2];
+                    string result8 = Answer8[2];
+                    string result9 = Answer9[2];
+                    string result10 = Answer10[3];
+                    string result15 = Answer15[3];
+                    string result16 = Answer16[4];
+                    string result17 = Answer17[4];
+                    
+
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
@@ -789,9 +795,9 @@ namespace Test
                     MixName();
 
                     //1
-                    string n = Answer1_1[0];
-                    string k = Answer1_1[1];
-                    string m = Answer1_1[2];
+                    string n = Answer1[0];
+                    string k = Answer1[1];
+                    string m = Answer1[2];
 
                     string text1 = label1.Text;
                     text1 = text1.Replace("n", n);
@@ -922,43 +928,52 @@ namespace Test
                     label10.Text = text10;
 
                     sw.Write("10)" + label10.Text + "\n" + "\n");
-                    //---------------------------------------------------------------------------//
                     sw.Write("11) " + label11.Text + "\n" + "\n");
                     sw.Write("12) " + label12.Text + "\n" + "\n");
                     sw.Write("13) " + label13.Text + "\n" + "\n");
                     sw.Write("14) " + label14.Text + "\n" + "\n");
+                    //15
+                    n = Answer15[0];
+                    k = Answer15[1];
+                    p = Answer15[2];
+
+                    string text15 = label15.Text;
+                    text15 = text15.Replace("n", n);
+                    text15 = text15.Replace("k", k);
+                    text15 = text15.Replace("p", p);
+                    label15.Text = text15;
+
+                    sw.Write("15)" + label15.Text + "\n" + "\n");
+                    //16
+                    string a = Answer16[0];
+                    string sig= Answer16[1];
+                    string x1 = Answer16[2];
+                    string x2 = Answer16[3];
+
+                    string text16 = label16.Text;
+                    text16 = text16.Replace("z", a);
+                    text16 = text16.Replace("b", sig);
+                    text16 = text16.Replace("x1", x1);
+                    text16 = text16.Replace("x2", x2);
+                    label16.Text = text16;
+
                     sw.Write("16) " + label16.Text + "\n" + "\n");
+                    //17
+                    a = Answer17[0];
+                    sig = Answer17[1];
+                    x1 = Answer17[2];
+                    x2= Answer17[3];
+
+                    string text17 = label17.Text;
+                    text17 = text17.Replace("z", a);
+                    text17 = text17.Replace("b", sig);
+                    text17 = text17.Replace("x1", x1);
+                    text17 = text17.Replace("x2", x2);
+                    label17.Text = text17;
+
                     sw.Write("17) " + label17.Text + "\n" + "\n");
+                    //18
                     sw.Write("18) " + label18.Text + "\n" + "\n");
-                    number_of_options++;
-                }
-
-                number_of_options = 1;
-
-                sw.WriteLine("Ответы" + "\n");
-                for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
-                {
-                    sw.Write("Вариант №" + number_of_options + "\n");
-                    //1
-                    sw.Write("1)" + "Ответ:" + "\n" + "a)" + result1_1 + " \n" + "b)" + result1_2 + " \n" + "c)" + result1_3 + "\n" + "\n");
-                    //2
-                    sw.WriteLine("2)" + "Ответ:" + result2 + "\n" + "\n");
-                    //3
-                    sw.WriteLine("3)" + "Ответ:" + result3 + "\n" + "\n");
-                    //4
-                    sw.WriteLine("4)" + "Ответ:" + result4 + "\n" + "\n");
-                    //5
-                    sw.WriteLine("5)" + "Ответ:" + result5 + "\n" + "\n");
-                    //6
-                    sw.WriteLine("6)" + "Ответ:" + result6 + "\n" + "\n");
-                    //7
-                    sw.WriteLine("7)" + "Ответ:" + result7 + "\n" + "\n");
-                    //8
-                    sw.WriteLine("8)" + "Ответ:" + result8 + "\n" + "\n");
-                    //9
-                    sw.WriteLine("9)" + "Ответ:" + result9 + "\n" + "\n");
-                    //10
-                    sw.WriteLine("10)" + "Ответ:" + result10 + "\n" + "\n");
                     number_of_options++;
                 }
             }
@@ -971,6 +986,32 @@ namespace Test
             //1-10
             if (checkBox2.Checked == true)
             {
+                ExerciseGenerator EG = new ExerciseGenerator();
+                string[] Answer1 = EG.TestGeneric1();
+                string[] Answer2 = EG.TestGeneric2();
+                string[] Answer3 = EG.TestGeneric3();
+                string[] Answer4 = EG.TestGeneric4();
+                string[] Answer5 = EG.TestGeneric5();
+                string[] Answer6 = EG.TestGeneric6();
+                string[] Answer7 = EG.TestGeneric7();
+                string[] Answer8 = EG.TestGeneric8();
+                string[] Answer9 = EG.TestGeneric9();
+                string[] Answer10 = EG.TestGeneric10();
+                string[] Answer15 = EG.TestGeneric15();
+
+                string result1_1 = Answer1[3];
+                string result1_2 = Answer1[4];
+                string result1_3 = Answer1[5];
+                string result2 = Answer2[4];
+                string result3 = Answer3[2];
+                string result4 = Answer4[3];
+                string result5 = Answer5[3];
+                string result6 = Answer6[3];
+                string result7 = Answer7[2];
+                string result8 = Answer8[2];
+                string result9 = Answer9[2];
+                string result10 = Answer10[3];
+                string result15 = Answer15[3];
                 for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
                 {
                     StartTest();
@@ -989,9 +1030,9 @@ namespace Test
                     MixName();
 
                     //1
-                    string n = Answer1_1[0];
-                    string k = Answer1_1[1];
-                    string m = Answer1_1[2];
+                    string n = Answer1[0];
+                    string k = Answer1[1];
+                    string m = Answer1[2];
 
                     string text1 = label1.Text;
                     text1 = text1.Replace("n", n);
@@ -1122,35 +1163,6 @@ namespace Test
                     label10.Text = text10;
 
                     sw.Write("10)" + label10.Text + "\n" + "\n");
-                    number_of_options++;
-                }
-
-                number_of_options = 1;
-
-                sw.WriteLine("Ответы" + "\n");
-                for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
-                {
-                    sw.Write("Вариант №" + number_of_options + "\n");
-                    //1
-                    sw.Write("1)" + "Ответ:" + "\n" + "a)" + result1_1 + " \n" + "b)" + result1_2 + " \n" + "c)" + result1_3 + "\n" + "\n");
-                    //2
-                    sw.WriteLine("2)" + "Ответ:" + result2 + "\n" + "\n");
-                    //3
-                    sw.WriteLine("3)" + "Ответ:" + result3 + "\n" + "\n");
-                    //4
-                    sw.WriteLine("4)" + "Ответ:" + result4 + "\n" + "\n");
-                    //5
-                    sw.WriteLine("5)" + "Ответ:" + result5 + "\n" + "\n");
-                    //6
-                    sw.WriteLine("6)" + "Ответ:" + result6 + "\n" + "\n");
-                    //7
-                    sw.WriteLine("7)" + "Ответ:" + result7 + "\n" + "\n");
-                    //8
-                    sw.WriteLine("8)" + "Ответ:" + result8 + "\n" + "\n");
-                    //9
-                    sw.WriteLine("9)" + "Ответ:" + result9 + "\n" + "\n");
-                    //10
-                    sw.WriteLine("10)" + "Ответ:" + result10 + "\n" + "\n");
                     number_of_options++;
                 }
             }
