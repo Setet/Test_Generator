@@ -722,10 +722,13 @@ namespace Test
             int number_of_options = 1;//счётчик для номера варианта
 
             string Path1 = WritePath1.Text;
+            string Path2 = WritePath2.Text;
 
             string writePath1 = @"" + Path1;//создание файла по пути написанному пользователем в WritePath
+            string writePath2 = @"" + Path2;//создание файла по пути написанному пользователем в WritePath
 
             StreamWriter sw = new StreamWriter(writePath1, false, System.Text.Encoding.Default);
+            StreamWriter ws = new StreamWriter(writePath2, false, System.Text.Encoding.Default);
 
             //считает кол-во людей по факту(заполняет var lines строками из Name,а потом считает кол-во строк)
             string dest = Directory.GetCurrentDirectory() + @"\Name.txt";
@@ -752,7 +755,7 @@ namespace Test
                     string[] Answer15 = EG.TestGeneric15();
                     string[] Answer16 = EG.TestGeneric16();
                     string[] Answer17 = EG.TestGeneric17();
-                    
+
 
                     string result1_1 = Answer1[3];
                     string result1_2 = Answer1[4];
@@ -769,11 +772,12 @@ namespace Test
                     string result15 = Answer15[3];
                     string result16 = Answer16[4];
                     string result17 = Answer17[4];
-                    
+
 
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
+                    ws.Write("Вариант №" + number_of_options + "\n");
                     MixQuestion1();
                     MixQuestion2();
                     MixQuestion3();
@@ -806,6 +810,7 @@ namespace Test
                     label1.Text = text1;
 
                     sw.Write("1)" + label1.Text + "\n" + "\n");
+                    ws.Write("1)" + "Ответ:" + "a)" + result1_1 + "\t" + "b)" + result1_2 + "\t" + "c)" + result1_3 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -823,6 +828,7 @@ namespace Test
                     label2.Text = text2;
 
                     sw.Write("2)" + label2.Text + "\n" + "\n");
+                    ws.Write("2)" + "Ответ:" + result2 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -837,6 +843,7 @@ namespace Test
                     label3.Text = text3;
 
                     sw.Write("3)" + label3.Text + "\n" + "\n");
+                    ws.Write("3)" + "Ответ:" + result3 + "\n");
                     n = "";
                     k = "";
                     //4
@@ -851,6 +858,7 @@ namespace Test
                     label4.Text = text4;
 
                     sw.Write("4)" + label4.Text + "\n" + "\n");
+                    ws.Write("4)" + "Ответ:" + result4 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -866,6 +874,7 @@ namespace Test
                     label5.Text = text5;
 
                     sw.Write("5)" + label5.Text + "\n" + "\n");
+                    ws.Write("5)" + "Ответ:" + result5 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -881,6 +890,7 @@ namespace Test
                     label6.Text = text6;
 
                     sw.Write("6)" + label6.Text + "\n" + "\n");
+                    ws.Write("6)" + "Ответ:" + result6 + "\n");
                     p1 = "";
                     p2 = "";
                     p3 = "";
@@ -894,6 +904,7 @@ namespace Test
                     label7.Text = text7;
 
                     sw.Write("7)" + label7.Text + "\n" + "\n");
+                    ws.Write("7)" + "Ответ:" + result7 + "\n");
                     p1 = "";
                     p2 = "";
                     //8
@@ -906,6 +917,7 @@ namespace Test
                     label8.Text = text8;
 
                     sw.Write("8)" + label8.Text + "\n" + "\n");
+                    ws.Write("8)" + "Ответ:" + result8 + "\n");
                     //9
                     string b1 = Answer9[0];
                     string b2 = Answer9[1];
@@ -916,6 +928,7 @@ namespace Test
                     label9.Text = text9;
 
                     sw.Write("9)" + label9.Text + "\n" + "\n");
+                    ws.Write("9)" + "Ответ:" + result9 + "\n");
                     //10
                     n = Answer10[0];
                     k = Answer10[1];
@@ -928,6 +941,8 @@ namespace Test
                     label10.Text = text10;
 
                     sw.Write("10)" + label10.Text + "\n" + "\n");
+                    ws.Write("10)" + "Ответ:" + result10 + "\n");
+                    //11
                     sw.Write("11) " + label11.Text + "\n" + "\n");
                     sw.Write("12) " + label12.Text + "\n" + "\n");
                     sw.Write("13) " + label13.Text + "\n" + "\n");
@@ -944,9 +959,10 @@ namespace Test
                     label15.Text = text15;
 
                     sw.Write("15)" + label15.Text + "\n" + "\n");
+                    ws.Write("15)" + "Ответ:" + result15 + "\n");
                     //16
                     string a = Answer16[0];
-                    string sig= Answer16[1];
+                    string sig = Answer16[1];
                     string x1 = Answer16[2];
                     string x2 = Answer16[3];
 
@@ -958,11 +974,12 @@ namespace Test
                     label16.Text = text16;
 
                     sw.Write("16) " + label16.Text + "\n" + "\n");
+                    ws.Write("16)" + "Ответ:" + result16 + "\n");
                     //17
                     a = Answer17[0];
                     sig = Answer17[1];
                     x1 = Answer17[2];
-                    x2= Answer17[3];
+                    x2 = Answer17[3];
 
                     string text17 = label17.Text;
                     text17 = text17.Replace("z", a);
@@ -972,6 +989,7 @@ namespace Test
                     label17.Text = text17;
 
                     sw.Write("17) " + label17.Text + "\n" + "\n");
+                    ws.Write("17)" + "Ответ:" + result17 + "\n");
                     //18
                     sw.Write("18) " + label18.Text + "\n" + "\n");
                     number_of_options++;
@@ -986,37 +1004,38 @@ namespace Test
             //1-10
             if (checkBox2.Checked == true)
             {
-                ExerciseGenerator EG = new ExerciseGenerator();
-                string[] Answer1 = EG.TestGeneric1();
-                string[] Answer2 = EG.TestGeneric2();
-                string[] Answer3 = EG.TestGeneric3();
-                string[] Answer4 = EG.TestGeneric4();
-                string[] Answer5 = EG.TestGeneric5();
-                string[] Answer6 = EG.TestGeneric6();
-                string[] Answer7 = EG.TestGeneric7();
-                string[] Answer8 = EG.TestGeneric8();
-                string[] Answer9 = EG.TestGeneric9();
-                string[] Answer10 = EG.TestGeneric10();
-                string[] Answer15 = EG.TestGeneric15();
-
-                string result1_1 = Answer1[3];
-                string result1_2 = Answer1[4];
-                string result1_3 = Answer1[5];
-                string result2 = Answer2[4];
-                string result3 = Answer3[2];
-                string result4 = Answer4[3];
-                string result5 = Answer5[3];
-                string result6 = Answer6[3];
-                string result7 = Answer7[2];
-                string result8 = Answer8[2];
-                string result9 = Answer9[2];
-                string result10 = Answer10[3];
-                string result15 = Answer15[3];
                 for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
                 {
+                    ExerciseGenerator EG = new ExerciseGenerator();
+
+                    string[] Answer1 = EG.TestGeneric1();
+                    string[] Answer2 = EG.TestGeneric2();
+                    string[] Answer3 = EG.TestGeneric3();
+                    string[] Answer4 = EG.TestGeneric4();
+                    string[] Answer5 = EG.TestGeneric5();
+                    string[] Answer6 = EG.TestGeneric6();
+                    string[] Answer7 = EG.TestGeneric7();
+                    string[] Answer8 = EG.TestGeneric8();
+                    string[] Answer9 = EG.TestGeneric9();
+                    string[] Answer10 = EG.TestGeneric10();
+
+                    string result1_1 = Answer1[3];
+                    string result1_2 = Answer1[4];
+                    string result1_3 = Answer1[5];
+                    string result2 = Answer2[4];
+                    string result3 = Answer3[2];
+                    string result4 = Answer4[3];
+                    string result5 = Answer5[3];
+                    string result6 = Answer6[3];
+                    string result7 = Answer7[2];
+                    string result8 = Answer8[2];
+                    string result9 = Answer9[2];
+                    string result10 = Answer10[3];
+
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
+                    ws.Write("Вариант №" + number_of_options + "\n");
                     MixQuestion1();
                     MixQuestion2();
                     MixQuestion3();
@@ -1027,6 +1046,14 @@ namespace Test
                     MixQuestion8();
                     MixQuestion9();
                     MixQuestion10();
+                    MixQuestion11();
+                    MixQuestion12();
+                    MixQuestion13();
+                    MixQuestion14();
+                    MixQuestion15();
+                    MixQuestion16();
+                    MixQuestion17();
+                    MixQuestion18();
                     MixName();
 
                     //1
@@ -1041,6 +1068,7 @@ namespace Test
                     label1.Text = text1;
 
                     sw.Write("1)" + label1.Text + "\n" + "\n");
+                    ws.Write("1)" + "Ответ:" + "a)" + result1_1 + "\t" + "b)" + result1_2 + "\t" + "c)" + result1_3 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -1058,6 +1086,7 @@ namespace Test
                     label2.Text = text2;
 
                     sw.Write("2)" + label2.Text + "\n" + "\n");
+                    ws.Write("2)" + "Ответ:" + result2 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -1072,6 +1101,7 @@ namespace Test
                     label3.Text = text3;
 
                     sw.Write("3)" + label3.Text + "\n" + "\n");
+                    ws.Write("3)" + "Ответ:" + result3 + "\n");
                     n = "";
                     k = "";
                     //4
@@ -1086,6 +1116,7 @@ namespace Test
                     label4.Text = text4;
 
                     sw.Write("4)" + label4.Text + "\n" + "\n");
+                    ws.Write("4)" + "Ответ:" + result4 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -1101,6 +1132,7 @@ namespace Test
                     label5.Text = text5;
 
                     sw.Write("5)" + label5.Text + "\n" + "\n");
+                    ws.Write("5)" + "Ответ:" + result5 + "\n");
                     n = "";
                     k = "";
                     m = "";
@@ -1116,6 +1148,7 @@ namespace Test
                     label6.Text = text6;
 
                     sw.Write("6)" + label6.Text + "\n" + "\n");
+                    ws.Write("6)" + "Ответ:" + result6 + "\n");
                     p1 = "";
                     p2 = "";
                     p3 = "";
@@ -1129,6 +1162,7 @@ namespace Test
                     label7.Text = text7;
 
                     sw.Write("7)" + label7.Text + "\n" + "\n");
+                    ws.Write("7)" + "Ответ:" + result7 + "\n");
                     p1 = "";
                     p2 = "";
                     //8
@@ -1141,6 +1175,7 @@ namespace Test
                     label8.Text = text8;
 
                     sw.Write("8)" + label8.Text + "\n" + "\n");
+                    ws.Write("8)" + "Ответ:" + result8 + "\n");
                     //9
                     string b1 = Answer9[0];
                     string b2 = Answer9[1];
@@ -1151,6 +1186,7 @@ namespace Test
                     label9.Text = text9;
 
                     sw.Write("9)" + label9.Text + "\n" + "\n");
+                    ws.Write("9)" + "Ответ:" + result9 + "\n");
                     //10
                     n = Answer10[0];
                     k = Answer10[1];
@@ -1163,6 +1199,7 @@ namespace Test
                     label10.Text = text10;
 
                     sw.Write("10)" + label10.Text + "\n" + "\n");
+                    ws.Write("10)" + "Ответ:" + result10 + "\n");
                     number_of_options++;
                 }
             }
@@ -1202,25 +1239,18 @@ namespace Test
 
 
             sw.Close();
+            ws.Close();
             MessageBox.Show("Тест составлен в файл " + textBox1.Text + "!!!");
-            button_FileCreate.Visible = true;
-
-            //зануляет значения всех полей
-            textBox1.Text = "";
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            checkBox1.Checked = false;
-            checkBox2.Checked = false;
-            checkBox3.Checked = false;
+            Environment.Exit(0);
         }
 
-        //крысинное скрытие label-ов
+        //крысинное скрытие label-ов и не только
         private void FormTest_Load(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
 
             button_GenerateTest.Visible = false;
+            button_SaveFileAnswer.Visible = false;
 
             labeln.Visible = false;
             label1.Visible = false;
@@ -1242,12 +1272,14 @@ namespace Test
             label17.Visible = false;
             label18.Visible = false;
             label19.Visible = false;
+            label20.Visible = false;
 
             checkBox1.Visible = false;
             checkBox2.Visible = false;
             checkBox3.Visible = false;
 
             textBox1.Visible = false;
+            textBox2.Visible = false;
             WritePath1.Visible = false;
             WritePath2.Visible = false;
         }
@@ -1283,9 +1315,7 @@ namespace Test
 
             label19.Visible = true;
             textBox1.Visible = true;
-
-            groupBox1.Visible = true;
-            button_GenerateTest.Visible = true;
+            button_SaveFileAnswer.Visible = true;
         }
 
         /*короче,про создание файла из того же окна что и выбор инфы крайне мало,поэтому пришлось идти костылями
@@ -1295,28 +1325,6 @@ namespace Test
         сами костыли в том что создавая файл,он автоматически выбирается главным(из-за косяка описанного выше),если пользователь создать один файл
         а записать тест захочет в другой,он этого не сможет(на кнопку выбора данный косяк зеркально не работает)
         */
-
-        private void button_FileCreate_Click(object sender, EventArgs e)
-        {
-            string res = "Варианты тестов пофамильно";//Ъръютр тх№юџђэюёђќ, їђю C №ѓїхъ юърцѓђёџ
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            saveFileDialog.Filter = "Tests(*.doc)|*.doc|All files(*.*)|*.*";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
-            {
-                return;
-            }
-            else
-            {
-                File.WriteAllText(saveFileDialog.FileName, res);//микро фикс пробелемы с левой кнопкой которые родились недавно,вроде работает,надеюсь
-                                                                //надеюсь обойдёмся без приколов
-
-                MessageBox.Show("Файл создан!!!");
-                button_FileCreate.Visible = false;
-            }
-        }
 
         private void radioButton_All_CheckedChanged(object sender, EventArgs e)
         {
@@ -1355,6 +1363,31 @@ namespace Test
             {
                 checkBox3.Checked = false;
             }
+        }
+
+        private void button_SaveFileAnswer_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();//создаём объект класса для работы с открытием файла
+
+            openFileDialog.Filter = "Tests(*.doc)|*.doc|All files(*.*)|*.*";//фильтр,конструкция немного норкоманская,как работает доподлинно не знаю,но если надо сменить формат
+                                                                            //то просто замени .doc на то что надо
+
+            if (openFileDialog.ShowDialog() == DialogResult.Cancel)//тип если он не открылся по какой-то причине,то у нас проблемы
+            {
+                return;
+            }
+
+            string filename1 = openFileDialog.FileName;//получаем в строку имя файла с расширением(из-за это писать его в WritePath и в коде не нужно(я про расширение)
+            string filename2 = openFileDialog.SafeFileName;
+
+            WritePath2.Text = filename1;
+            textBox2.Text = filename2;
+
+            MessageBox.Show("Файл для ответов принят!!");
+            label20.Visible = true;
+            textBox2.Visible = true;
+            groupBox1.Visible = true;
+            button_GenerateTest.Visible = true;
         }
     }
 }

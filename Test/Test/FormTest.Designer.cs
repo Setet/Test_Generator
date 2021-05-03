@@ -34,7 +34,6 @@ namespace Test
             this.label2 = new System.Windows.Forms.Label();
             this.button_SaveFile = new System.Windows.Forms.Button();
             this.labeln = new System.Windows.Forms.Label();
-            this.button_FileCreate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,6 +61,9 @@ namespace Test
             this.label9 = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.RichTextBox();
             this.button_GenerateTest = new System.Windows.Forms.Button();
+            this.button_SaveFileAnswer = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,16 +111,6 @@ namespace Test
             this.labeln.Size = new System.Drawing.Size(35, 13);
             this.labeln.TabIndex = 10;
             this.labeln.Text = "labeln";
-            // 
-            // button_FileCreate
-            // 
-            this.button_FileCreate.Location = new System.Drawing.Point(11, 12);
-            this.button_FileCreate.Name = "button_FileCreate";
-            this.button_FileCreate.Size = new System.Drawing.Size(112, 38);
-            this.button_FileCreate.TabIndex = 11;
-            this.button_FileCreate.Text = "Создать файл";
-            this.button_FileCreate.UseVisualStyleBackColor = true;
-            this.button_FileCreate.Click += new System.EventHandler(this.button_FileCreate_Click);
             // 
             // label3
             // 
@@ -372,11 +364,41 @@ namespace Test
             this.button_GenerateTest.UseVisualStyleBackColor = true;
             this.button_GenerateTest.Click += new System.EventHandler(this.button_GenerateTest_Click);
             // 
+            // button_SaveFileAnswer
+            // 
+            this.button_SaveFileAnswer.Location = new System.Drawing.Point(8, 12);
+            this.button_SaveFileAnswer.Name = "button_SaveFileAnswer";
+            this.button_SaveFileAnswer.Size = new System.Drawing.Size(112, 38);
+            this.button_SaveFileAnswer.TabIndex = 45;
+            this.button_SaveFileAnswer.Text = "Выбрать файл для тестов с ответами";
+            this.button_SaveFileAnswer.UseVisualStyleBackColor = true;
+            this.button_SaveFileAnswer.Click += new System.EventHandler(this.button_SaveFileAnswer_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(2, 55);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(124, 13);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Имя файла с ответами";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(5, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(114, 20);
+            this.textBox2.TabIndex = 46;
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 249);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button_SaveFileAnswer);
             this.Controls.Add(this.button_GenerateTest);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -401,7 +423,6 @@ namespace Test
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button_FileCreate);
             this.Controls.Add(this.labeln);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -423,7 +444,6 @@ namespace Test
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_SaveFile;
         private System.Windows.Forms.Label labeln;
-        private System.Windows.Forms.Button button_FileCreate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -451,6 +471,9 @@ namespace Test
         private System.Windows.Forms.RichTextBox label9;
         private System.Windows.Forms.RichTextBox label10;
         private System.Windows.Forms.Button button_GenerateTest;
+        private System.Windows.Forms.Button button_SaveFileAnswer;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
