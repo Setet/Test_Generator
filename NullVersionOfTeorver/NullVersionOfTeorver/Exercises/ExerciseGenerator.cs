@@ -378,7 +378,13 @@ namespace NullVersionOfTeorver.Exercises
 
             return Answer;
         }
-
+        /// <summary>
+        /// Ох...Ну, погнали: 0 - основная функция, 1 - левая граница функции, 2 - правая граница функции
+        /// 3 - F если x ЛЕВЕЕ границ функции, 4 - F если x ВНУТРИ границ функции, 5 - F если x ПРАВЕЕ границ функции
+        /// 6 - левая граница P, 7 - правая граница P, 8 - ответ для P,
+        /// 9 - M(F), 10 - D(F), 11 - Sig(E)
+        /// </summary>
+        /// <returns></returns>
         public string[] TestGeneric13_14()
         {
             int ch = rnd.Next(1, 7);
