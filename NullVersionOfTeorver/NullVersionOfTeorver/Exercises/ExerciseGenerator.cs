@@ -42,15 +42,16 @@ namespace NullVersionOfTeorver.Exercises
             int m = rnd.Next(2, n / 2 - 2);
             int l = rnd.Next(1, m);
 
-            while (l >= k)
+            double Res = ExerciseAnswer.AnswerForExc2(n, k, m, l);
+            while (Res >=1 || Res <=0.01)
             {
                 n = rnd.Next(20, 27);
                 k = rnd.Next(5, 9);
                 m = rnd.Next(2, n / 2 - 2);
                 l = rnd.Next(1, m);
-            }
 
-            double Res = ExerciseAnswer.AnswerForExc2(n, k, m, l);
+                Res = ExerciseAnswer.AnswerForExc2(n, k, m, l);
+            }
 
             String[] Answer = new string[5]
             { n.ToString(), k.ToString(), m.ToString(), l.ToString(), Math.Round(Res, 3).ToString() };
@@ -299,6 +300,17 @@ namespace NullVersionOfTeorver.Exercises
 
             double Res = ExerciseAnswer.AnswerForExc10(n, k, p);
 
+            while (Res <= 0.0001)
+            {
+                p = rnd.Next(3, 7);
+                p /= 100;
+
+                n = rnd.Next(3, 7);
+                k = rnd.Next(2, n);
+
+                Res = ExerciseAnswer.AnswerForExc10(n, k, p);
+            }
+
             String[] Answer = new string[4]
             { n.ToString(), k.ToString(), p.ToString(), Math.Round(Res, 5).ToString() };
 
@@ -322,6 +334,9 @@ namespace NullVersionOfTeorver.Exercises
                 c -= y;
             }
             P[n - 1] = c * 0.05;
+
+            for (int i = 0; i < 20; i++)
+                swaper(rnd.Next(0, n), rnd.Next(0, n), P);
 
             string[,] Answer;
             switch (n)
@@ -364,6 +379,116 @@ namespace NullVersionOfTeorver.Exercises
             return Answer;
         }
 
+        public string[] TestGeneric13_14()
+        {
+            int ch = rnd.Next(1, 7);
+            string[] Answer = new string[12];
+
+            switch (ch)
+            {
+                case (1):
+                    {
+                        Answer[0] = "cos(x)";
+                        Answer[1] = "0";
+                        Answer[2] = "Pi/2";
+                        Answer[3] = "0";
+                        Answer[4] = "sin(x)";
+                        Answer[5] = "1";
+                        Answer[6] = "0";
+                        Answer[7] = "Pi/6";
+                        Answer[8] = "1/2";
+                        Answer[9] = "0,570796";
+                        Answer[10] = "0,14159";
+                        Answer[11] = "0,37628";
+                        break;
+                    }
+                case (2):
+                    {
+                        Answer[0] = "cos(x)";
+                        Answer[1] = "0";
+                        Answer[2] = "Pi/2";
+                        Answer[3] = "0";
+                        Answer[4] = "sin(x)";
+                        Answer[5] = "1";
+                        Answer[6] = "Pi/6";
+                        Answer[7] = "Pi/3";
+                        Answer[8] = "0,366";
+                        Answer[9] = "0,570796";
+                        Answer[10] = "0,14159";
+                        Answer[11] = "0,37628";
+                        break;
+                    }
+                case (3):
+                    {
+                        Answer[0] = "x - 0,5";
+                        Answer[1] = "1";
+                        Answer[2] = "2";
+                        Answer[3] = "0";
+                        Answer[4] = "(x^2 - x)/2";
+                        Answer[5] = "1";
+                        Answer[6] = "1";
+                        Answer[7] = "1,3";
+                        Answer[8] = "0,195";
+                        Answer[9] = "1,5833";
+                        Answer[10] = "0,0763";
+                        Answer[11] = "0,2763";
+                        break;
+                    }
+                case (4):
+                    {
+                        Answer[0] = "x - 0,5";
+                        Answer[1] = "1";
+                        Answer[2] = "2";
+                        Answer[3] = "0";
+                        Answer[4] = "(x^2 - x)/2";
+                        Answer[5] = "1";
+                        Answer[6] = "1,2";
+                        Answer[7] = "1,7";
+                        Answer[8] = "0,475";
+                        Answer[9] = "1,5833";
+                        Answer[10] = "0,0763";
+                        Answer[11] = "0,2763";
+                        break;
+                    }
+                case (5):
+                    {
+                        Answer[0] = "2cos(2x)";
+                        Answer[1] = "0";
+                        Answer[2] = "Pi/4";
+                        Answer[3] = "0";
+                        Answer[4] = "sin(2x)";
+                        Answer[5] = "1";
+                        Answer[6] = "0";
+                        Answer[7] = "Pi/8";
+                        Answer[8] = "Sqrt(2)/2";
+                        Answer[9] = "0.28539";
+                        Answer[10] = "0.03539";
+                        Answer[11] = "0.18811";
+                        break;
+                    }
+                case (6):
+                    {
+                        Answer[0] = "2cos(2x)";
+                        Answer[1] = "0";
+                        Answer[2] = "Pi/4";
+                        Answer[3] = "0";
+                        Answer[4] = "sin(2x)";
+                        Answer[5] = "1";
+                        Answer[6] = "Pi/12";
+                        Answer[7] = "Pi/4";
+                        Answer[8] = "0,5";
+                        Answer[9] = "0.28539";
+                        Answer[10] = "0.03539";
+                        Answer[11] = "0.18811";
+                        break;
+                    }
+                default:
+                    break;
+            }
+
+            return Answer;
+        }
+
         /// <summary>
         /// Генератор задания 15. На выход поступает стринговый одномерный массив из 4 элементов: 1 - n, 2 - k, 3 - p, 3 - Результат
         /// </summary>
@@ -377,6 +502,16 @@ namespace NullVersionOfTeorver.Exercises
             p *= 0.05;
 
             double Res = ExerciseAnswer.AnswerForExc15(n, k, p);
+            while (Res <= 0.0001)
+            {
+                n = rnd.Next(100, 201);
+                k = rnd.Next(n / 5, 4 * n / 5 + 1);
+
+                p = rnd.Next(8, 19);
+                p *= 0.05;
+
+                Res = ExerciseAnswer.AnswerForExc15(n, k, p);
+            }
 
             String[] Answer = new string[4]
             { n.ToString(), k.ToString(), p.ToString(), Res.ToString() };
@@ -397,6 +532,16 @@ namespace NullVersionOfTeorver.Exercises
             double x2 = rnd.Next(Convert.ToInt32(x1) + 2, 10);
             double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1, x2);
 
+            while (Res <= 0.01)
+            {
+                a = rnd.Next(1, 6);
+                sig = rnd.Next(4, 10);
+                sig /= 10;
+                x1 = rnd.Next(1, 5);
+                x2 = rnd.Next(Convert.ToInt32(x1) + 2, 10);
+                Res = ExerciseAnswer.AnswerForExc16(a, sig, x1, x2);
+            }
+
             string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
             return Answer;
         }
@@ -414,6 +559,18 @@ namespace NullVersionOfTeorver.Exercises
             double x2 = rnd.Next(1, 4);
             x2 *= 0.1;
             double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1 - x2, x1 + x2);
+
+            while (Res <= 0.01)
+            {
+                a = rnd.Next(1, 5);
+                sig = rnd.Next(4, 10);
+                sig /= 10;
+                x1 = rnd.Next(3, 7);
+                x1 *= 0.5;
+                x2 = rnd.Next(1, 4);
+                x2 *= 0.1;
+                Res = ExerciseAnswer.AnswerForExc16(a, sig, x1 - x2, x1 + x2);
+            }
 
             string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
             return Answer;
@@ -448,6 +605,8 @@ namespace NullVersionOfTeorver.Exercises
             P[4] = 0.3 - P[3];
             P[5] = 0;
 
+            if (P[2] > 0.09 && P[2] < 0.1) P[2] = 0.1;
+
             for (int i = 0; i < 20; i++)
                 swaper(rnd.Next(0, 6), rnd.Next(0, 6), P);
 
@@ -464,20 +623,20 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] AnswerGeneric18(string[,] Matrix)
         {
-            string[,] E = new string[2, 2] { { "0", "1" }, { (Convert.ToDouble(Matrix[1,1])+ Convert.ToDouble(Matrix[1, 2])+ Convert.ToDouble(Matrix[1, 3])).ToString(),
-                    (Convert.ToDouble(Matrix[2, 1])+Convert.ToDouble(Matrix[2,2])+Convert.ToDouble(Matrix[2,3])).ToString() } };
+            string[,] E = new string[2, 2] { { "0", "1" }, { (Convert.ToDouble(Matrix[1,1]) + Convert.ToDouble(Matrix[1, 2]) + Convert.ToDouble(Matrix[1, 3])).ToString(),
+                    (Convert.ToDouble(Matrix[2, 1]) + Convert.ToDouble(Matrix[2,2]) + Convert.ToDouble(Matrix[2,3])).ToString() } };
             string[,] n = new string[2, 3] {
-                { (Convert.ToDouble(Matrix[1, 1]) + Convert.ToDouble(Matrix[2, 1])).ToString(), (Convert.ToDouble(Matrix[1, 2]) + Convert.ToDouble(Matrix[2, 2])).ToString(), 
-                    (Convert.ToDouble(Matrix[1, 3]) + Convert.ToDouble(Matrix[2, 3])).ToString()},{ "-1", "0", "1" } };
+                { "-1", "0", "1" }, {(Convert.ToDouble(Matrix[1, 1]) + Convert.ToDouble(Matrix[2, 1])).ToString(), (Convert.ToDouble(Matrix[1, 2]) + Convert.ToDouble(Matrix[2, 2])).ToString(),
+                    (Convert.ToDouble(Matrix[1, 3]) + Convert.ToDouble(Matrix[2, 3])).ToString()} };
 
             double ME = ExerciseAnswer.FinderM(E);
             double Mn = ExerciseAnswer.FinderM(n);
             double DE = ExerciseAnswer.FinderD(E);
             double Dn = ExerciseAnswer.FinderD(n);
 
-            string[,] nE = new string[2, 3] { { "0", "0", "0" }, { "-" + Matrix[2, 1], "0", Matrix[2, 3] } };
-            double MnE = ExerciseAnswer.FinderM(nE);
-            double DnE = ExerciseAnswer.FinderD(nE);
+            double MnE = -1 * Convert.ToDouble(Matrix[2, 1]) + Convert.ToDouble(Matrix[2, 3]);
+            double DnE = Convert.ToDouble(Matrix[2, 1]) + Convert.ToDouble(Matrix[2, 3]) - Math.Pow(MnE, 2);
+
 
             string[] Answer = new string[6] { ME.ToString(), Mn.ToString(), MnE.ToString(), DE.ToString(), Dn.ToString(), DnE.ToString() };
 
