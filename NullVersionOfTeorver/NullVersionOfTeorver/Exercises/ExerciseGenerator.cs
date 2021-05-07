@@ -336,7 +336,7 @@ namespace NullVersionOfTeorver.Exercises
             P[n - 1] = c * 0.05;
 
             for (int i = 0; i < 20; i++)
-                swaper(rnd.Next(0, n), rnd.Next(0, n), P);
+                Swaper(rnd.Next(0, n), rnd.Next(0, n), P);
 
             string[,] Answer;
             switch (n)
@@ -370,11 +370,11 @@ namespace NullVersionOfTeorver.Exercises
         {
             string[] Answer = new string[3];
 
-            Answer[0] = ExerciseAnswer.FinderM(Matrix).ToString();
+            Answer[0] = Math.Round(ExerciseAnswer.FinderM(Matrix), 4).ToString();
 
-            Answer[1] = ExerciseAnswer.FinderD(Matrix).ToString();
+            Answer[1] = Math.Round(ExerciseAnswer.FinderD(Matrix), 4).ToString();
 
-            Answer[2] = ExerciseAnswer.FinderS(Matrix).ToString();
+            Answer[2] = Math.Round(ExerciseAnswer.FinderS(Matrix), 4).ToString();
 
             return Answer;
         }
@@ -501,14 +501,9 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric15()
         {
-            int n = rnd.Next(100, 201);
-            int k = rnd.Next(n / 5, 4 * n / 5 + 1);
-
-            double p = rnd.Next(8, 19);
-            p *= 0.05;
-
-            double Res = ExerciseAnswer.AnswerForExc15(n, k, p);
-            while (Res <= 0.0001)
+            int n, k;
+            double p, Res;
+            do
             {
                 n = rnd.Next(100, 201);
                 k = rnd.Next(n / 5, 4 * n / 5 + 1);
@@ -516,8 +511,8 @@ namespace NullVersionOfTeorver.Exercises
                 p = rnd.Next(8, 19);
                 p *= 0.05;
 
-                Res = ExerciseAnswer.AnswerForExc15(n, k, p);
-            }
+                Res = Math.Round(ExerciseAnswer.AnswerForExc15(n, k, p), 5);
+            } while (Res < 0.01);
 
             String[] Answer = new string[4]
             { n.ToString(), k.ToString(), p.ToString(), Res.ToString() };
@@ -531,54 +526,41 @@ namespace NullVersionOfTeorver.Exercises
         /// <returns></returns>
         public string[] TestGeneric16()
         {
-            double a = rnd.Next(1, 6);
-            double sig = rnd.Next(4, 10);
-            sig /= 10;
-            double x1 = rnd.Next(1, 5);
-            double x2 = rnd.Next(Convert.ToInt32(x1) + 2, 10);
-            double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1, x2);
-
-            while (Res <= 0.01)
+            double Res, sig, x1, x2, a;
+            do
             {
-                a = rnd.Next(1, 6);
                 sig = rnd.Next(4, 10);
                 sig /= 10;
-                x1 = rnd.Next(1, 5);
-                x2 = rnd.Next(Convert.ToInt32(x1) + 2, 10);
-                Res = ExerciseAnswer.AnswerForExc16(a, sig, x1, x2);
-            }
+                x1 = rnd.Next(1, 3);
+                x2 = rnd.Next(Convert.ToInt32(x1) + 1, Convert.ToInt32(x1) + 4);
+                a = rnd.Next(Convert.ToInt32(x1), Convert.ToInt32(x2) + 1);
+                Res = Math.Round(ExerciseAnswer.AnswerForExc16(a, sig, x1, x2), 4);
+            } while (Res < 0.1 || Res > 0.9) ;
 
-            string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
+                string[] Answer = new string[] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
             return Answer;
         }
+
         /// <summary>
-        /// Генератор задания 17. На выход поступаетстринговый массив из 5 элементов: 1 - a, 2 - sig, 3 - x1, 4 - x2, 5 - Результат.
+        /// Генератор задания 17. На выход поступаетстринговый массив из 5 элементов: 1 - a, 2 - sig, 3,4 - P(|Eps-x| < b), 5 - Результат.
         /// </summary>
         /// <returns></returns>
         public string[] TestGeneric17()
         {
-            double a = rnd.Next(1, 5);
-            double sig = rnd.Next(4, 10);
-            sig /= 10;
-            double x1 = rnd.Next(3, 7);
-            x1 *= 0.5;
-            double x2 = rnd.Next(1, 4);
-            x2 *= 0.1;
-            double Res = ExerciseAnswer.AnswerForExc16(a, sig, x1 - x2, x1 + x2);
-
-            while (Res <= 0.01)
+            double Res, sig, x1, x2, a, x, b;
+            do
             {
-                a = rnd.Next(1, 5);
                 sig = rnd.Next(4, 10);
                 sig /= 10;
-                x1 = rnd.Next(3, 7);
-                x1 *= 0.5;
-                x2 = rnd.Next(1, 4);
-                x2 *= 0.1;
-                Res = ExerciseAnswer.AnswerForExc16(a, sig, x1 - x2, x1 + x2);
-            }
+                x1 = rnd.Next(1, 3);
+                x2 = rnd.Next(Convert.ToInt32(x1) + 1, Convert.ToInt32(x1) + 4);
+                a = rnd.Next(Convert.ToInt32(x1), Convert.ToInt32(x2) + 1);
+                Res = Math.Round(ExerciseAnswer.AnswerForExc16(a, sig, x1, x2), 4);
+            } while (Res < 0.1 || Res > 0.9);
+            x = (x1 + x2) / 2;
+            b = (x2 - x1) / 2;
 
-            string[] Answer = new string[5] { a.ToString(), sig.ToString(), x1.ToString(), x2.ToString(), Res.ToString() };
+            string[] Answer = new string[] { a.ToString(), sig.ToString(), x.ToString(), b.ToString(), Res.ToString() };
             return Answer;
         }
 
@@ -589,7 +571,7 @@ namespace NullVersionOfTeorver.Exercises
         /// <param name="x2"></param>
         /// <param name="line"></param>
         /// <returns></returns>
-        private double[] swaper(int x1, int x2, double[] line)
+        private double[] Swaper(int x1, int x2, double[] line)
         {
             double t = line[x1];
             line[x1] = line[x2];
@@ -614,7 +596,7 @@ namespace NullVersionOfTeorver.Exercises
             if (P[2] > 0.09 && P[2] < 0.1) P[2] = 0.1;
 
             for (int i = 0; i < 20; i++)
-                swaper(rnd.Next(0, 6), rnd.Next(0, 6), P);
+                Swaper(rnd.Next(0, 6), rnd.Next(0, 6), P);
 
             string[,] Matrix = new string[3, 4] { { "  ", "-1", "0", "1" }, 
                 { "0", P[0].ToString(), P[1].ToString(), P[2].ToString() }, { "1", P[3].ToString(), P[4].ToString(), P[5].ToString() } };
