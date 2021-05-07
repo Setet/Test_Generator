@@ -745,6 +745,7 @@ namespace Test
                     string[] Answer9 = EG.TestGeneric9();
                     string[] Answer10 = EG.TestGeneric10();
                     string[,] Answer11 = EG.TestGeneric11();
+                    string[] Answer13 = EG.TestGeneric13_14();
                     string[] Answer15 = EG.TestGeneric15();
                     string[] Answer16 = EG.TestGeneric16();
                     string[] Answer17 = EG.TestGeneric17();
@@ -917,38 +918,44 @@ namespace Test
                     if (pipu == 8)
                     {
                         richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
-                            "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3];
+                            "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "\n";
                         richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3];
+                           "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "\n";
                     }
                     if (pipu == 10)
                     {
                         richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                           "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "\n";
                         richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                           "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "\n";
                     }
                     if (pipu == 12)
                     {
                         richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5] + "\n";
                         richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5] + "\n";
                     }
                     sw.Write("11)" + label11.Text + "\n");
                     sw.Write(richTextBox1.Text + "\n");
                     sw.Write("Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения." + "\n");
-                    ws.Write("11)" + "Ответ:" + "\n"+richTextBox2.Text+"\n");
+                    ws.Write("11)" + "Ответ:" + "\n" + richTextBox2.Text + "\n");
                     //12
                     string[] Result = EG.TestGeneric12(Answer11);
 
-                    richTextBox2.Text += "\n\n M(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
+                    richTextBox2.Text += "\nM(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
                     sw.Write("12) " + label12.Text + "\n" + "\n");
-                    ws.Write("12)" + "Ответ:" + "\n" + richTextBox2.Text + "\n");
+                    ws.Write("12)" + "Ответ:" + "\n" + richTextBox2.Text);
                     //13
-                    sw.Write("13) " + label13.Text + "\n" + "\n");
+                    richTextBox1.Text = "Func = " + Answer13[0] + "\n(" + Answer13[1] + " ; " + Answer13[2] + "]" + "\nПри x <= a это " + Answer13[3] +
+                "\nПри a < x <= b это " + Answer13[4] + "\nПри b < x это " + Answer13[5] + "\nP( " + Answer13[6] + " < Eps < " + Answer13[7] + ") \nP(Eps) = " +
+                Answer13[8] + "\n\n";
+                    sw.Write("13) " + label13.Text + "\n");
+                    sw.Write(richTextBox1.Text);
                     //14
                     sw.Write("14) " + label14.Text + "\n" + "\n");
+                    richTextBox2.Text = "M(E) = " + Answer13[9] + "\nD(E) = " + Answer13[10] + "\nSig(E) = " + Answer13[11] + "\n";
+                    ws.Write("15)" + "Ответ:" + "\n" + richTextBox2.Text);
                     //15
                     result = Answer15[3];
                     n = Answer15[0];
@@ -1001,7 +1008,7 @@ namespace Test
                 "\n" + Answer18[2, 0] + " " + Answer18[2, 1] + " " + Answer18[2, 2] + " " + Answer18[2, 3] + "\n";
                     sw.Write("18) " + label18.Text + "\n");
                     sw.Write(richTextBox1.Text);
-                    sw.Write("Найдите M(E),M(n),M(E,n),D(E),D(n),D(E,n)." + "\n");
+                    sw.Write("Найдите M(E),M(n),M(E,n),D(E),D(n),D(E,n)." + "\n\n");
                     Result = EG.AnswerGeneric18(Answer18);
                     richTextBox2.Text = "18)" + "Ответ:" + "\n M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n";
                     ws.Write(richTextBox2.Text);
@@ -1026,7 +1033,6 @@ namespace Test
                     string[] Answer8 = EG.TestGeneric8();
                     string[] Answer9 = EG.TestGeneric9();
                     string[] Answer10 = EG.TestGeneric10();
-
 
                     string result1_1 = Answer1[3];
                     string result1_2 = Answer1[4];
@@ -1193,6 +1199,7 @@ namespace Test
                     ExerciseGenerator EG = new ExerciseGenerator();
 
                     string[,] Answer11 = EG.TestGeneric11();
+                    string[] Answer13 = EG.TestGeneric13_14();
                     string[] Answer15 = EG.TestGeneric15();
                     string[] Answer16 = EG.TestGeneric16();
                     string[] Answer17 = EG.TestGeneric17();
@@ -1218,23 +1225,23 @@ namespace Test
                     if (pipu == 8)
                     {
                         richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
-                            "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3];
+                            "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "\n";
                         richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3];
+                           "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "\n";
                     }
                     if (pipu == 10)
                     {
                         richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                           "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "\n";
                         richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                           "\n" + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "\n";
                     }
                     if (pipu == 12)
                     {
                         richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5] + "\n";
                         richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
-                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5] + "\n";
                     }
                     sw.Write("11)" + label11.Text + "\n");
                     sw.Write(richTextBox1.Text + "\n");
@@ -1243,13 +1250,19 @@ namespace Test
                     //12
                     string[] Result = EG.TestGeneric12(Answer11);
 
-                    richTextBox2.Text += "\n\n M(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
+                    richTextBox2.Text += "\nM(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
                     sw.Write("12) " + label12.Text + "\n" + "\n");
-                    ws.Write("12)" + "Ответ:" + "\n" + richTextBox2.Text + "\n");
+                    ws.Write("12)" + "Ответ:" + "\n" + richTextBox2.Text);
                     //13
-                    sw.Write("13) " + label13.Text + "\n" + "\n");
+                    richTextBox1.Text = "Func = " + Answer13[0] + "\n(" + Answer13[1] + " ; " + Answer13[2] + "]" + "\nПри x <= a это " + Answer13[3] +
+                "\nПри a < x <= b это " + Answer13[4] + "\nПри b < x это " + Answer13[5] + "\nP( " + Answer13[6] + " < Eps < " + Answer13[7] + ") \nP(Eps) = " +
+                Answer13[8] + "\n\n";
+                    sw.Write("13) " + label13.Text + "\n");
+                    sw.Write(richTextBox1.Text);
                     //14
                     sw.Write("14) " + label14.Text + "\n" + "\n");
+                    richTextBox2.Text = "M(E) = " + Answer13[9] + "\nD(E) = " + Answer13[10] + "\nSig(E) = " + Answer13[11] + "\n";
+                    ws.Write("15)" + "Ответ:" + "\n" + richTextBox2.Text);
                     //15
                     string result = Answer15[3];
                     string n = Answer15[0];
@@ -1302,7 +1315,7 @@ namespace Test
                 "\n" + Answer18[2, 0] + " " + Answer18[2, 1] + " " + Answer18[2, 2] + " " + Answer18[2, 3] + "\n";
                     sw.Write("18) " + label18.Text + "\n");
                     sw.Write(richTextBox1.Text);
-                    sw.Write("Найдите M(E),M(n),M(E,n),D(E),D(n),D(E,n)." + "\n");
+                    sw.Write("Найдите M(E),M(n),M(E,n),D(E),D(n),D(E,n)." + "\n\n");
                     Result = EG.AnswerGeneric18(Answer18);
                     richTextBox2.Text = "18)" + "Ответ:" + "\n M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n";
                     ws.Write(richTextBox2.Text);
