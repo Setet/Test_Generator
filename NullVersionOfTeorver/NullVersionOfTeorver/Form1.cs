@@ -112,14 +112,14 @@ namespace NullVersionOfTeorver
             RTBAnswer.Text += "\n\n M(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button14_Click(object sender, EventArgs e)
         {
+            ExerciseGenerator EG = new ExerciseGenerator();
+            string[] Answer = EG.TestGeneric13_14();
 
+            RTBAnswer.Text = "Func = " + Answer[0] + "\n (" + Answer[1] + " ; " + Answer[2] + " ]" + "\n При x <= a это " + Answer[3] +
+                "\n При a < x <= b это " + Answer[4] + "\n При b < x это " + Answer[5] + "\n P( " + Answer[6] + " < Eps < " + Answer[7] + ") \nP(Eps) = " +
+                Answer[8] + "\n\n M(E) = " + Answer[9] + "\nD(E) = " + Answer[10] + "\nSig(E) = " + Answer[11];
         }
 
         private void button15_Click(object sender, EventArgs e)

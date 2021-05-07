@@ -37,7 +37,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.RTBAnswer = new System.Windows.Forms.RichTextBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -136,16 +135,6 @@
             this.RTBAnswer.TabIndex = 22;
             this.RTBAnswer.Text = "";
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(390, 41);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 24;
-            this.button10.Text = "13";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(187, 68);
@@ -178,17 +167,17 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(390, 70);
+            this.button14.Location = new System.Drawing.Point(390, 39);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(75, 23);
             this.button14.TabIndex = 28;
-            this.button14.Text = "14";
+            this.button14.Text = "13+14";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(390, 101);
+            this.button15.Location = new System.Drawing.Point(390, 70);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(75, 23);
             this.button15.TabIndex = 29;
@@ -198,7 +187,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(390, 131);
+            this.button16.Location = new System.Drawing.Point(390, 100);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 23);
             this.button16.TabIndex = 30;
@@ -208,7 +197,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(390, 159);
+            this.button17.Location = new System.Drawing.Point(390, 128);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
             this.button17.TabIndex = 31;
@@ -218,7 +207,7 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(390, 189);
+            this.button18.Location = new System.Drawing.Point(390, 158);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(75, 23);
             this.button18.TabIndex = 32;
@@ -239,7 +228,6 @@
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.RTBAnswer);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -265,7 +253,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.RichTextBox RTBAnswer;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
