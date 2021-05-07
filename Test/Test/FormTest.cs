@@ -6,7 +6,7 @@ namespace Test
 {
     public partial class FormTest : Form
     {
-        StreamReader number1;//для задания 1 и т.д
+        StreamReader number1;//для задания 1-18
         StreamReader number2;
         StreamReader number3;
         StreamReader number4;
@@ -29,7 +29,6 @@ namespace Test
 
         int number_of_human = 0;//переменная кол-ва человеков
 
-
         public FormTest()
         {
             InitializeComponent();
@@ -39,7 +38,6 @@ namespace Test
             FormBorderStyle = FormBorderStyle.Fixed3D;//нельзя изменить размер окна
             button_GenerateTest.AutoSize = true;//хз что это 2
         }
-
 
         //функция позволяет миксовать вопросы в файле(костыли,но больше я пока не придумал)
         void MixQuestion1()
@@ -463,7 +461,7 @@ namespace Test
             try
             {
                 // Создание экземпляра StreamReader для чтения из файла
-                number1 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number1.txt", encoding);//место где лежит список заданий
+                number1 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number1.txt", encoding);
             }
             catch (Exception message)
             {   // Отчет о всех ошибках:
@@ -473,7 +471,7 @@ namespace Test
             try
             {
 
-                number2 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number2.txt", encoding);//место где лежит список заданий
+                number2 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number2.txt", encoding);
             }
             catch (Exception message)
             {
@@ -483,7 +481,7 @@ namespace Test
             try
             {
 
-                number3 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number3.txt", encoding);//место где лежит список заданий
+                number3 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number3.txt", encoding);
             }
             catch (Exception message)
             {
@@ -493,7 +491,7 @@ namespace Test
             try
             {
 
-                number4 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number4.txt", encoding);//место где лежит список заданий
+                number4 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number4.txt", encoding);
             }
             catch (Exception message)
             {
@@ -503,7 +501,7 @@ namespace Test
             try
             {
 
-                number5 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number5.txt", encoding);//место где лежит список заданий
+                number5 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number5.txt", encoding);
             }
             catch (Exception message)
             {
@@ -513,7 +511,7 @@ namespace Test
             try
             {
 
-                number6 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number6.txt", encoding);//место где лежит список заданий
+                number6 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number6.txt", encoding);
             }
             catch (Exception message)
             {
@@ -523,7 +521,7 @@ namespace Test
             try
             {
 
-                number7 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number7.txt", encoding);//место где лежит список заданий
+                number7 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number7.txt", encoding);
             }
             catch (Exception message)
             {
@@ -533,7 +531,7 @@ namespace Test
             try
             {
 
-                number8 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number8.txt", encoding);//место где лежит список заданий
+                number8 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number8.txt", encoding);
             }
             catch (Exception message)
             {
@@ -542,17 +540,7 @@ namespace Test
 
             try
             {
-                number9 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number9.txt", encoding);//место где лежит список заданий
-            }
-            catch (Exception message)
-            {
-                MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            try
-            {
-
-                number10 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number10.txt", encoding);//место где лежит список заданий
+                number9 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number9.txt", encoding);
             }
             catch (Exception message)
             {
@@ -562,7 +550,7 @@ namespace Test
             try
             {
 
-                number11 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number11.txt", encoding);//место где лежит список заданий
+                number10 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number10.txt", encoding);
             }
             catch (Exception message)
             {
@@ -572,7 +560,7 @@ namespace Test
             try
             {
 
-                number12 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number12.txt", encoding);//место где лежит список заданий
+                number11 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number11.txt", encoding);
             }
             catch (Exception message)
             {
@@ -582,7 +570,7 @@ namespace Test
             try
             {
 
-                number13 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number13.txt", encoding);//место где лежит список заданий
+                number12 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number12.txt", encoding);
             }
             catch (Exception message)
             {
@@ -592,7 +580,7 @@ namespace Test
             try
             {
 
-                number14 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number14.txt", encoding);//место где лежит список заданий
+                number13 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number13.txt", encoding);
             }
             catch (Exception message)
             {
@@ -602,7 +590,7 @@ namespace Test
             try
             {
 
-                number15 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number15.txt", encoding);//место где лежит список заданий
+                number14 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number14.txt", encoding);
             }
             catch (Exception message)
             {
@@ -612,7 +600,7 @@ namespace Test
             try
             {
 
-                number16 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number16.txt", encoding);//место где лежит список заданий
+                number15 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number15.txt", encoding);
             }
             catch (Exception message)
             {
@@ -622,7 +610,7 @@ namespace Test
             try
             {
 
-                number17 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number17.txt", encoding);//место где лежит список заданий
+                number16 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number16.txt", encoding);
             }
             catch (Exception message)
             {
@@ -632,7 +620,17 @@ namespace Test
             try
             {
 
-                number18 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number18.txt", encoding);//место где лежит список заданий
+                number17 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number17.txt", encoding);
+            }
+            catch (Exception message)
+            {
+                MessageBox.Show(message.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            try
+            {
+
+                number18 = new StreamReader(Directory.GetCurrentDirectory() + @"\Tusk\Number18.txt", encoding);
             }
             catch (Exception message)
             {
@@ -641,12 +639,6 @@ namespace Test
 
             ReadNextQuestion();
         }
-
-
-        /*
-         Микро фикс который можно сделать-чтобы к конце каждого вопроса в каждом задании не ставить
-         ограничительный знак как этого требуют строки ниже
-         */
 
         //функция позволяющая выбрать след вопрос
         void ReadNextQuestion()
@@ -724,8 +716,8 @@ namespace Test
             string Path1 = WritePath1.Text;
             string Path2 = WritePath2.Text;
 
-            string writePath1 = @"" + Path1;//создание файла по пути написанному пользователем в WritePath
-            string writePath2 = @"" + Path2;//создание файла по пути написанному пользователем в WritePath
+            string writePath1 = @"" + Path1;//путь выбранный пользователем для записи в файл теста
+            string writePath2 = @"" + Path2;//путь выбранный пользователем для записи в файл ответов на тест
 
             StreamWriter sw = new StreamWriter(writePath1, false, System.Text.Encoding.Default);
             StreamWriter ws = new StreamWriter(writePath2, false, System.Text.Encoding.Default);
@@ -752,27 +744,15 @@ namespace Test
                     string[] Answer8 = EG.TestGeneric8();
                     string[] Answer9 = EG.TestGeneric9();
                     string[] Answer10 = EG.TestGeneric10();
+                    string[,] Answer11 = EG.TestGeneric11();
                     string[] Answer15 = EG.TestGeneric15();
                     string[] Answer16 = EG.TestGeneric16();
                     string[] Answer17 = EG.TestGeneric17();
-
+                    string[,] Answer18 = EG.TableGeneric18();
 
                     string result1_1 = Answer1[3];
                     string result1_2 = Answer1[4];
                     string result1_3 = Answer1[5];
-                    string result2 = Answer2[4];
-                    string result3 = Answer3[2];
-                    string result4 = Answer4[3];
-                    string result5 = Answer5[3];
-                    string result6 = Answer6[3];
-                    string result7 = Answer7[2];
-                    string result8 = Answer8[2];
-                    string result9 = Answer9[2];
-                    string result10 = Answer10[3];
-                    string result15 = Answer15[3];
-                    string result16 = Answer16[4];
-                    string result17 = Answer17[4];
-
 
                     StartTest();
                     sw.Write(labeln.Text + "\n");
@@ -803,203 +783,231 @@ namespace Test
                     string k = Answer1[1];
                     string m = Answer1[2];
 
-                    string text1 = label1.Text;
-                    text1 = text1.Replace("n", n);
-                    text1 = text1.Replace("k", k);
-                    text1 = text1.Replace("m", m);
-                    label1.Text = text1;
+                    string text = label1.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    label1.Text = text;
 
                     sw.Write("1)" + label1.Text + "\n" + "\n");
                     ws.Write("1)" + "Ответ:" + "a)" + result1_1 + "\t" + "b)" + result1_2 + "\t" + "c)" + result1_3 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
                     //2
+                    string result = Answer2[4];
                     n = Answer2[0];
                     k = Answer2[1];
                     m = Answer2[2];
                     string l = Answer2[3];
 
-                    string text2 = label2.Text;
-                    text2 = text2.Replace("n", n);
-                    text2 = text2.Replace("k", k);
-                    text2 = text2.Replace("m", m);
-                    text2 = text2.Replace("l", l);
-                    label2.Text = text2;
+                    text = label2.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    text = text.Replace("l", l);
+                    label2.Text = text;
 
                     sw.Write("2)" + label2.Text + "\n" + "\n");
-                    ws.Write("2)" + "Ответ:" + result2 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
-                    l = "";
+                    ws.Write("2)" + "Ответ:" + result + "\n");
                     //3
+                    result = Answer3[2];
                     n = Answer3[0];
                     k = Answer3[1];
 
-                    string text3 = label3.Text;
-                    text3 = text3.Replace("n", n);
-                    text3 = text3.Replace("k", k);
-                    label3.Text = text3;
+                    text = label3.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    label3.Text = text;
 
                     sw.Write("3)" + label3.Text + "\n" + "\n");
-                    ws.Write("3)" + "Ответ:" + result3 + "\n");
-                    n = "";
-                    k = "";
+                    ws.Write("3)" + "Ответ:" + result + "\n");
                     //4
+                    result = Answer4[3];
                     n = Answer4[0];
                     k = Answer4[1];
                     m = Answer4[2];
 
-                    string text4 = label4.Text;
-                    text4 = text4.Replace("n", n);
-                    text4 = text4.Replace("k", k);
-                    text4 = text4.Replace("m", m);
-                    label4.Text = text4;
+                    text = label4.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    label4.Text = text;
 
                     sw.Write("4)" + label4.Text + "\n" + "\n");
-                    ws.Write("4)" + "Ответ:" + result4 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
+                    ws.Write("4)" + "Ответ:" + result + "\n");
                     //5
+                    result = Answer5[3];
                     n = Answer5[0];
                     k = Answer5[1];
                     m = Answer5[2];
 
-                    string text5 = label5.Text;
-                    text5 = text5.Replace("n", n);
-                    text5 = text5.Replace("k", k);
-                    text5 = text5.Replace("m", m);
-                    label5.Text = text5;
+                    text = label5.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    label5.Text = text;
 
                     sw.Write("5)" + label5.Text + "\n" + "\n");
-                    ws.Write("5)" + "Ответ:" + result5 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
+                    ws.Write("5)" + "Ответ:" + result + "\n");
                     //6
+                    result = Answer6[3];
                     string p1 = Answer6[0];
                     string p2 = Answer6[1];
                     string p3 = Answer6[2];
 
-                    string text6 = label6.Text;
-                    text6 = text6.Replace("p1", p1);
-                    text6 = text6.Replace("p2", p2);
-                    text6 = text6.Replace("p3", p3);
-                    label6.Text = text6;
+                    text = label6.Text;
+                    text = text.Replace("p1", p1);
+                    text = text.Replace("p2", p2);
+                    text = text.Replace("p3", p3);
+                    label6.Text = text;
 
                     sw.Write("6)" + label6.Text + "\n" + "\n");
-                    ws.Write("6)" + "Ответ:" + result6 + "\n");
-                    p1 = "";
-                    p2 = "";
-                    p3 = "";
+                    ws.Write("6)" + "Ответ:" + result + "\n");
                     //7
+                    result = Answer7[2];
                     p1 = Answer7[0];
                     p2 = Answer7[1];
 
-                    string text7 = label7.Text;
-                    text7 = text7.Replace("p1", p1);
-                    text7 = text7.Replace("p2", p2);
-                    label7.Text = text7;
+                    text = label7.Text;
+                    text = text.Replace("p1", p1);
+                    text = text.Replace("p2", p2);
+                    label7.Text = text;
 
                     sw.Write("7)" + label7.Text + "\n" + "\n");
-                    ws.Write("7)" + "Ответ:" + result7 + "\n");
-                    p1 = "";
-                    p2 = "";
+                    ws.Write("7)" + "Ответ:" + result + "\n");
                     //8
+                    result = Answer8[2];
                     string h1 = Answer8[0];
                     string h2 = Answer8[1];
 
-                    string text8 = label8.Text;
-                    text8 = text8.Replace("h1", h1);
-                    text8 = text8.Replace("h2", h2);
-                    label8.Text = text8;
+                    text = label8.Text;
+                    text = text.Replace("h1", h1);
+                    text = text.Replace("h2", h2);
+                    label8.Text = text;
 
                     sw.Write("8)" + label8.Text + "\n" + "\n");
-                    ws.Write("8)" + "Ответ:" + result8 + "\n");
+                    ws.Write("8)" + "Ответ:" + result + "\n");
                     //9
+                    result = Answer9[2];
                     string b1 = Answer9[0];
                     string b2 = Answer9[1];
 
-                    string text9 = label9.Text;
-                    text9 = text9.Replace("b1", b1);
-                    text9 = text9.Replace("b2", b2);
-                    label9.Text = text9;
+                    text = label9.Text;
+                    text = text.Replace("b1", b1);
+                    text = text.Replace("b2", b2);
+                    label9.Text = text;
 
                     sw.Write("9)" + label9.Text + "\n" + "\n");
-                    ws.Write("9)" + "Ответ:" + result9 + "\n");
+                    ws.Write("9)" + "Ответ:" + result + "\n");
                     //10
+                    result = Answer10[3];
                     n = Answer10[0];
                     k = Answer10[1];
                     string p = Answer10[2];
 
-                    string text10 = label10.Text;
-                    text10 = text10.Replace("n", n);
-                    text10 = text10.Replace("k", k);
-                    text10 = text10.Replace("p", p);
-                    label10.Text = text10;
+                    text = label10.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("p", p);
+                    label10.Text = text;
 
                     sw.Write("10)" + label10.Text + "\n" + "\n");
-                    ws.Write("10)" + "Ответ:" + result10 + "\n");
+                    ws.Write("10)" + "Ответ:" + result + "\n");
                     //11
-                    sw.Write("11) " + label11.Text + "\n" + "\n");
+                    int pipu = Answer11.Length;
+
+                    if (pipu == 8)
+                    {
+                        richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
+                            "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3];
+                        richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3];
+                    }
+                    if (pipu == 10)
+                    {
+                        richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                        richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                    }
+                    if (pipu == 12)
+                    {
+                        richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                        richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                    }
+                    sw.Write("11)" + label11.Text + "\n");
+                    sw.Write(richTextBox1.Text + "\n");
+                    sw.Write("Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения." + "\n");
+                    ws.Write("11)" + "Ответ:" + "\n"+richTextBox2.Text+"\n");
+                    //12
+                    string[] Result = EG.TestGeneric12(Answer11);
+
+                    richTextBox2.Text += "\n\n M(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
                     sw.Write("12) " + label12.Text + "\n" + "\n");
+                    ws.Write("12)" + "Ответ:" + "\n" + richTextBox2.Text + "\n");
+                    //13
                     sw.Write("13) " + label13.Text + "\n" + "\n");
+                    //14
                     sw.Write("14) " + label14.Text + "\n" + "\n");
                     //15
+                    result = Answer15[3];
                     n = Answer15[0];
                     k = Answer15[1];
                     p = Answer15[2];
 
-                    string text15 = label15.Text;
-                    text15 = text15.Replace("n", n);
-                    text15 = text15.Replace("k", k);
-                    text15 = text15.Replace("p", p);
-                    label15.Text = text15;
+                    text = label15.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("p", p);
+                    label15.Text = text;
 
                     sw.Write("15)" + label15.Text + "\n" + "\n");
-                    ws.Write("15)" + "Ответ:" + result15 + "\n");
+                    ws.Write("15)" + "Ответ:" + result + "\n");
                     //16
                     string a = Answer16[0];
                     string sig = Answer16[1];
                     string x1 = Answer16[2];
                     string x2 = Answer16[3];
+                    result = Answer16[4];
 
-                    string text16 = label16.Text;
-                    text16 = text16.Replace("z", a);
-                    text16 = text16.Replace("b", sig);
-                    text16 = text16.Replace("x1", x1);
-                    text16 = text16.Replace("x2", x2);
-                    label16.Text = text16;
+                    text = label16.Text;
+                    text = text.Replace("z", a);
+                    text = text.Replace("b", sig);
+                    text = text.Replace("x1", x1);
+                    text = text.Replace("x2", x2);
+                    label16.Text = text;
 
                     sw.Write("16) " + label16.Text + "\n" + "\n");
-                    ws.Write("16)" + "Ответ:" + result16 + "\n");
+                    ws.Write("16)" + "Ответ:" + result + "\n");
                     //17
                     a = Answer17[0];
                     sig = Answer17[1];
                     x1 = Answer17[2];
                     x2 = Answer17[3];
+                    result = Answer17[4];
 
-                    string text17 = label17.Text;
-                    text17 = text17.Replace("z", a);
-                    text17 = text17.Replace("b", sig);
-                    text17 = text17.Replace("x1", x1);
-                    text17 = text17.Replace("x2", x2);
-                    label17.Text = text17;
+                    text = label17.Text;
+                    text = text.Replace("z", a);
+                    text = text.Replace("b", sig);
+                    text = text.Replace("x1", x1);
+                    text = text.Replace("x2", x2);
+                    label17.Text = text;
 
                     sw.Write("17) " + label17.Text + "\n" + "\n");
-                    ws.Write("17)" + "Ответ:" + result17 + "\n");
+                    ws.Write("17)" + "Ответ:" + result + "\n");
                     //18
-                    sw.Write("18) " + label18.Text + "\n" + "\n");
+                    richTextBox1.Text = Answer18[0, 0] + " " + Answer18[0, 1] + " " + Answer18[0, 2] + " " + Answer18[0, 3] +
+                "\n" + Answer18[1, 0] + " " + Answer18[1, 1] + " " + Answer18[1, 2] + " " + Answer18[1, 3] +
+                "\n" + Answer18[2, 0] + " " + Answer18[2, 1] + " " + Answer18[2, 2] + " " + Answer18[2, 3] + "\n";
+                    sw.Write("18) " + label18.Text + "\n");
+                    sw.Write(richTextBox1.Text);
+                    sw.Write("Найдите M(E),M(n),M(E,n),D(E),D(n),D(E,n)." + "\n");
+                    Result = EG.AnswerGeneric18(Answer18);
+                    richTextBox2.Text = "18)" + "Ответ:" + "\n M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n";
+                    ws.Write(richTextBox2.Text);
                     number_of_options++;
                 }
             }
-
-            /*
-            знаю,реализовать RadioBox через CheckBox чистый мазахизм
-            но в таком случае-я мазахист
-            */
 
             //1-10
             if (checkBox2.Checked == true)
@@ -1019,18 +1027,10 @@ namespace Test
                     string[] Answer9 = EG.TestGeneric9();
                     string[] Answer10 = EG.TestGeneric10();
 
+
                     string result1_1 = Answer1[3];
                     string result1_2 = Answer1[4];
                     string result1_3 = Answer1[5];
-                    string result2 = Answer2[4];
-                    string result3 = Answer3[2];
-                    string result4 = Answer4[3];
-                    string result5 = Answer5[3];
-                    string result6 = Answer6[3];
-                    string result7 = Answer7[2];
-                    string result8 = Answer8[2];
-                    string result9 = Answer9[2];
-                    string result10 = Answer10[3];
 
                     StartTest();
                     sw.Write(labeln.Text + "\n");
@@ -1046,14 +1046,6 @@ namespace Test
                     MixQuestion8();
                     MixQuestion9();
                     MixQuestion10();
-                    MixQuestion11();
-                    MixQuestion12();
-                    MixQuestion13();
-                    MixQuestion14();
-                    MixQuestion15();
-                    MixQuestion16();
-                    MixQuestion17();
-                    MixQuestion18();
                     MixName();
 
                     //1
@@ -1061,145 +1053,134 @@ namespace Test
                     string k = Answer1[1];
                     string m = Answer1[2];
 
-                    string text1 = label1.Text;
-                    text1 = text1.Replace("n", n);
-                    text1 = text1.Replace("k", k);
-                    text1 = text1.Replace("m", m);
-                    label1.Text = text1;
+                    string text = label1.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    label1.Text = text;
 
                     sw.Write("1)" + label1.Text + "\n" + "\n");
                     ws.Write("1)" + "Ответ:" + "a)" + result1_1 + "\t" + "b)" + result1_2 + "\t" + "c)" + result1_3 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
                     //2
+                    string result = Answer2[4];
                     n = Answer2[0];
                     k = Answer2[1];
                     m = Answer2[2];
                     string l = Answer2[3];
 
-                    string text2 = label2.Text;
-                    text2 = text2.Replace("n", n);
-                    text2 = text2.Replace("k", k);
-                    text2 = text2.Replace("m", m);
-                    text2 = text2.Replace("l", l);
-                    label2.Text = text2;
+                    text = label2.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    text = text.Replace("l", l);
+                    label2.Text = text;
 
                     sw.Write("2)" + label2.Text + "\n" + "\n");
-                    ws.Write("2)" + "Ответ:" + result2 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
-                    l = "";
+                    ws.Write("2)" + "Ответ:" + result + "\n");
                     //3
+                    result = Answer3[2];
                     n = Answer3[0];
                     k = Answer3[1];
 
-                    string text3 = label3.Text;
-                    text3 = text3.Replace("n", n);
-                    text3 = text3.Replace("k", k);
-                    label3.Text = text3;
+                    text = label3.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    label3.Text = text;
 
                     sw.Write("3)" + label3.Text + "\n" + "\n");
-                    ws.Write("3)" + "Ответ:" + result3 + "\n");
-                    n = "";
-                    k = "";
+                    ws.Write("3)" + "Ответ:" + result + "\n");
                     //4
+                    result = Answer4[3];
                     n = Answer4[0];
                     k = Answer4[1];
                     m = Answer4[2];
 
-                    string text4 = label4.Text;
-                    text4 = text4.Replace("n", n);
-                    text4 = text4.Replace("k", k);
-                    text4 = text4.Replace("m", m);
-                    label4.Text = text4;
+                    text = label4.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    label4.Text = text;
 
                     sw.Write("4)" + label4.Text + "\n" + "\n");
-                    ws.Write("4)" + "Ответ:" + result4 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
+                    ws.Write("4)" + "Ответ:" + result + "\n");
                     //5
+                    result = Answer5[3];
                     n = Answer5[0];
                     k = Answer5[1];
                     m = Answer5[2];
 
-                    string text5 = label5.Text;
-                    text5 = text5.Replace("n", n);
-                    text5 = text5.Replace("k", k);
-                    text5 = text5.Replace("m", m);
-                    label5.Text = text5;
+                    text = label5.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("m", m);
+                    label5.Text = text;
 
                     sw.Write("5)" + label5.Text + "\n" + "\n");
-                    ws.Write("5)" + "Ответ:" + result5 + "\n");
-                    n = "";
-                    k = "";
-                    m = "";
+                    ws.Write("5)" + "Ответ:" + result + "\n");
                     //6
+                    result = Answer6[3];
                     string p1 = Answer6[0];
                     string p2 = Answer6[1];
                     string p3 = Answer6[2];
 
-                    string text6 = label6.Text;
-                    text6 = text6.Replace("p1", p1);
-                    text6 = text6.Replace("p2", p2);
-                    text6 = text6.Replace("p3", p3);
-                    label6.Text = text6;
+                    text = label6.Text;
+                    text = text.Replace("p1", p1);
+                    text = text.Replace("p2", p2);
+                    text = text.Replace("p3", p3);
+                    label6.Text = text;
 
                     sw.Write("6)" + label6.Text + "\n" + "\n");
-                    ws.Write("6)" + "Ответ:" + result6 + "\n");
-                    p1 = "";
-                    p2 = "";
-                    p3 = "";
+                    ws.Write("6)" + "Ответ:" + result + "\n");
                     //7
+                    result = Answer7[2];
                     p1 = Answer7[0];
                     p2 = Answer7[1];
 
-                    string text7 = label7.Text;
-                    text7 = text7.Replace("p1", p1);
-                    text7 = text7.Replace("p2", p2);
-                    label7.Text = text7;
+                    text = label7.Text;
+                    text = text.Replace("p1", p1);
+                    text = text.Replace("p2", p2);
+                    label7.Text = text;
 
                     sw.Write("7)" + label7.Text + "\n" + "\n");
-                    ws.Write("7)" + "Ответ:" + result7 + "\n");
-                    p1 = "";
-                    p2 = "";
+                    ws.Write("7)" + "Ответ:" + result + "\n");
                     //8
+                    result = Answer8[2];
                     string h1 = Answer8[0];
                     string h2 = Answer8[1];
 
-                    string text8 = label8.Text;
-                    text8 = text8.Replace("h1", h1);
-                    text8 = text8.Replace("h2", h2);
-                    label8.Text = text8;
+                    text = label8.Text;
+                    text = text.Replace("h1", h1);
+                    text = text.Replace("h2", h2);
+                    label8.Text = text;
 
                     sw.Write("8)" + label8.Text + "\n" + "\n");
-                    ws.Write("8)" + "Ответ:" + result8 + "\n");
+                    ws.Write("8)" + "Ответ:" + result + "\n");
                     //9
+                    result = Answer9[2];
                     string b1 = Answer9[0];
                     string b2 = Answer9[1];
 
-                    string text9 = label9.Text;
-                    text9 = text9.Replace("b1", b1);
-                    text9 = text9.Replace("b2", b2);
-                    label9.Text = text9;
+                    text = label9.Text;
+                    text = text.Replace("b1", b1);
+                    text = text.Replace("b2", b2);
+                    label9.Text = text;
 
                     sw.Write("9)" + label9.Text + "\n" + "\n");
-                    ws.Write("9)" + "Ответ:" + result9 + "\n");
+                    ws.Write("9)" + "Ответ:" + result + "\n");
                     //10
+                    result = Answer10[3];
                     n = Answer10[0];
                     k = Answer10[1];
                     string p = Answer10[2];
 
-                    string text10 = label10.Text;
-                    text10 = text10.Replace("n", n);
-                    text10 = text10.Replace("k", k);
-                    text10 = text10.Replace("p", p);
-                    label10.Text = text10;
+                    text = label10.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("p", p);
+                    label10.Text = text;
 
                     sw.Write("10)" + label10.Text + "\n" + "\n");
-                    ws.Write("10)" + "Ответ:" + result10 + "\n");
+                    ws.Write("10)" + "Ответ:" + result + "\n");
                     number_of_options++;
                 }
             }
@@ -1209,9 +1190,18 @@ namespace Test
             {
                 for (int i = 0; i < number_of_human; i++)//записть нужного кол-ва вопросов в файл
                 {
+                    ExerciseGenerator EG = new ExerciseGenerator();
+
+                    string[,] Answer11 = EG.TestGeneric11();
+                    string[] Answer15 = EG.TestGeneric15();
+                    string[] Answer16 = EG.TestGeneric16();
+                    string[] Answer17 = EG.TestGeneric17();
+                    string[,] Answer18 = EG.TableGeneric18();
+
                     StartTest();
                     sw.Write(labeln.Text + "\n");
                     sw.Write("Вариант №" + number_of_options + "\n");
+                    ws.Write("Вариант №" + number_of_options + "\n");
                     MixQuestion11();
                     MixQuestion12();
                     MixQuestion13();
@@ -1222,21 +1212,103 @@ namespace Test
                     MixQuestion18();
                     MixName();
 
-                    //здесь я ХОЧУ изъябнуться и сделать так чтобы у каждого задания писалось
-                    // номер+) , но я пока не придумал как это грамотно сделать,поэтому пока ручками
+                    //11
+                    int pipu = Answer11.Length;
 
-                    sw.Write("11) " + label11.Text + "\n" + "\n");
+                    if (pipu == 8)
+                    {
+                        richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
+                            "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3];
+                        richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3];
+                    }
+                    if (pipu == 10)
+                    {
+                        richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                        richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4];
+                    }
+                    if (pipu == 12)
+                    {
+                        richTextBox1.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + "_" + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                        richTextBox2.Text = Answer11[0, 0] + "  " + Answer11[0, 1] + "  " + Answer11[0, 2] + "  " + Answer11[0, 3] + "  " + Answer11[0, 4] + "  " + Answer11[0, 5] +
+                           "\n " + Answer11[1, 0] + "  " + Answer11[1, 1] + "  " + Answer11[1, 2] + "  " + Answer11[1, 3] + "  " + Answer11[1, 4] + "  " + Answer11[1, 5];
+                    }
+                    sw.Write("11)" + label11.Text + "\n");
+                    sw.Write(richTextBox1.Text + "\n");
+                    sw.Write("Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения." + "\n");
+                    ws.Write("11)" + "Ответ:" + "\n" + richTextBox2.Text + "\n");
+                    //12
+                    string[] Result = EG.TestGeneric12(Answer11);
+
+                    richTextBox2.Text += "\n\n M(E) = " + Result[0] + "\nD(E) = " + Result[1] + "\nSig(E) = " + Result[2];
                     sw.Write("12) " + label12.Text + "\n" + "\n");
+                    ws.Write("12)" + "Ответ:" + "\n" + richTextBox2.Text + "\n");
+                    //13
                     sw.Write("13) " + label13.Text + "\n" + "\n");
+                    //14
                     sw.Write("14) " + label14.Text + "\n" + "\n");
-                    sw.Write("15) " + label15.Text + "\n" + "\n");
+                    //15
+                    string result = Answer15[3];
+                    string n = Answer15[0];
+                    string k = Answer15[1];
+                    string p = Answer15[2];
+
+                    string text = label15.Text;
+                    text = text.Replace("n", n);
+                    text = text.Replace("k", k);
+                    text = text.Replace("p", p);
+                    label15.Text = text;
+
+                    sw.Write("15)" + label15.Text + "\n" + "\n");
+                    ws.Write("15)" + "Ответ:" + result + "\n");
+                    //16
+                    string a = Answer16[0];
+                    string sig = Answer16[1];
+                    string x1 = Answer16[2];
+                    string x2 = Answer16[3];
+                    result = Answer16[4];
+
+                    text = label16.Text;
+                    text = text.Replace("z", a);
+                    text = text.Replace("b", sig);
+                    text = text.Replace("x1", x1);
+                    text = text.Replace("x2", x2);
+                    label16.Text = text;
+
                     sw.Write("16) " + label16.Text + "\n" + "\n");
+                    ws.Write("16)" + "Ответ:" + result + "\n");
+                    //17
+                    a = Answer17[0];
+                    sig = Answer17[1];
+                    x1 = Answer17[2];
+                    x2 = Answer17[3];
+                    result = Answer17[4];
+
+                    text = label17.Text;
+                    text = text.Replace("z", a);
+                    text = text.Replace("b", sig);
+                    text = text.Replace("x1", x1);
+                    text = text.Replace("x2", x2);
+                    label17.Text = text;
+
                     sw.Write("17) " + label17.Text + "\n" + "\n");
-                    sw.Write("18) " + label18.Text + "\n" + "\n");
+                    ws.Write("17)" + "Ответ:" + result + "\n");
+                    //18
+                    richTextBox1.Text = Answer18[0, 0] + " " + Answer18[0, 1] + " " + Answer18[0, 2] + " " + Answer18[0, 3] +
+                "\n" + Answer18[1, 0] + " " + Answer18[1, 1] + " " + Answer18[1, 2] + " " + Answer18[1, 3] +
+                "\n" + Answer18[2, 0] + " " + Answer18[2, 1] + " " + Answer18[2, 2] + " " + Answer18[2, 3] + "\n";
+                    sw.Write("18) " + label18.Text + "\n");
+                    sw.Write(richTextBox1.Text);
+                    sw.Write("Найдите M(E),M(n),M(E,n),D(E),D(n),D(E,n)." + "\n");
+                    Result = EG.AnswerGeneric18(Answer18);
+                    richTextBox2.Text = "18)" + "Ответ:" + "\n M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n";
+                    ws.Write(richTextBox2.Text);
                     number_of_options++;
                 }
             }
-
 
             sw.Close();
             ws.Close();
@@ -1274,6 +1346,9 @@ namespace Test
             label19.Visible = false;
             label20.Visible = false;
 
+            richTextBox1.Visible = false;
+            richTextBox2.Visible = false;
+
             checkBox1.Visible = false;
             checkBox2.Visible = false;
             checkBox3.Visible = false;
@@ -1284,15 +1359,11 @@ namespace Test
             WritePath2.Visible = false;
         }
 
-        //вроде как решил проблему с работой в вордовском формате
-
         /*
-         Поправка,формат одновременно вордовский и нет.Тип я юзнул страый вордовский формат(.doc)
-         ибо с новым форматом ворда(.docx) VS-ка работать автоматически не хочет,
-         а мне лень пока этим себе голову забивать
+         Формат одновременно вордовский и нет.Тип я юзнул страый вордовский формат(.doc)
+         ибо с новым форматом ворда(.docx) VS-ка работать автоматически не хочет.
          */
 
-        //если есть время-довести до идеала
         private void button_SaveFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();//создаём объект класса для работы с открытием файла
@@ -1318,13 +1389,30 @@ namespace Test
             button_SaveFileAnswer.Visible = true;
         }
 
-        /*короче,про создание файла из того же окна что и выбор инфы крайне мало,поэтому пришлось идти костылями
-        (или я просто дэбил и не могу вспомнить как создать файл,и закрыть его для чтения через File,если тот кто это читает смогёт это сделать
-        будет нереально круто,а пока вот так)
+        private void button_SaveFileAnswer_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();//создаём объект класса для работы с открытием файла
 
-        сами костыли в том что создавая файл,он автоматически выбирается главным(из-за косяка описанного выше),если пользователь создать один файл
-        а записать тест захочет в другой,он этого не сможет(на кнопку выбора данный косяк зеркально не работает)
-        */
+            openFileDialog.Filter = "Tests(*.doc)|*.doc|All files(*.*)|*.*";//фильтр,конструкция немного наркоманская,как работает доподлинно не знаю,но если надо сменить формат
+                                                                            //то просто замени .doc на то что надо
+
+            if (openFileDialog.ShowDialog() == DialogResult.Cancel)//тип если он не открылся по какой-то причине,то у нас проблемы
+            {
+                return;
+            }
+
+            string filename1 = openFileDialog.FileName;//получаем в строку имя файла с расширением(из-за это писать его в WritePath и в коде не нужно(я про расширение)
+            string filename2 = openFileDialog.SafeFileName;
+
+            WritePath2.Text = filename1;
+            textBox2.Text = filename2;
+
+            MessageBox.Show("Файл для ответов принят!!");
+            label20.Visible = true;
+            textBox2.Visible = true;
+            groupBox1.Visible = true;
+            button_GenerateTest.Visible = true;
+        }
 
         private void radioButton_All_CheckedChanged(object sender, EventArgs e)
         {
@@ -1365,29 +1453,5 @@ namespace Test
             }
         }
 
-        private void button_SaveFileAnswer_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();//создаём объект класса для работы с открытием файла
-
-            openFileDialog.Filter = "Tests(*.doc)|*.doc|All files(*.*)|*.*";//фильтр,конструкция немного норкоманская,как работает доподлинно не знаю,но если надо сменить формат
-                                                                            //то просто замени .doc на то что надо
-
-            if (openFileDialog.ShowDialog() == DialogResult.Cancel)//тип если он не открылся по какой-то причине,то у нас проблемы
-            {
-                return;
-            }
-
-            string filename1 = openFileDialog.FileName;//получаем в строку имя файла с расширением(из-за это писать его в WritePath и в коде не нужно(я про расширение)
-            string filename2 = openFileDialog.SafeFileName;
-
-            WritePath2.Text = filename1;
-            textBox2.Text = filename2;
-
-            MessageBox.Show("Файл для ответов принят!!");
-            label20.Visible = true;
-            textBox2.Visible = true;
-            groupBox1.Visible = true;
-            button_GenerateTest.Visible = true;
-        }
     }
 }

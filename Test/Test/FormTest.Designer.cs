@@ -64,6 +64,8 @@ namespace Test
             this.button_SaveFileAnswer = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,9 +97,9 @@ namespace Test
             // 
             // button_SaveFile
             // 
-            this.button_SaveFile.Location = new System.Drawing.Point(126, 12);
+            this.button_SaveFile.Location = new System.Drawing.Point(124, 14);
             this.button_SaveFile.Name = "button_SaveFile";
-            this.button_SaveFile.Size = new System.Drawing.Size(112, 38);
+            this.button_SaveFile.Size = new System.Drawing.Size(115, 38);
             this.button_SaveFile.TabIndex = 9;
             this.button_SaveFile.Text = "Выбрать файл для тестов";
             this.button_SaveFile.UseVisualStyleBackColor = true;
@@ -366,7 +368,7 @@ namespace Test
             // 
             // button_SaveFileAnswer
             // 
-            this.button_SaveFileAnswer.Location = new System.Drawing.Point(8, 12);
+            this.button_SaveFileAnswer.Location = new System.Drawing.Point(6, 14);
             this.button_SaveFileAnswer.Name = "button_SaveFileAnswer";
             this.button_SaveFileAnswer.Size = new System.Drawing.Size(112, 38);
             this.button_SaveFileAnswer.TabIndex = 45;
@@ -391,14 +393,33 @@ namespace Test
             this.textBox2.Size = new System.Drawing.Size(114, 20);
             this.textBox2.TabIndex = 46;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(165, 14);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(55, 36);
+            this.richTextBox1.TabIndex = 48;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(24, 14);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(55, 38);
+            this.richTextBox2.TabIndex = 49;
+            this.richTextBox2.Text = "";
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 249);
+            this.Controls.Add(this.button_SaveFileAnswer);
+            this.Controls.Add(this.button_SaveFile);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button_SaveFileAnswer);
             this.Controls.Add(this.button_GenerateTest);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -410,7 +431,6 @@ namespace Test
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button_SaveFile);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -474,6 +494,8 @@ namespace Test
         private System.Windows.Forms.Button button_SaveFileAnswer;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 
