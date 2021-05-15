@@ -16,7 +16,7 @@ namespace NullVersionOfTeorver
             ExerciseGenerator EG = new ExerciseGenerator();
             string[] Answer = EG.TestGeneric1();
 
-            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n ResultA = " + Answer[3] + "\n ResultB = " + Answer[4] + "\n ResultC = " + Answer[5];
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n p = " + Answer[1] + "\n k =" + Answer[2] + "\n m = " + Answer[3] + "\n ResultA = " + Answer[4] + "\n ResultB = " + Answer[5] + "\n ResultC = " + Answer[6];
         }
 
         private void button12_Click(object sender, EventArgs e)//2
@@ -24,7 +24,7 @@ namespace NullVersionOfTeorver
             ExerciseGenerator EG = new ExerciseGenerator();
             string[] Answer = EG.TestGeneric2();
 
-            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n k =" + Answer[1] + "\n m = " + Answer[2] + "\n l = " + Answer[3] + "\n Result = " + Answer[4];
+            RTBAnswer.Text = "Answer is \n n = " + Answer[0] + "\n p = " + Answer[1]+ "\n k =" + Answer[2] + "\n m = " + Answer[3] + "\n l = " + Answer[4] + "\n Result = " + Answer[5];
         }
 
         private void button11_Click(object sender, EventArgs e)//3
