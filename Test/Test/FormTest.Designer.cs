@@ -64,14 +64,13 @@ namespace Test
             this.button_SaveFileAnswer = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.labelV = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // WritePath1
             // 
-            this.WritePath1.Location = new System.Drawing.Point(120, 227);
+            this.WritePath1.Location = new System.Drawing.Point(112, 214);
             this.WritePath1.Name = "WritePath1";
             this.WritePath1.Size = new System.Drawing.Size(111, 20);
             this.WritePath1.TabIndex = 1;
@@ -97,9 +96,9 @@ namespace Test
             // 
             // button_SaveFile
             // 
-            this.button_SaveFile.Location = new System.Drawing.Point(124, 14);
+            this.button_SaveFile.Location = new System.Drawing.Point(126, 14);
             this.button_SaveFile.Name = "button_SaveFile";
-            this.button_SaveFile.Size = new System.Drawing.Size(115, 38);
+            this.button_SaveFile.Size = new System.Drawing.Size(109, 38);
             this.button_SaveFile.TabIndex = 9;
             this.button_SaveFile.Text = "Выбрать файл для тестов";
             this.button_SaveFile.UseVisualStyleBackColor = true;
@@ -108,9 +107,10 @@ namespace Test
             // labeln
             // 
             this.labeln.AutoSize = true;
-            this.labeln.Location = new System.Drawing.Point(12, 204);
+            this.labeln.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labeln.Location = new System.Drawing.Point(24, 214);
             this.labeln.Name = "labeln";
-            this.labeln.Size = new System.Drawing.Size(35, 13);
+            this.labeln.Size = new System.Drawing.Size(67, 24);
             this.labeln.TabIndex = 10;
             this.labeln.Text = "labeln";
             // 
@@ -301,7 +301,7 @@ namespace Test
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(127, 53);
+            this.label19.Location = new System.Drawing.Point(123, 55);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(112, 13);
             this.label19.TabIndex = 35;
@@ -319,14 +319,14 @@ namespace Test
             // 
             // WritePath2
             // 
-            this.WritePath2.Location = new System.Drawing.Point(6, 227);
+            this.WritePath2.Location = new System.Drawing.Point(15, 214);
             this.WritePath2.Name = "WritePath2";
             this.WritePath2.Size = new System.Drawing.Size(111, 20);
             this.WritePath2.TabIndex = 40;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(136, 210);
+            this.label7.Location = new System.Drawing.Point(92, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 41;
@@ -334,7 +334,7 @@ namespace Test
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(138, 194);
+            this.label8.Location = new System.Drawing.Point(20, 213);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 17);
             this.label8.TabIndex = 42;
@@ -342,7 +342,7 @@ namespace Test
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(32, 194);
+            this.label9.Location = new System.Drawing.Point(15, 223);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 17);
             this.label9.TabIndex = 43;
@@ -350,7 +350,7 @@ namespace Test
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(32, 213);
+            this.label10.Location = new System.Drawing.Point(15, 227);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 17);
             this.label10.TabIndex = 44;
@@ -358,7 +358,7 @@ namespace Test
             // 
             // button_GenerateTest
             // 
-            this.button_GenerateTest.Location = new System.Drawing.Point(2, 191);
+            this.button_GenerateTest.Location = new System.Drawing.Point(6, 186);
             this.button_GenerateTest.Name = "button_GenerateTest";
             this.button_GenerateTest.Size = new System.Drawing.Size(234, 58);
             this.button_GenerateTest.TabIndex = 5;
@@ -368,9 +368,9 @@ namespace Test
             // 
             // button_SaveFileAnswer
             // 
-            this.button_SaveFileAnswer.Location = new System.Drawing.Point(6, 14);
+            this.button_SaveFileAnswer.Location = new System.Drawing.Point(5, 14);
             this.button_SaveFileAnswer.Name = "button_SaveFileAnswer";
-            this.button_SaveFileAnswer.Size = new System.Drawing.Size(112, 38);
+            this.button_SaveFileAnswer.Size = new System.Drawing.Size(114, 38);
             this.button_SaveFileAnswer.TabIndex = 45;
             this.button_SaveFileAnswer.Text = "Выбрать файл для тестов с ответами";
             this.button_SaveFileAnswer.UseVisualStyleBackColor = true;
@@ -387,44 +387,37 @@ namespace Test
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(5, 71);
+            this.textBox2.Location = new System.Drawing.Point(6, 71);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(114, 20);
             this.textBox2.TabIndex = 46;
             // 
-            // richTextBox1
+            // labelV
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(165, 14);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(55, 36);
-            this.richTextBox1.TabIndex = 48;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(24, 14);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(55, 38);
-            this.richTextBox2.TabIndex = 49;
-            this.richTextBox2.Text = "";
+            this.labelV.AutoSize = true;
+            this.labelV.Location = new System.Drawing.Point(8, 230);
+            this.labelV.Name = "labelV";
+            this.labelV.Size = new System.Drawing.Size(41, 13);
+            this.labelV.TabIndex = 50;
+            this.labelV.Text = "label21";
+            this.labelV.Visible = false;
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 249);
+            this.ClientSize = new System.Drawing.Size(245, 248);
+            this.Controls.Add(this.button_GenerateTest);
             this.Controls.Add(this.button_SaveFileAnswer);
             this.Controls.Add(this.button_SaveFile);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button_GenerateTest);
+            this.Controls.Add(this.WritePath1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.WritePath2);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox1);
@@ -446,8 +439,8 @@ namespace Test
             this.Controls.Add(this.labeln);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.WritePath1);
             this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.labelV);
             this.Name = "FormTest";
             this.Text = "Генератор тестов";
             this.Load += new System.EventHandler(this.FormTest_Load);
@@ -494,8 +487,7 @@ namespace Test
         private System.Windows.Forms.Button button_SaveFileAnswer;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label labelV;
     }
 }
 

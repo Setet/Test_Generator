@@ -13,7 +13,7 @@ namespace Test
 
         /// <summary>
         /// Генератор задания №1. 
-        /// На выход поступает стринговый массив из 6 элементов: 1-n, 2-k, 3-m, 4-Результат для подзадачи "a", 5 - для "b", 6 - для "c"
+        /// На выход поступает стринговый массив из 7 элементов: 1-n, 2- p, 3-k, 4-m, 5-Результат для подзадачи "a", 6 - для "b", 7 - для "c"
         /// </summary>
         /// <returns></returns>
         public string[] TestGeneric1()
@@ -25,14 +25,14 @@ namespace Test
             double ResB = ExerciseAnswer.AnswerForExc1b(n, k, m);
             double ResC = ExerciseAnswer.AnswerForExc1c(n, k, m);
 
-            String[] Answer = new string[6]
-            { n.ToString(), k.ToString(), m.ToString(), Math.Round(ResA, 3).ToString(),Math.Round(ResB, 3).ToString(),Math.Round(ResC, 3).ToString() };
+            String[] Answer = new string[7]
+            { n.ToString(), (n-k).ToString(),k.ToString(), m.ToString(), Math.Round(ResA, 3).ToString(),Math.Round(ResB, 3).ToString(),Math.Round(ResC, 3).ToString() };
 
             return Answer;
         }
 
         /// <summary>
-        /// Генератор задания №2. На выход поступает стринговый массив из 5 элементов: 1-n, 2-k, 3-m, 4-l, 5-Результат
+        /// Генератор задания №2. На выход поступает стринговый массив из 5 элементов: 1-n, 2- p, 3-k, 4-m, 5-l, 6-Результат
         /// </summary>
         /// <returns></returns>
         public string[] TestGeneric2()
@@ -53,8 +53,8 @@ namespace Test
                 Res = ExerciseAnswer.AnswerForExc2(n, k, m, l);
             }
 
-            String[] Answer = new string[5]
-            { n.ToString(), k.ToString(), m.ToString(), l.ToString(), Math.Round(Res, 3).ToString() };
+            String[] Answer = new string[6]
+            { n.ToString(), (n-k).ToString() ,k.ToString(), m.ToString(), l.ToString(), Math.Round(Res, 3).ToString() };
 
             return Answer;
         }
@@ -343,7 +343,7 @@ namespace Test
             {
                 case (4):
                     {
-                        Answer = new string[2, 4] { { "0,1", "0,2", "0,3", "0,4" }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString() } };
+                        Answer = new string[2, 4] { { "0,1", "0,2", "0,3", "0,4", }, { P[0].ToString(), P[1].ToString(), P[2].ToString(), P[3].ToString() } };
                         return Answer;
                     }
                 case (5):
