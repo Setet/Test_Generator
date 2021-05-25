@@ -48,3 +48,6 @@ C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.csproj.GenerateResource.cache
 C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.exe
 C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.pdb
+C:\Users\user\Desktop\Test\Test\bin\Debug\Xceed.Document.NET.dll
+C:\Users\user\Desktop\Test\Test\bin\Debug\Xceed.Words.NET.dll
+C:\Users\user\Desktop\Test\Test\obj\Debug\Test.csproj.CopyComplete

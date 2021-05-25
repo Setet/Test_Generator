@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using Word = Microsoft.Office.Interop.Word;
+using Xceed.Words.NET;
+using Xceed.Document.NET;
 
 namespace Test
 {
@@ -710,28 +712,16 @@ namespace Test
             label18.Text = tmp18[index18++];
         }
 
-
         //та самая кнопка в которой происходит кривая костылявая,но магия
         private void button_GenerateTest_Click(object sender, EventArgs e)
         {
-
-            List<string> allCategories = new List<string>();
-
-            allCategories.Add("1");
-
-            //1
-            var application1 = new Word.Application();
-            Word.Document document1 = application1.Documents.Add();
-
-            //2
-            var application2 = new Word.Application();
-            Word.Document document2 = application2.Documents.Add();
-
-
             int number_of_options = 1;//счётчик для номера варианта
 
             string Path1 = WritePath1.Text;
             string Path2 = WritePath2.Text;
+
+            DocX Document1 = DocX.Create(@"" + Path1);//тест
+            DocX Document2 = DocX.Create(@"" + Path2);//ответы на него
 
             //считает кол-во людей по факту(заполняет var lines строками из Name,а потом считает кол-во строк)
             string dest = Directory.GetCurrentDirectory() + @"\Name.txt";
@@ -800,6 +790,7 @@ namespace Test
                     text = text.Replace("k", k);
                     text = text.Replace("m", m);
                     label1.Text = text;
+
                     //2
                     string result2 = Answer2[5];
                     n = Answer2[0];
@@ -815,6 +806,7 @@ namespace Test
                     text = text.Replace("m", m);
                     text = text.Replace("j", l);
                     label2.Text = text;
+
                     //3
                     string result3 = Answer3[2];
                     n = Answer3[0];
@@ -824,6 +816,7 @@ namespace Test
                     text = text.Replace("n", n);
                     text = text.Replace("k", k);
                     label3.Text = text;
+
                     //4
                     string result4 = Answer4[3];
                     n = Answer4[0];
@@ -835,6 +828,7 @@ namespace Test
                     text = text.Replace("k", k);
                     text = text.Replace("m", m);
                     label4.Text = text;
+
                     //5
                     string result5 = Answer5[3];
                     n = Answer5[0];
@@ -846,6 +840,7 @@ namespace Test
                     text = text.Replace("k", k);
                     text = text.Replace("m", m);
                     label5.Text = text;
+
                     //6
                     string result6 = Answer6[3];
                     string p1 = Answer6[0];
@@ -857,6 +852,7 @@ namespace Test
                     text = text.Replace("b", p2);
                     text = text.Replace("c", p3);
                     label6.Text = text;
+
                     //7
                     string result7 = Answer7[2];
                     p1 = Answer7[0];
@@ -866,6 +862,7 @@ namespace Test
                     text = text.Replace("a", p1);
                     text = text.Replace("b", p2);
                     label7.Text = text;
+
                     //8
                     string result8 = Answer8[2];
                     string h1 = Answer8[0];
@@ -875,6 +872,7 @@ namespace Test
                     text = text.Replace("m", h1);
                     text = text.Replace("n", h2);
                     label8.Text = text;
+
                     //9
                     string result9 = Answer9[2];
                     string b1 = Answer9[0];
@@ -884,6 +882,7 @@ namespace Test
                     text = text.Replace("m", b1);
                     text = text.Replace("n", b2);
                     label9.Text = text;
+
                     //10
                     string result10 = Answer10[3];
                     n = Answer10[0];
@@ -896,282 +895,188 @@ namespace Test
                     text = text.Replace("p", p);
                     label10.Text = text;
 
-                    Word.Paragraph obj1 = document1.Paragraphs.Add();
-                    Word.Range Test = obj1.Range;
+                    Document1.InsertParagraph("\n" + labeln.Text + "\n" + labelV.Text +
+                        "1)" + label1.Text + "\n\n" +
+                        "2) " + label2.Text + "\n\n" +
+                        "3) " + label3.Text + "\n\n" +
+                        "4) " + label4.Text + "\n\n" +
+                        "5) " + label5.Text + "\n\n" +
+                        "6) " + label6.Text + "\n\n" +
+                        "7) " + label7.Text + "\n\n" +
+                        "8) " + label8.Text + "\n\n" +
+                        "9) " + label9.Text + "\n\n" +
+                        "10) " + label10.Text + "\n\n" +
+                        "11) " + label11.Text).
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    Test.Text = labeln.Text + "\n" + labelV.Text +
-                        "1)" + label1.Text + "\n" +
-                        "2)" + label2.Text + "\n" +
-                        "3)" + label3.Text + "\n" +
-                        "4)" + label4.Text + "\n" +
-                        "5)" + label5.Text + "\n" +
-                        "6)" + label6.Text + "\n" +
-                        "7)" + label7.Text + "\n" +
-                        "8)" + label8.Text + "\n" +
-                        "9)" + label9.Text + "\n" +
-                        "10)" + label10.Text + "\n";
-
-                    Word.Paragraph obj2 = document2.Paragraphs.Add();
-                    Word.Range Answer = obj2.Range;
-                    Answer.Text = labelV.Text +
+                    Document2.InsertParagraph("\n" + labelV.Text +
                         "1) a)" + result1_1 + " b)" + result1_2 + " c)" + result1_3 + "\n" +
-                        "2)" + result2 + "\n" +
-                        "3)" + result3 + "\n" +
-                        "4)" + result4 + "\n" +
-                        "5)" + result5 + "\n" +
-                        "6)" + result6 + "\n" +
-                        "7)" + result7 + "\n" +
-                        "8)" + result8 + "\n" +
-                        "9)" + result9 + "\n" +
-                        "10)" + result10 + "\n";
+                        "2) " + result2 + "\n\n" +
+                        "3) " + result3 + "\n\n" +
+                        "4) " + result4 + "\n\n" +
+                        "5) " + result5 + "\n\n" +
+                        "6) " + result6 + "\n\n" +
+                        "7) " + result7 + "\n\n" +
+                        "8) " + result8 + "\n\n" +
+                        "9) " + result9 + "\n\n" +
+                        "10) " + result10 + "\n\n" +
+                        "11) ").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
                     int pipu = Answer11.Length;
 
-                    Word.Paragraph obj0 = document1.Paragraphs.Add();
-                    Word.Range Test1 = obj0.Range;
-                    Test1.Text = "11)" + label11.Text;
-
-                    Word.Paragraph obj9 = document2.Paragraphs.Add();
-                    Word.Range Test2 = obj9.Range;
-                    Test2.Text = "11)";
-
                     if (pipu == 8)
                     {
-                        Word.Paragraph userParagrapth1 = document1.Paragraphs.Add();
-                        Word.Range userRange1 = userParagrapth1.Range;
+                        Table table1 = Document1.AddTable(2, 5);
+                        // располагаем таблицу по центру
+                        table1.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table1.Design = TableDesign.TableGrid;
 
-                        Word.Paragraph tableParagraph1 = document1.Paragraphs.Add();
-                        Word.Range tableRange1 = tableParagraph1.Range;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
 
-                        Word.Table paymentsTable1 = document1.Tables.Add(tableRange1, allCategories.Count() + 1, 5);
-                        paymentsTable1.Borders.InsideLineStyle = paymentsTable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable1.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        table1.Rows[1].Cells[0].Paragraphs[0].Append("P(X)");
+                        table1.Rows[1].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table1.Rows[1].Cells[2].Paragraphs[0].Append("");
+                        table1.Rows[1].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table1.Rows[1].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
 
-                        Word.Range cellRange;
+                        Table table2 = Document2.AddTable(2, 5);
+                        // располагаем таблицу по центру
+                        table2.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table2.Design = TableDesign.TableGrid;
 
-                        cellRange = paymentsTable1.Cell(1, 1).Range;
-                        cellRange.Text = "X";
-                        cellRange = paymentsTable1.Cell(1, 2).Range;
-                        cellRange.Text = "0.1";
-                        cellRange = paymentsTable1.Cell(1, 3).Range;
-                        cellRange.Text = "0.2";
-                        cellRange = paymentsTable1.Cell(1, 4).Range;
-                        cellRange.Text = "0.3";
-                        cellRange = paymentsTable1.Cell(1, 5).Range;
-                        cellRange.Text = "0.4";
-                        cellRange = paymentsTable1.Cell(2, 1).Range;
-                        cellRange.Text = "P(X)";
-                        cellRange = paymentsTable1.Cell(2, 2).Range;
-                        cellRange.Text = Answer11[1, 0];
-                        cellRange = paymentsTable1.Cell(2, 3).Range;
-                        cellRange.Text = "";
-                        cellRange = paymentsTable1.Cell(2, 4).Range;
-                        cellRange.Text = Answer11[1, 2];
-                        cellRange = paymentsTable1.Cell(2, 5).Range;
-                        cellRange.Text = Answer11[1, 3];
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
 
-                        Word.Paragraph userParagrapth2 = document2.Paragraphs.Add();
-                        Word.Range userRange2 = userParagrapth2.Range;
+                        table2.Rows[1].Cells[0].Paragraphs[0].Append("P(X)");
+                        table2.Rows[1].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table2.Rows[1].Cells[2].Paragraphs[0].Append(Answer11[1, 1]);
+                        table2.Rows[1].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table2.Rows[1].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
 
-                        Word.Paragraph tableParagraph2 = document2.Paragraphs.Add();
-                        Word.Range tableRange2 = tableParagraph2.Range;
-
-                        Word.Table paymentsTable2 = document2.Tables.Add(tableRange2, allCategories.Count() + 1, 5);
-                        paymentsTable2.Borders.InsideLineStyle = paymentsTable2.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable2.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        Word.Range cellRange2;
-
-                        cellRange2 = paymentsTable2.Cell(1, 1).Range;
-                        cellRange2.Text = "X";
-                        cellRange2 = paymentsTable2.Cell(1, 2).Range;
-                        cellRange2.Text = "0.1";
-                        cellRange2 = paymentsTable2.Cell(1, 3).Range;
-                        cellRange2.Text = "0.2";
-                        cellRange2 = paymentsTable2.Cell(1, 4).Range;
-                        cellRange2.Text = "0.3";
-                        cellRange2 = paymentsTable2.Cell(1, 5).Range;
-                        cellRange2.Text = "0.4";
-                        cellRange2 = paymentsTable2.Cell(2, 1).Range;
-                        cellRange2.Text = "P(X)";
-                        cellRange2 = paymentsTable2.Cell(2, 2).Range;
-                        cellRange2.Text = Answer11[1, 0];
-                        cellRange2 = paymentsTable2.Cell(2, 3).Range;
-                        cellRange2.Text = Answer11[1, 1];
-                        cellRange2 = paymentsTable2.Cell(2, 4).Range;
-                        cellRange2.Text = Answer11[1, 2];
-                        cellRange2 = paymentsTable2.Cell(2, 5).Range;
-                        cellRange2.Text = Answer11[1, 3];
+                        Document1.InsertParagraph().InsertTableAfterSelf(table1);
+                        Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
+
                     if (pipu == 10)
                     {
-                        Word.Paragraph userParagrapth1 = document1.Paragraphs.Add();
-                        Word.Range userRange1 = userParagrapth1.Range;
+                        Table table1 = Document1.AddTable(2, 6);
+                        // располагаем таблицу по центру
+                        table1.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table1.Design = TableDesign.TableGrid;
 
-                        Word.Paragraph tableParagraph1 = document1.Paragraphs.Add();
-                        Word.Range tableRange1 = tableParagraph1.Range;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table1.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
 
-                        Word.Table paymentsTable1 = document1.Tables.Add(tableRange1, allCategories.Count() + 1, 6);
-                        paymentsTable1.Borders.InsideLineStyle = paymentsTable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable1.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        table1.Rows[1].Cells[0].Paragraphs[0].Append("P(X)");
+                        table1.Rows[1].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table1.Rows[1].Cells[2].Paragraphs[0].Append("");
+                        table1.Rows[1].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table1.Rows[1].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table1.Rows[1].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
 
-                        Word.Range cellRange;
+                        Table table2 = Document2.AddTable(2, 6);
+                        // располагаем таблицу по центру
+                        table2.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table2.Design = TableDesign.TableGrid;
 
-                        cellRange = paymentsTable1.Cell(1, 1).Range;
-                        cellRange.Text = "X";
-                        cellRange = paymentsTable1.Cell(1, 2).Range;
-                        cellRange.Text = "0.1";
-                        cellRange = paymentsTable1.Cell(1, 3).Range;
-                        cellRange.Text = "0.2";
-                        cellRange = paymentsTable1.Cell(1, 4).Range;
-                        cellRange.Text = "0.3";
-                        cellRange = paymentsTable1.Cell(1, 5).Range;
-                        cellRange.Text = "0.4";
-                        cellRange = paymentsTable1.Cell(1, 6).Range;
-                        cellRange.Text = "0.5";
-                        cellRange = paymentsTable1.Cell(2, 1).Range;
-                        cellRange.Text = "P(X)";
-                        cellRange = paymentsTable1.Cell(2, 2).Range;
-                        cellRange.Text = Answer11[1, 0];
-                        cellRange = paymentsTable1.Cell(2, 3).Range;
-                        cellRange.Text = "";
-                        cellRange = paymentsTable1.Cell(2, 4).Range;
-                        cellRange.Text = Answer11[1, 2];
-                        cellRange = paymentsTable1.Cell(2, 5).Range;
-                        cellRange.Text = Answer11[1, 3];
-                        cellRange = paymentsTable1.Cell(2, 6).Range;
-                        cellRange.Text = Answer11[1, 4];
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table2.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
 
-                        Word.Paragraph userParagrapth2 = document2.Paragraphs.Add();
-                        Word.Range userRange2 = userParagrapth2.Range;
+                        table2.Rows[1].Cells[0].Paragraphs[0].Append("P(X)");
+                        table2.Rows[1].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table2.Rows[1].Cells[2].Paragraphs[0].Append(Answer11[1, 1]);
+                        table2.Rows[1].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table2.Rows[1].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table2.Rows[1].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
 
-                        Word.Paragraph tableParagraph2 = document2.Paragraphs.Add();
-                        Word.Range tableRange2 = tableParagraph2.Range;
-
-                        Word.Table paymentsTable2 = document2.Tables.Add(tableRange2, allCategories.Count() + 1, 6);
-                        paymentsTable2.Borders.InsideLineStyle = paymentsTable2.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable2.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        Word.Range cellRange2;
-
-                        cellRange2 = paymentsTable2.Cell(1, 1).Range;
-                        cellRange2.Text = "X";
-                        cellRange2 = paymentsTable2.Cell(1, 2).Range;
-                        cellRange2.Text = "0.1";
-                        cellRange2 = paymentsTable2.Cell(1, 3).Range;
-                        cellRange2.Text = "0.2";
-                        cellRange2 = paymentsTable2.Cell(1, 4).Range;
-                        cellRange2.Text = "0.3";
-                        cellRange2 = paymentsTable2.Cell(1, 5).Range;
-                        cellRange2.Text = "0.4";
-                        cellRange2 = paymentsTable2.Cell(1, 6).Range;
-                        cellRange2.Text = "0.5";
-                        cellRange2 = paymentsTable2.Cell(2, 1).Range;
-                        cellRange2.Text = "P(X)";
-                        cellRange2 = paymentsTable2.Cell(2, 2).Range;
-                        cellRange2.Text = Answer11[1, 0];
-                        cellRange2 = paymentsTable2.Cell(2, 3).Range;
-                        cellRange2.Text = Answer11[1, 1];
-                        cellRange2 = paymentsTable2.Cell(2, 4).Range;
-                        cellRange2.Text = Answer11[1, 2];
-                        cellRange2 = paymentsTable2.Cell(2, 5).Range;
-                        cellRange2.Text = Answer11[1, 3];
-                        cellRange2 = paymentsTable2.Cell(2, 6).Range;
-                        cellRange2.Text = Answer11[1, 4];
+                        Document1.InsertParagraph().InsertTableAfterSelf(table1);
+                        Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
+
                     if (pipu == 12)
                     {
-                        Word.Paragraph userParagrapth1 = document1.Paragraphs.Add();
-                        Word.Range userRange1 = userParagrapth1.Range;
+                        Table table1 = Document1.AddTable(2, 7);
+                        // располагаем таблицу по центру
+                        table1.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table1.Design = TableDesign.TableGrid;
 
-                        Word.Paragraph tableParagraph1 = document1.Paragraphs.Add();
-                        Word.Range tableRange1 = tableParagraph1.Range;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table1.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
+                        table1.Rows[0].Cells[6].Paragraphs[0].Append("0.6");
 
-                        Word.Table paymentsTable1 = document1.Tables.Add(tableRange1, allCategories.Count() + 1, 7);
-                        paymentsTable1.Borders.InsideLineStyle = paymentsTable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable1.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        table1.Rows[1].Cells[0].Paragraphs[0].Append("P(X)");
+                        table1.Rows[1].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table1.Rows[1].Cells[2].Paragraphs[0].Append("");
+                        table1.Rows[1].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table1.Rows[1].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table1.Rows[1].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
+                        table1.Rows[1].Cells[6].Paragraphs[0].Append(Answer11[1, 5]);
 
-                        Word.Range cellRange;
+                        Table table2 = Document1.AddTable(2, 7);
+                        // располагаем таблицу по центру
+                        table2.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table2.Design = TableDesign.TableGrid;
 
-                        cellRange = paymentsTable1.Cell(1, 1).Range;
-                        cellRange.Text = "X";
-                        cellRange = paymentsTable1.Cell(1, 2).Range;
-                        cellRange.Text = "0.1";
-                        cellRange = paymentsTable1.Cell(1, 3).Range;
-                        cellRange.Text = "0.2";
-                        cellRange = paymentsTable1.Cell(1, 4).Range;
-                        cellRange.Text = "0.3";
-                        cellRange = paymentsTable1.Cell(1, 5).Range;
-                        cellRange.Text = "0.4";
-                        cellRange = paymentsTable1.Cell(1, 6).Range;
-                        cellRange.Text = "0.5";
-                        cellRange = paymentsTable1.Cell(1, 7).Range;
-                        cellRange.Text = "0.6";
-                        cellRange = paymentsTable1.Cell(2, 1).Range;
-                        cellRange.Text = "P(X)";
-                        cellRange = paymentsTable1.Cell(2, 2).Range;
-                        cellRange.Text = Answer11[1, 0];
-                        cellRange = paymentsTable1.Cell(2, 3).Range;
-                        cellRange.Text = "";
-                        cellRange = paymentsTable1.Cell(2, 4).Range;
-                        cellRange.Text = Answer11[1, 2];
-                        cellRange = paymentsTable1.Cell(2, 5).Range;
-                        cellRange.Text = Answer11[1, 3];
-                        cellRange = paymentsTable1.Cell(2, 6).Range;
-                        cellRange.Text = Answer11[1, 4];
-                        cellRange = paymentsTable1.Cell(2, 7).Range;
-                        cellRange.Text = Answer11[1, 5];
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table2.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
+                        table2.Rows[0].Cells[6].Paragraphs[0].Append("0.6");
 
-                        Word.Paragraph userParagrapth2 = document2.Paragraphs.Add();
-                        Word.Range userRange2 = userParagrapth2.Range;
+                        table2.Rows[1].Cells[0].Paragraphs[0].Append("P(X)");
+                        table2.Rows[1].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table2.Rows[1].Cells[2].Paragraphs[0].Append(Answer11[1, 1]);
+                        table2.Rows[1].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table2.Rows[1].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table2.Rows[1].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
+                        table2.Rows[1].Cells[6].Paragraphs[0].Append(Answer11[1, 5]);
 
-                        Word.Paragraph tableParagraph2 = document2.Paragraphs.Add();
-                        Word.Range tableRange2 = tableParagraph2.Range;
-
-                        Word.Table paymentsTable2 = document2.Tables.Add(tableRange2, allCategories.Count() + 1, 7);
-                        paymentsTable2.Borders.InsideLineStyle = paymentsTable2.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable2.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        Word.Range cellRange2;
-
-                        cellRange2 = paymentsTable2.Cell(1, 1).Range;
-                        cellRange2.Text = "X";
-                        cellRange2 = paymentsTable2.Cell(1, 2).Range;
-                        cellRange2.Text = "0.1";
-                        cellRange2 = paymentsTable2.Cell(1, 3).Range;
-                        cellRange2.Text = "0.2";
-                        cellRange2 = paymentsTable2.Cell(1, 4).Range;
-                        cellRange2.Text = "0.3";
-                        cellRange2 = paymentsTable2.Cell(1, 5).Range;
-                        cellRange2.Text = "0.4";
-                        cellRange2 = paymentsTable2.Cell(1, 6).Range;
-                        cellRange2.Text = "0.5";
-                        cellRange2 = paymentsTable2.Cell(1, 7).Range;
-                        cellRange2.Text = "0.6";
-                        cellRange2 = paymentsTable2.Cell(2, 1).Range;
-                        cellRange2.Text = "P(X)";
-                        cellRange2 = paymentsTable2.Cell(2, 2).Range;
-                        cellRange2.Text = Answer11[1, 0];
-                        cellRange2 = paymentsTable2.Cell(2, 3).Range;
-                        cellRange2.Text = Answer11[1, 1];
-                        cellRange2 = paymentsTable2.Cell(2, 4).Range;
-                        cellRange2.Text = Answer11[1, 2];
-                        cellRange2 = paymentsTable2.Cell(2, 5).Range;
-                        cellRange2.Text = Answer11[1, 3];
-                        cellRange2 = paymentsTable2.Cell(2, 6).Range;
-                        cellRange2.Text = Answer11[1, 4];
-                        cellRange2 = paymentsTable2.Cell(2, 7).Range;
-                        cellRange2.Text = Answer11[1, 5];
+                        Document1.InsertParagraph().InsertTableAfterSelf(table1);
+                        Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
 
-                    Test1.Text += "\n" + "Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения.";
+                    Document1.InsertParagraph("Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения.\n").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
                     //12
                     string[] Result = EG.TestGeneric12(Answer11);
-
-                    //13
-
-                    //14
 
                     //15
                     string result1 = Answer15[3];
@@ -1214,67 +1119,58 @@ namespace Test
                     label17.Text = text;
 
                     //18
-
                     Result = EG.AnswerGeneric18(Answer18);
 
-                    Word.Paragraph objN = document1.Paragraphs.Add();
-                    Word.Range TestN = objN.Range;
-                    TestN.Text = "12)" + label12.Text + "\n" +
-                        "13)" + label13.Text + "\n" + "Func = " + Answer13[0] + "\n" + "(" + Answer13[1] + " ; " + Answer13[2] + "]" + "\nP(Eps) = " + Answer13[8] + "\n" +
-                        "14)" + label14.Text + "\n" +
-                        "15)" + label15.Text + "\n" +
-                        "16)" + label16.Text + "\n" +
-                        "17)" + label17.Text + "\n" +
-                        "18)" + label18.Text + "\n";
+                    Document1.InsertParagraph("12)" + label12.Text + "\n\n" +
+                        "13) " + label13.Text + "\n" + "F(X) = " + Answer13[0] + "\tпри ∀x∈" + "(" + Answer13[1] + " ; " + Answer13[2] + "]" + "\nF(X) = 0\tпри ∀x∉ " + "(" + Answer13[1] + " ; " + Answer13[2] + "]" +
+                        "\nНайти функцию распределения F(X) и " + "P( " + Answer13[6] + " < Eps < " + Answer13[7] + ")" +
+                        "\n\n14) " + label14.Text + "\n\n" +
+                        "15) " + label15.Text + "\n\n" +
+                        "16) " + label16.Text + "\nНайти P(x1 < X < x2).\n\n" +
+                        "17) " + label17.Text + "\nНайти P(|X-x1| < x2).\n\n" +
+                        "18) " + label18.Text + "\nНайти M(x), M(y), M(xy), D(x), D(y), D(xy).").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    Word.Paragraph obj3 = document2.Paragraphs.Add();
-                    Word.Range Test3 = obj3.Range;
-                    Test3.Text = "12)" + "\nM(E) = " + Result[0] + "D(E) = " + Result[1] + "Sig(E) = " + Result[2] + "\n" +
-                        "13)" + "При x <= a это " + Answer13[3] + "\nПри a < x <= b это " + Answer13[4] + "\nПри b < x это " + Answer13[5] + "\n" +
-                        "14)" + "M(E) = " + Answer13[9] + "\nD(E) = " + Answer13[10] + "\nSig(E) = " + Answer13[11] + "\n" +
-                        "15)" + result1 + "\n" +
-                        "16)" + result2 + "\n" +
-                        "17)" + result3 + "\n" +
-                        "18)" + " M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n"; ;
+                    Document2.InsertParagraph("12)" + "\nM(E) = " + Result[0] + "D(E) = " + Result[1] + "Sig(E) = " + Result[2] + "\n" +
+                        "13) " + "При x <= a это " + Answer13[3] + "\nПри a < x <= b это " + Answer13[4] + "\nПри b < x это " + Answer13[5] + "\n" + "P(Eps) = " +
+                Answer13[8] +
+                        "\n14) " + "M(E) = " + Answer13[9] + "\nD(E) = " + Answer13[10] + "\nSig(E) = " + Answer13[11] + "\n" +
+                        "15) " + result1 + "\n" +
+                        "16) " + result2 + "\n" +
+                        "17) " + result3 + "\n" +
+                        "18) " + " M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    Word.Paragraph tableParagraphN = document1.Paragraphs.Add();
-                    Word.Range tableRangeN = tableParagraphN.Range;
+                    Table table3 = Document1.AddTable(3, 4);
+                    // располагаем таблицу по центру
+                    table3.Alignment = Alignment.center;
+                    // меняем стандартный дизайн таблицы
+                    table3.Design = TableDesign.TableGrid;
 
-                    Word.Table paymentsTableN = document1.Tables.Add(tableRangeN, allCategories.Count() + 2, 4);
-                    paymentsTableN.Borders.InsideLineStyle = paymentsTableN.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                    paymentsTableN.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                    table3.Rows[0].Cells[0].Paragraphs[0].Append("X/y");
+                    table3.Rows[0].Cells[1].Paragraphs[0].Append("-1");
+                    table3.Rows[0].Cells[2].Paragraphs[0].Append("0");
+                    table3.Rows[0].Cells[3].Paragraphs[0].Append("1");
 
-                    Word.Range cellRange1;
+                    table3.Rows[1].Cells[0].Paragraphs[0].Append("0");
+                    table3.Rows[1].Cells[1].Paragraphs[0].Append(Answer18[1, 1]);
+                    table3.Rows[1].Cells[2].Paragraphs[0].Append(Answer18[1, 2]);
+                    table3.Rows[1].Cells[3].Paragraphs[0].Append(Answer18[1, 3]);
 
-                    cellRange1 = paymentsTableN.Cell(1, 1).Range;
-                    cellRange1.Text = "E/n";
-                    cellRange1 = paymentsTableN.Cell(1, 2).Range;
-                    cellRange1.Text = "-1";
-                    cellRange1 = paymentsTableN.Cell(1, 3).Range;
-                    cellRange1.Text = "0";
-                    cellRange1 = paymentsTableN.Cell(1, 4).Range;
-                    cellRange1.Text = "1";
+                    table3.Rows[2].Cells[0].Paragraphs[0].Append("1");
+                    table3.Rows[2].Cells[1].Paragraphs[0].Append(Answer18[2, 1]);
+                    table3.Rows[2].Cells[2].Paragraphs[0].Append(Answer18[2, 2]);
+                    table3.Rows[2].Cells[3].Paragraphs[0].Append(Answer18[2, 3]);
 
-                    cellRange1 = paymentsTableN.Cell(2, 1).Range;
-                    cellRange1.Text = "0";
-                    cellRange1 = paymentsTableN.Cell(2, 2).Range;
-                    cellRange1.Text = Answer18[1, 1];
-                    cellRange1 = paymentsTableN.Cell(2, 3).Range;
-                    cellRange1.Text = Answer18[1, 2];
-                    cellRange1 = paymentsTableN.Cell(2, 4).Range;
-                    cellRange1.Text = Answer18[1, 3];
+                    Document1.InsertParagraph().InsertTableAfterSelf(table3);
+                    Document1.InsertSectionPageBreak();
 
-                    cellRange1 = paymentsTableN.Cell(3, 1).Range;
-                    cellRange1.Text = "1";
-                    cellRange1 = paymentsTableN.Cell(3, 2).Range;
-                    cellRange1.Text = Answer18[2, 1];
-                    cellRange1 = paymentsTableN.Cell(3, 3).Range;
-                    cellRange1.Text = Answer18[2, 2];
-                    cellRange1 = paymentsTableN.Cell(3, 4).Range;
-                    cellRange1.Text = Answer18[2, 3];
-
-                    document1.SaveAs2(@"" + Path1);
-                    document2.SaveAs2(@"" + Path2);
                     number_of_options++;
                 }
             }
@@ -1296,6 +1192,12 @@ namespace Test
                     string[] Answer8 = EG.TestGeneric8();
                     string[] Answer9 = EG.TestGeneric9();
                     string[] Answer10 = EG.TestGeneric10();
+                    string[,] Answer11 = EG.TestGeneric11();
+                    string[] Answer13 = EG.TestGeneric13_14();
+                    string[] Answer15 = EG.TestGeneric15();
+                    string[] Answer16 = EG.TestGeneric16();
+                    string[] Answer17 = EG.TestGeneric17();
+                    string[,] Answer18 = EG.TableGeneric18();
 
                     string result1_1 = Answer1[4];
                     string result1_2 = Answer1[5];
@@ -1313,6 +1215,14 @@ namespace Test
                     MixQuestion8();
                     MixQuestion9();
                     MixQuestion10();
+                    MixQuestion11();
+                    MixQuestion12();
+                    MixQuestion13();
+                    MixQuestion14();
+                    MixQuestion15();
+                    MixQuestion16();
+                    MixQuestion17();
+                    MixQuestion18();
                     MixName();
 
                     //1
@@ -1327,6 +1237,7 @@ namespace Test
                     text = text.Replace("k", k);
                     text = text.Replace("m", m);
                     label1.Text = text;
+
                     //2
                     string result2 = Answer2[5];
                     n = Answer2[0];
@@ -1342,6 +1253,7 @@ namespace Test
                     text = text.Replace("m", m);
                     text = text.Replace("j", l);
                     label2.Text = text;
+
                     //3
                     string result3 = Answer3[2];
                     n = Answer3[0];
@@ -1351,6 +1263,7 @@ namespace Test
                     text = text.Replace("n", n);
                     text = text.Replace("k", k);
                     label3.Text = text;
+
                     //4
                     string result4 = Answer4[3];
                     n = Answer4[0];
@@ -1362,6 +1275,7 @@ namespace Test
                     text = text.Replace("k", k);
                     text = text.Replace("m", m);
                     label4.Text = text;
+
                     //5
                     string result5 = Answer5[3];
                     n = Answer5[0];
@@ -1373,6 +1287,7 @@ namespace Test
                     text = text.Replace("k", k);
                     text = text.Replace("m", m);
                     label5.Text = text;
+
                     //6
                     string result6 = Answer6[3];
                     string p1 = Answer6[0];
@@ -1384,6 +1299,7 @@ namespace Test
                     text = text.Replace("b", p2);
                     text = text.Replace("c", p3);
                     label6.Text = text;
+
                     //7
                     string result7 = Answer7[2];
                     p1 = Answer7[0];
@@ -1393,6 +1309,7 @@ namespace Test
                     text = text.Replace("a", p1);
                     text = text.Replace("b", p2);
                     label7.Text = text;
+
                     //8
                     string result8 = Answer8[2];
                     string h1 = Answer8[0];
@@ -1402,6 +1319,7 @@ namespace Test
                     text = text.Replace("m", h1);
                     text = text.Replace("n", h2);
                     label8.Text = text;
+
                     //9
                     string result9 = Answer9[2];
                     string b1 = Answer9[0];
@@ -1411,6 +1329,7 @@ namespace Test
                     text = text.Replace("m", b1);
                     text = text.Replace("n", b2);
                     label9.Text = text;
+
                     //10
                     string result10 = Answer10[3];
                     n = Answer10[0];
@@ -1423,36 +1342,40 @@ namespace Test
                     text = text.Replace("p", p);
                     label10.Text = text;
 
-                    Word.Paragraph obj1 = document1.Paragraphs.Add();
-                    Word.Range Test = obj1.Range;
-                    Test.Text = labeln.Text + "\n" + labelV.Text +
-                        "1)" + label1.Text + "\n" +
-                        "2)" + label2.Text + "\n" +
-                        "3)" + label3.Text + "\n" +
-                        "4)" + label4.Text + "\n" +
-                        "5)" + label5.Text + "\n" +
-                        "6)" + label6.Text + "\n" +
-                        "7)" + label7.Text + "\n" +
-                        "8)" + label8.Text + "\n" +
-                        "9)" + label9.Text + "\n" +
-                        "10)" + label10.Text + "\n";
+                    Document1.InsertParagraph("\n" + labeln.Text + "\n" + labelV.Text +
+                        "1)" + label1.Text + "\n\n" +
+                        "2) " + label2.Text + "\n\n" +
+                        "3) " + label3.Text + "\n\n" +
+                        "4) " + label4.Text + "\n\n" +
+                        "5) " + label5.Text + "\n\n" +
+                        "6) " + label6.Text + "\n\n" +
+                        "7) " + label7.Text + "\n\n" +
+                        "8) " + label8.Text + "\n\n" +
+                        "9) " + label9.Text + "\n\n" +
+                        "10) " + label10.Text + "\n\n" +
+                        "11) " + label11.Text).
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    Word.Paragraph obj2 = document2.Paragraphs.Add();
-                    Word.Range Answer = obj2.Range;
-                    Answer.Text = labelV.Text +
+                    Document2.InsertParagraph("\n" + labelV.Text +
                         "1) a)" + result1_1 + " b)" + result1_2 + " c)" + result1_3 + "\n" +
-                        "2)" + result2 + "\n" +
-                        "3)" + result3 + "\n" +
-                        "4)" + result4 + "\n" +
-                        "5)" + result5 + "\n" +
-                        "6)" + result6 + "\n" +
-                        "7)" + result7 + "\n" +
-                        "8)" + result8 + "\n" +
-                        "9)" + result9 + "\n" +
-                        "10)" + result10 + "\n";
+                        "2) " + result2 + "\n\n" +
+                        "3) " + result3 + "\n\n" +
+                        "4) " + result4 + "\n\n" +
+                        "5) " + result5 + "\n\n" +
+                        "6) " + result6 + "\n\n" +
+                        "7) " + result7 + "\n\n" +
+                        "8) " + result8 + "\n\n" +
+                        "9) " + result9 + "\n\n" +
+                        "10) " + result10 + "\n\n" +
+                        "11) ").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    document1.SaveAs2(@"" + Path1);
-                    document2.SaveAs2(@"" + Path2);
                     number_of_options++;
                 }
             }
@@ -1486,255 +1409,152 @@ namespace Test
                     //11
                     int pipu = Answer11.Length;
 
-                    Word.Paragraph obj99 = document1.Paragraphs.Add();
-                    Word.Range Test99 = obj99.Range;
-                    Test99.Text = labeln.Text;
-
-                    Word.Paragraph obj1 = document1.Paragraphs.Add();
-                    Word.Range Test1 = obj1.Range;
-                    Test1.Text = "\n" + labelV.Text + "11)" + label11.Text;
-
-                    Word.Paragraph obj2 = document2.Paragraphs.Add();
-                    Word.Range Test2 = obj2.Range;
-                    Test2.Text = labelV.Text + "11)";
-
                     if (pipu == 8)
                     {
-                        Word.Paragraph userParagrapth1 = document1.Paragraphs.Add();
-                        Word.Range userRange1 = userParagrapth1.Range;
+                        Table table1 = Document1.AddTable(2, 5);
+                        // располагаем таблицу по центру
+                        table1.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table1.Design = TableDesign.TableGrid;
 
-                        Word.Paragraph tableParagraph1 = document1.Paragraphs.Add();
-                        Word.Range tableRange1 = tableParagraph1.Range;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
 
-                        Word.Table paymentsTable1 = document1.Tables.Add(tableRange1, allCategories.Count() + 1, 5);
-                        paymentsTable1.Borders.InsideLineStyle = paymentsTable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable1.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("P(X)");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
 
-                        Word.Range cellRange;
+                        Table table2 = Document2.AddTable(2, 5);
+                        // располагаем таблицу по центру
+                        table2.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table2.Design = TableDesign.TableGrid;
 
-                        cellRange = paymentsTable1.Cell(1, 1).Range;
-                        cellRange.Text = "X";
-                        cellRange = paymentsTable1.Cell(1, 2).Range;
-                        cellRange.Text = "0.1";
-                        cellRange = paymentsTable1.Cell(1, 3).Range;
-                        cellRange.Text = "0.2";
-                        cellRange = paymentsTable1.Cell(1, 4).Range;
-                        cellRange.Text = "0.3";
-                        cellRange = paymentsTable1.Cell(1, 5).Range;
-                        cellRange.Text = "0.4";
-                        cellRange = paymentsTable1.Cell(2, 1).Range;
-                        cellRange.Text = "P(X)";
-                        cellRange = paymentsTable1.Cell(2, 2).Range;
-                        cellRange.Text = Answer11[1, 0];
-                        cellRange = paymentsTable1.Cell(2, 3).Range;
-                        cellRange.Text = "";
-                        cellRange = paymentsTable1.Cell(2, 4).Range;
-                        cellRange.Text = Answer11[1, 2];
-                        cellRange = paymentsTable1.Cell(2, 5).Range;
-                        cellRange.Text = Answer11[1, 3];
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
 
-                        Word.Paragraph userParagrapth2 = document2.Paragraphs.Add();
-                        Word.Range userRange2 = userParagrapth2.Range;
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("P(X)");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append(Answer11[1, 1]);
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
 
-                        Word.Paragraph tableParagraph2 = document2.Paragraphs.Add();
-                        Word.Range tableRange2 = tableParagraph2.Range;
-
-                        Word.Table paymentsTable2 = document2.Tables.Add(tableRange2, allCategories.Count() + 1, 5);
-                        paymentsTable2.Borders.InsideLineStyle = paymentsTable2.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable2.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        Word.Range cellRange2;
-
-                        cellRange2 = paymentsTable2.Cell(1, 1).Range;
-                        cellRange2.Text = "X";
-                        cellRange2 = paymentsTable2.Cell(1, 2).Range;
-                        cellRange2.Text = "0.1";
-                        cellRange2 = paymentsTable2.Cell(1, 3).Range;
-                        cellRange2.Text = "0.2";
-                        cellRange2 = paymentsTable2.Cell(1, 4).Range;
-                        cellRange2.Text = "0.3";
-                        cellRange2 = paymentsTable2.Cell(1, 5).Range;
-                        cellRange2.Text = "0.4";
-                        cellRange2 = paymentsTable2.Cell(2, 1).Range;
-                        cellRange2.Text = "P(X)";
-                        cellRange2 = paymentsTable2.Cell(2, 2).Range;
-                        cellRange2.Text = Answer11[1, 0];
-                        cellRange2 = paymentsTable2.Cell(2, 3).Range;
-                        cellRange2.Text = Answer11[1, 1];
-                        cellRange2 = paymentsTable2.Cell(2, 4).Range;
-                        cellRange2.Text = Answer11[1, 2];
-                        cellRange2 = paymentsTable2.Cell(2, 5).Range;
-                        cellRange2.Text = Answer11[1, 3];
+                        Document1.InsertParagraph().InsertTableAfterSelf(table1);
+                        Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
+
                     if (pipu == 10)
                     {
-                        Word.Paragraph userParagrapth1 = document1.Paragraphs.Add();
-                        Word.Range userRange1 = userParagrapth1.Range;
+                        Table table1 = Document1.AddTable(2, 6);
+                        // располагаем таблицу по центру
+                        table1.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table1.Design = TableDesign.TableGrid;
 
-                        Word.Paragraph tableParagraph1 = document1.Paragraphs.Add();
-                        Word.Range tableRange1 = tableParagraph1.Range;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table1.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
 
-                        Word.Table paymentsTable1 = document1.Tables.Add(tableRange1, allCategories.Count() + 1, 6);
-                        paymentsTable1.Borders.InsideLineStyle = paymentsTable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable1.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("P(X)");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table1.Rows[0].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
 
-                        Word.Range cellRange;
+                        Table table2 = Document2.AddTable(2, 6);
+                        // располагаем таблицу по центру
+                        table2.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table2.Design = TableDesign.TableGrid;
 
-                        cellRange = paymentsTable1.Cell(1, 1).Range;
-                        cellRange.Text = "X";
-                        cellRange = paymentsTable1.Cell(1, 2).Range;
-                        cellRange.Text = "0.1";
-                        cellRange = paymentsTable1.Cell(1, 3).Range;
-                        cellRange.Text = "0.2";
-                        cellRange = paymentsTable1.Cell(1, 4).Range;
-                        cellRange.Text = "0.3";
-                        cellRange = paymentsTable1.Cell(1, 5).Range;
-                        cellRange.Text = "0.4";
-                        cellRange = paymentsTable1.Cell(1, 6).Range;
-                        cellRange.Text = "0.5";
-                        cellRange = paymentsTable1.Cell(2, 1).Range;
-                        cellRange.Text = "P(X)";
-                        cellRange = paymentsTable1.Cell(2, 2).Range;
-                        cellRange.Text = Answer11[1, 0];
-                        cellRange = paymentsTable1.Cell(2, 3).Range;
-                        cellRange.Text = "";
-                        cellRange = paymentsTable1.Cell(2, 4).Range;
-                        cellRange.Text = Answer11[1, 2];
-                        cellRange = paymentsTable1.Cell(2, 5).Range;
-                        cellRange.Text = Answer11[1, 3];
-                        cellRange = paymentsTable1.Cell(2, 6).Range;
-                        cellRange.Text = Answer11[1, 4];
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table2.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
 
-                        Word.Paragraph userParagrapth2 = document2.Paragraphs.Add();
-                        Word.Range userRange2 = userParagrapth2.Range;
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("P(X)");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append(Answer11[1, 1]);
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table2.Rows[0].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
 
-                        Word.Paragraph tableParagraph2 = document2.Paragraphs.Add();
-                        Word.Range tableRange2 = tableParagraph2.Range;
-
-                        Word.Table paymentsTable2 = document2.Tables.Add(tableRange2, allCategories.Count() + 1, 6);
-                        paymentsTable2.Borders.InsideLineStyle = paymentsTable2.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable2.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        Word.Range cellRange2;
-
-                        cellRange2 = paymentsTable2.Cell(1, 1).Range;
-                        cellRange2.Text = "X";
-                        cellRange2 = paymentsTable2.Cell(1, 2).Range;
-                        cellRange2.Text = "0.1";
-                        cellRange2 = paymentsTable2.Cell(1, 3).Range;
-                        cellRange2.Text = "0.2";
-                        cellRange2 = paymentsTable2.Cell(1, 4).Range;
-                        cellRange2.Text = "0.3";
-                        cellRange2 = paymentsTable2.Cell(1, 5).Range;
-                        cellRange2.Text = "0.4";
-                        cellRange2 = paymentsTable2.Cell(1, 6).Range;
-                        cellRange2.Text = "0.5";
-                        cellRange2 = paymentsTable2.Cell(2, 1).Range;
-                        cellRange2.Text = "P(X)";
-                        cellRange2 = paymentsTable2.Cell(2, 2).Range;
-                        cellRange2.Text = Answer11[1, 0];
-                        cellRange2 = paymentsTable2.Cell(2, 3).Range;
-                        cellRange2.Text = Answer11[1, 1];
-                        cellRange2 = paymentsTable2.Cell(2, 4).Range;
-                        cellRange2.Text = Answer11[1, 2];
-                        cellRange2 = paymentsTable2.Cell(2, 5).Range;
-                        cellRange2.Text = Answer11[1, 3];
-                        cellRange2 = paymentsTable2.Cell(2, 6).Range;
-                        cellRange2.Text = Answer11[1, 4];
+                        Document1.InsertParagraph().InsertTableAfterSelf(table1);
+                        Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
+
                     if (pipu == 12)
                     {
-                        Word.Paragraph userParagrapth1 = document1.Paragraphs.Add();
-                        Word.Range userRange1 = userParagrapth1.Range;
+                        Table table1 = Document1.AddTable(2, 7);
+                        // располагаем таблицу по центру
+                        table1.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table1.Design = TableDesign.TableGrid;
 
-                        Word.Paragraph tableParagraph1 = document1.Paragraphs.Add();
-                        Word.Range tableRange1 = tableParagraph1.Range;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table1.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
+                        table1.Rows[0].Cells[6].Paragraphs[0].Append("0.6");
 
-                        Word.Table paymentsTable1 = document1.Tables.Add(tableRange1, allCategories.Count() + 1, 7);
-                        paymentsTable1.Borders.InsideLineStyle = paymentsTable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable1.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        table1.Rows[0].Cells[0].Paragraphs[0].Append("P(X)");
+                        table1.Rows[0].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table1.Rows[0].Cells[2].Paragraphs[0].Append("");
+                        table1.Rows[0].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table1.Rows[0].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table1.Rows[0].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
+                        table1.Rows[0].Cells[6].Paragraphs[0].Append(Answer11[1, 5]);
 
-                        Word.Range cellRange;
+                        Table table2 = Document1.AddTable(2, 7);
+                        // располагаем таблицу по центру
+                        table2.Alignment = Alignment.center;
+                        // меняем стандартный дизайн таблицы
+                        table2.Design = TableDesign.TableGrid;
 
-                        cellRange = paymentsTable1.Cell(1, 1).Range;
-                        cellRange.Text = "X";
-                        cellRange = paymentsTable1.Cell(1, 2).Range;
-                        cellRange.Text = "0.1";
-                        cellRange = paymentsTable1.Cell(1, 3).Range;
-                        cellRange.Text = "0.2";
-                        cellRange = paymentsTable1.Cell(1, 4).Range;
-                        cellRange.Text = "0.3";
-                        cellRange = paymentsTable1.Cell(1, 5).Range;
-                        cellRange.Text = "0.4";
-                        cellRange = paymentsTable1.Cell(1, 6).Range;
-                        cellRange.Text = "0.5";
-                        cellRange = paymentsTable1.Cell(1, 7).Range;
-                        cellRange.Text = "0.6";
-                        cellRange = paymentsTable1.Cell(2, 1).Range;
-                        cellRange.Text = "P(X)";
-                        cellRange = paymentsTable1.Cell(2, 2).Range;
-                        cellRange.Text = Answer11[1, 0];
-                        cellRange = paymentsTable1.Cell(2, 3).Range;
-                        cellRange.Text = "";
-                        cellRange = paymentsTable1.Cell(2, 4).Range;
-                        cellRange.Text = Answer11[1, 2];
-                        cellRange = paymentsTable1.Cell(2, 5).Range;
-                        cellRange.Text = Answer11[1, 3];
-                        cellRange = paymentsTable1.Cell(2, 6).Range;
-                        cellRange.Text = Answer11[1, 4];
-                        cellRange = paymentsTable1.Cell(2, 7).Range;
-                        cellRange.Text = Answer11[1, 5];
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("X");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append("0.1");
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append("0.2");
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append("0.3");
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append("0.4");
+                        table2.Rows[0].Cells[5].Paragraphs[0].Append("0.5");
+                        table2.Rows[0].Cells[6].Paragraphs[0].Append("0.6");
 
-                        Word.Paragraph userParagrapth2 = document2.Paragraphs.Add();
-                        Word.Range userRange2 = userParagrapth2.Range;
+                        table2.Rows[0].Cells[0].Paragraphs[0].Append("P(X)");
+                        table2.Rows[0].Cells[1].Paragraphs[0].Append(Answer11[1, 0]);
+                        table2.Rows[0].Cells[2].Paragraphs[0].Append(Answer11[1, 1]);
+                        table2.Rows[0].Cells[3].Paragraphs[0].Append(Answer11[1, 2]);
+                        table2.Rows[0].Cells[4].Paragraphs[0].Append(Answer11[1, 3]);
+                        table2.Rows[0].Cells[5].Paragraphs[0].Append(Answer11[1, 4]);
+                        table2.Rows[0].Cells[6].Paragraphs[0].Append(Answer11[1, 5]);
 
-                        Word.Paragraph tableParagraph2 = document2.Paragraphs.Add();
-                        Word.Range tableRange2 = tableParagraph2.Range;
-
-                        Word.Table paymentsTable2 = document2.Tables.Add(tableRange2, allCategories.Count() + 1, 7);
-                        paymentsTable2.Borders.InsideLineStyle = paymentsTable2.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                        paymentsTable2.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        Word.Range cellRange2;
-
-                        cellRange2 = paymentsTable2.Cell(1, 1).Range;
-                        cellRange2.Text = "X";
-                        cellRange2 = paymentsTable2.Cell(1, 2).Range;
-                        cellRange2.Text = "0.1";
-                        cellRange2 = paymentsTable2.Cell(1, 3).Range;
-                        cellRange2.Text = "0.2";
-                        cellRange2 = paymentsTable2.Cell(1, 4).Range;
-                        cellRange2.Text = "0.3";
-                        cellRange2 = paymentsTable2.Cell(1, 5).Range;
-                        cellRange2.Text = "0.4";
-                        cellRange2 = paymentsTable2.Cell(1, 6).Range;
-                        cellRange2.Text = "0.5";
-                        cellRange2 = paymentsTable2.Cell(1, 7).Range;
-                        cellRange2.Text = "0.6";
-                        cellRange2 = paymentsTable2.Cell(2, 1).Range;
-                        cellRange2.Text = "P(X)";
-                        cellRange2 = paymentsTable2.Cell(2, 2).Range;
-                        cellRange2.Text = Answer11[1, 0];
-                        cellRange2 = paymentsTable2.Cell(2, 3).Range;
-                        cellRange2.Text = Answer11[1, 1];
-                        cellRange2 = paymentsTable2.Cell(2, 4).Range;
-                        cellRange2.Text = Answer11[1, 2];
-                        cellRange2 = paymentsTable2.Cell(2, 5).Range;
-                        cellRange2.Text = Answer11[1, 3];
-                        cellRange2 = paymentsTable2.Cell(2, 6).Range;
-                        cellRange2.Text = Answer11[1, 4];
-                        cellRange2 = paymentsTable2.Cell(2, 7).Range;
-                        cellRange2.Text = Answer11[1, 5];
+                        Document1.InsertParagraph().InsertTableAfterSelf(table1);
+                        Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
 
-                    Test1.Text += "\nНайти P(0.2),функцию распределения F(x).Построить многоугольник распределения.";
+                    Document1.InsertParagraph("\n" + "Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения.").
+                      // устанавливаем шрифт
+                      Font("Times New Roman").
+                      // устанавливаем размер шрифта
+                      FontSize(14);
 
                     //12
                     string[] Result = EG.TestGeneric12(Answer11);
-
-                    //13
-
-                    //14
 
                     //15
                     string result1 = Answer15[3];
@@ -1779,70 +1599,63 @@ namespace Test
                     //18
                     Result = EG.AnswerGeneric18(Answer18);
 
-                    Word.Paragraph objN = document1.Paragraphs.Add();
-                    Word.Range TestN = objN.Range;
-                    TestN.Text = "12)" + label12.Text + "\n" +
-                        "13)" + label13.Text + "\n" + "Func = " + Answer13[0] + "\n" + "(" + Answer13[1] + " ; " + Answer13[2] + "]" + "\nP(Eps) = " + Answer13[8] + "\n" +
-                        "14)" + label14.Text + "\n" +
-                        "15)" + label15.Text + "\n" +
-                        "16)" + label16.Text + "\n" +
-                        "17)" + label17.Text + "\n" +
-                        "18)" + label18.Text + "\n";
+                    Document1.InsertParagraph("12)" + label12.Text + "\n\n" +
+                        "13) " + label13.Text + "\n" + "F(X) = " + Answer13[0] + "\tпри ∀x∈" + "(" + Answer13[1] + " ; " + Answer13[2] + "]" + "\nF(X) = 0\tпри ∀x∉ " + "(" + Answer13[1] + " ; " + Answer13[2] + "]" +
+                        "\nНайти функцию распределения F(X) и " + "P( " + Answer13[6] + " < Eps < " + Answer13[7] + ")" +
+                        "\n\n14) " + label14.Text + "\n\n" +
+                        "15) " + label15.Text + "\n\n" +
+                        "16) " + label16.Text + "\nНайти P(x1 < X < x2).\n\n" +
+                        "17) " + label17.Text + "\nНайти P(|X-x1| < x2).\n\n" +
+                        "18) " + label18.Text + "\nНайти M(x), M(y), M(xy), D(x), D(y), D(xy).").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    Word.Paragraph obj3 = document2.Paragraphs.Add();
-                    Word.Range Test3 = obj3.Range;
-                    Test3.Text = "12)" + "\nM(E) = " + Result[0] + "D(E) = " + Result[1] + "Sig(E) = " + Result[2] + "\n" +
-                        "13)" + "При x <= a это " + Answer13[3] + "\nПри a < x <= b это " + Answer13[4] + "\nПри b < x это " + Answer13[5] + "\n" +
-                        "14)" + "M(E) = " + Answer13[9] + "\nD(E) = " + Answer13[10] + "\nSig(E) = " + Answer13[11] + "\n" +
-                        "15)" + result1 + "\n" +
-                        "16)" + result2 + "\n" +
-                        "17)" + result3 + "\n" +
-                        "18)" + " M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n"; ;
+                    Document2.InsertParagraph("12)" + "\nM(E) = " + Result[0] + "D(E) = " + Result[1] + "Sig(E) = " + Result[2] + "\n" +
+                        "13) " + "При x <= a это " + Answer13[3] + "\nПри a < x <= b это " + Answer13[4] + "\nПри b < x это " + Answer13[5] + "\n" + "P(Eps) = " +
+                Answer13[8] +
+                        "\n14) " + "M(E) = " + Answer13[9] + "\nD(E) = " + Answer13[10] + "\nSig(E) = " + Answer13[11] + "\n" +
+                        "15) " + result1 + "\n" +
+                        "16) " + result2 + "\n" +
+                        "17) " + result3 + "\n" +
+                        "18) " + " M(E) = " + Result[0] + "\n M(n) = " + Result[1] + "\n M(E,n) = " + Result[2] + "\n D(E) = " + Result[3] + "\n D(n) = " + Result[4] + "\n D(E,n) = " + Result[5] + "\n").
+                     // устанавливаем шрифт
+                     Font("Times New Roman").
+                     // устанавливаем размер шрифта
+                     FontSize(14);
 
-                    Word.Paragraph tableParagraphN = document1.Paragraphs.Add();
-                    Word.Range tableRangeN = tableParagraphN.Range;
+                    Table table3 = Document1.AddTable(3, 4);
+                    // располагаем таблицу по центру
+                    table3.Alignment = Alignment.center;
+                    // меняем стандартный дизайн таблицы
+                    table3.Design = TableDesign.TableGrid;
 
-                    Word.Table paymentsTableN = document1.Tables.Add(tableRangeN, allCategories.Count() + 2, 4);
-                    paymentsTableN.Borders.InsideLineStyle = paymentsTableN.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                    paymentsTableN.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                    table3.Rows[0].Cells[0].Paragraphs[0].Append("X/y");
+                    table3.Rows[0].Cells[1].Paragraphs[0].Append("-1");
+                    table3.Rows[0].Cells[2].Paragraphs[0].Append("0");
+                    table3.Rows[0].Cells[3].Paragraphs[0].Append("1");
 
-                    Word.Range cellRange1;
+                    table3.Rows[1].Cells[0].Paragraphs[0].Append("0");
+                    table3.Rows[1].Cells[1].Paragraphs[0].Append(Answer18[1, 1]);
+                    table3.Rows[1].Cells[2].Paragraphs[0].Append(Answer18[1, 2]);
+                    table3.Rows[1].Cells[3].Paragraphs[0].Append(Answer18[1, 3]);
 
-                    cellRange1 = paymentsTableN.Cell(1, 1).Range;
-                    cellRange1.Text = "E/n";
-                    cellRange1 = paymentsTableN.Cell(1, 2).Range;
-                    cellRange1.Text = "-1";
-                    cellRange1 = paymentsTableN.Cell(1, 3).Range;
-                    cellRange1.Text = "0";
-                    cellRange1 = paymentsTableN.Cell(1, 4).Range;
-                    cellRange1.Text = "1";
+                    table3.Rows[2].Cells[0].Paragraphs[0].Append("1");
+                    table3.Rows[2].Cells[1].Paragraphs[0].Append(Answer18[2, 1]);
+                    table3.Rows[2].Cells[2].Paragraphs[0].Append(Answer18[2, 2]);
+                    table3.Rows[2].Cells[3].Paragraphs[0].Append(Answer18[2, 3]);
 
-                    cellRange1 = paymentsTableN.Cell(2, 1).Range;
-                    cellRange1.Text = "0";
-                    cellRange1 = paymentsTableN.Cell(2, 2).Range;
-                    cellRange1.Text = Answer18[1, 1];
-                    cellRange1 = paymentsTableN.Cell(2, 3).Range;
-                    cellRange1.Text = Answer18[1, 2];
-                    cellRange1 = paymentsTableN.Cell(2, 4).Range;
-                    cellRange1.Text = Answer18[1, 3];
+                    Document1.InsertParagraph().InsertTableAfterSelf(table3);
+                    Document1.InsertSectionPageBreak();
 
-                    cellRange1 = paymentsTableN.Cell(3, 1).Range;
-                    cellRange1.Text = "1";
-                    cellRange1 = paymentsTableN.Cell(3, 2).Range;
-                    cellRange1.Text = Answer18[2, 1];
-                    cellRange1 = paymentsTableN.Cell(3, 3).Range;
-                    cellRange1.Text = Answer18[2, 2];
-                    cellRange1 = paymentsTableN.Cell(3, 4).Range;
-                    cellRange1.Text = Answer18[2, 3];
-
-                    document1.SaveAs2(@"" + Path1);
-                    document2.SaveAs2(@"" + Path2);
                     number_of_options++;
                 }
             }
 
-            document1.Close();
-            document2.Close();
+            Document1.Save();
+            Document2.Save();
+
             MessageBox.Show("Тест составлен в файл " + textBox1.Text + "!!!");
             Environment.Exit(0);
         }
