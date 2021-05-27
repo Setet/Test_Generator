@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using Word = Microsoft.Office.Interop.Word;
 using Xceed.Words.NET;
 using Xceed.Document.NET;
 
@@ -896,7 +893,7 @@ namespace Test
                     label10.Text = text;
 
                     Document1.InsertParagraph("\n" + labeln.Text + "\n" + labelV.Text +
-                        "1)" + label1.Text + "\n\n" +
+                        "1) " + label1.Text + "\n\n" +
                         "2) " + label2.Text + "\n\n" +
                         "3) " + label3.Text + "\n\n" +
                         "4) " + label4.Text + "\n\n" +
@@ -913,7 +910,7 @@ namespace Test
                      FontSize(14);
 
                     Document2.InsertParagraph("\n" + labelV.Text +
-                        "1) a)" + result1_1 + " b)" + result1_2 + " c)" + result1_3 + "\n" +
+                        "1) a)" + result1_1 + "\tb)" + result1_2 + "\tc)" + result1_3 + "\n" +
                         "2) " + result2 + "\n\n" +
                         "3) " + result3 + "\n\n" +
                         "4) " + result4 + "\n\n" +
@@ -1069,7 +1066,7 @@ namespace Test
                         Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
 
-                    Document1.InsertParagraph("Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения.\n").
+                    Document1.InsertParagraph("Найти P(0.2), функцию распределения F(x). Построить многоугольник распределения.\n").
                      // устанавливаем шрифт
                      Font("Times New Roman").
                      // устанавливаем размер шрифта
@@ -1343,7 +1340,7 @@ namespace Test
                     label10.Text = text;
 
                     Document1.InsertParagraph("\n" + labeln.Text + "\n" + labelV.Text +
-                        "1)" + label1.Text + "\n\n" +
+                        "1) " + label1.Text + "\n\n" +
                         "2) " + label2.Text + "\n\n" +
                         "3) " + label3.Text + "\n\n" +
                         "4) " + label4.Text + "\n\n" +
@@ -1360,7 +1357,7 @@ namespace Test
                      FontSize(14);
 
                     Document2.InsertParagraph("\n" + labelV.Text +
-                        "1) a)" + result1_1 + " b)" + result1_2 + " c)" + result1_3 + "\n" +
+                        "1) a)" + result1_1 + "\tb)" + result1_2 + "\tc)" + result1_3 + "\n" +
                         "2) " + result2 + "\n\n" +
                         "3) " + result3 + "\n\n" +
                         "4) " + result4 + "\n\n" +
@@ -1547,7 +1544,7 @@ namespace Test
                         Document2.InsertParagraph().InsertTableAfterSelf(table2);
                     }
 
-                    Document1.InsertParagraph("\n" + "Найти P(0.2),функцию распределения F(x).Построить многоугольник распределения.").
+                    Document1.InsertParagraph("\n" + "Найти P(0.2), функцию распределения F(x). Построить многоугольник распределения.\n").
                       // устанавливаем шрифт
                       Font("Times New Roman").
                       // устанавливаем размер шрифта

@@ -51,3 +51,16 @@ C:\Users\user\Desktop\Test1\Test\obj\Debug\Test.pdb
 C:\Users\user\Desktop\Test\Test\bin\Debug\Xceed.Document.NET.dll
 C:\Users\user\Desktop\Test\Test\bin\Debug\Xceed.Words.NET.dll
 C:\Users\user\Desktop\Test\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Setet\Desktop\Test\Test\bin\Debug\Test.exe.config
+C:\Users\Setet\Desktop\Test\Test\bin\Debug\Test.exe
+C:\Users\Setet\Desktop\Test\Test\bin\Debug\Test.pdb
+C:\Users\Setet\Desktop\Test\Test\bin\Debug\Xceed.Document.NET.dll
+C:\Users\Setet\Desktop\Test\Test\bin\Debug\Xceed.Words.NET.dll
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.FormTest.resources
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.exe
+C:\Users\Setet\Desktop\Test\Test\obj\Debug\Test.pdb
